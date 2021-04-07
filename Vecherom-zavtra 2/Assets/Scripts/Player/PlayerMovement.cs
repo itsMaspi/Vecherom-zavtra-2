@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
+    public Animator animator;
     //public InputMaster inputs;
 
     public float runSpeed = 30f;
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
+        animator.SetFloat("playerSpeed", Mathf.Abs(horizontalMove));
 
     }
 
