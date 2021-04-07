@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
 
+    private Vector2 boxSize = new Vector2(0.1f, 1f);
+
 	void Awake()
 	{
         /*inputs = new InputMaster();
@@ -48,4 +50,21 @@ public class PlayerMovement : MonoBehaviour
 	{
         crouch = context.ReadValue<float>() >= 0.4f;
     }
+
+    public void CheckInteraction(InputAction.CallbackContext context)
+	{
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
+
+		if (hits.Length > 0)
+		{
+			foreach (var rc in hits)
+			{
+                if (rc.transform.GetComponent<Interactable>())
+				{
+                    rc.transform.GetComponent<Interactable>().Interact();
+                    return;
+                }
+			}
+		}
+	}
 }
