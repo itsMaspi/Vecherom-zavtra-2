@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
-    public Animator animator;
+    public Transform background;
+    public Rigidbody2D rb;
     //public InputMaster inputs;
 
     public float runSpeed = 30f;
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
+
+    private Vector2 boxSize = new Vector2(0.1f, 1f);
 
 	void Awake()
 	{
@@ -26,8 +29,7 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        animator.SetFloat("playerSpeed", Mathf.Abs(horizontalMove));
-
+        background.localPosition = new Vector3(background.localPosition.x + (rb.velocity.x * 0.0001f), 0, 10f);
     }
 
 	void FixedUpdate()
@@ -50,4 +52,21 @@ public class PlayerMovement : MonoBehaviour
 	{
         crouch = context.ReadValue<float>() >= 0.4f;
     }
+
+    /*public void CheckInteraction(InputAction.CallbackContext context)
+	{
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
+
+		if (hits.Length > 0)
+		{
+			foreach (var rc in hits)
+			{
+                if (rc.transform.GetComponent<Interactable>())
+				{
+                    rc.transform.GetComponent<Interactable>().Interact();
+                    return;
+                }
+			}
+		}
+	}*/
 }
