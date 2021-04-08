@@ -44,6 +44,9 @@ TagManager:
   - name: Tiles
     uniqueID: 767237331
     locked: 0
+  - name: Decoration
+    uniqueID: 3546381895
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

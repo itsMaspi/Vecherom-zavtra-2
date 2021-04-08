@@ -78,7 +78,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 
 			// If crouching
-			if (crouch)
+			if (m_Grounded && crouch)
 			{
 				if (!m_wasCrouching)
 				{
@@ -93,7 +93,7 @@ public class CharacterController2D : MonoBehaviour
 				if (m_CrouchDisableCollider != null)
 					m_CrouchDisableCollider.enabled = false;
 			}
-			else
+			else if (!crouch)
 			{
 				// Enable the collider when not crouching
 				if (m_CrouchDisableCollider != null)
