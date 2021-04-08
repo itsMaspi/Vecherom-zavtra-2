@@ -33,16 +33,21 @@ public class PlayerController : MonoBehaviour
 
     public void CheckInteraction(InputAction.CallbackContext context)
     {
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
-
-        if (hits.Length > 0)
+        if (context.performed)
         {
-            foreach (var rc in hits)
+            //Debug.Log("PERFORMED");
+        
+            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
+
+            if (hits.Length > 0)
             {
-                if (rc.transform.GetComponent<Interactable>())
+                foreach (var rc in hits)
                 {
-                    rc.transform.GetComponent<Interactable>().Interact();
-                    return;
+                    if (rc.transform.GetComponent<Interactable>())
+                    {
+                        rc.transform.GetComponent<Interactable>().Interact();
+                        return;
+                    }
                 }
             }
         }
