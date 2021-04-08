@@ -14,7 +14,7 @@ public abstract class Interactable : MonoBehaviour
 	{
 		if (collision.CompareTag("Player"))
 		{
-			Debug.Log("Interactable object enter triggered");
+			//Debug.Log("Interactable object enter triggered");
 			collision.GetComponent<PlayerController>().OpenInteractableIcon();
 		}
 	}
@@ -23,7 +23,7 @@ public abstract class Interactable : MonoBehaviour
 	{
 		if (collision.CompareTag("Player"))
 		{
-			Debug.Log("Interactable object exit triggered");
+			//Debug.Log("Interactable object exit triggered");
 			collision.GetComponent<PlayerController>().CloseInteractableIcon();
 		}
 	}
