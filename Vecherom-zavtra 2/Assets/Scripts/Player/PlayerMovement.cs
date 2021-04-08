@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public Transform background;
     public Rigidbody2D rb;
+    public Animator animator;
     //public InputMaster inputs;
 
     public float runSpeed = 30f;
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
+        animator.SetFloat("playerSpeed", Mathf.Abs(horizontalMove));
         background.localPosition = new Vector3(background.localPosition.x + (rb.velocity.x * 0.0001f), 0, 10f);
     }
 
@@ -46,11 +48,20 @@ public class PlayerMovement : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
 	{
         jump = context.ReadValue<float>() >= 0.2f;
+        if (context.ReadValue<float>() >= 0.2f)
+        {
+            Debug.Log("Abc");
+            animator.SetBool("isJumping", true);
+        }
     }
 
     public void Crouch(InputAction.CallbackContext context)
 	{
         crouch = context.ReadValue<float>() >= 0.4f;
+    }
+    public void OnLanding()
+    {
+        animator.SetBool("isJumping", false);
     }
 
     /*public void CheckInteraction(InputAction.CallbackContext context)
