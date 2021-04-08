@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
+    public Transform background;
+    public Rigidbody2D rb;
     //public InputMaster inputs;
 
     public float runSpeed = 30f;
@@ -27,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-
+        background.localPosition = new Vector3(background.localPosition.x + (rb.velocity.x * 0.0001f), 0, 10f);
     }
 
 	void FixedUpdate()
