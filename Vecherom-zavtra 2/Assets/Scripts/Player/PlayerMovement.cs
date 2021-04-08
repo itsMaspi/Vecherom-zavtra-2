@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         crouch = context.ReadValue<float>() >= 0.4f;
     }
 
-    public void CheckInteraction(InputAction.CallbackContext context)
+    /*public void CheckInteraction(InputAction.CallbackContext context)
 	{
         RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
 
@@ -68,5 +68,5 @@ public class PlayerMovement : MonoBehaviour
                 }
 			}
 		}
-	}
+	}*/
 }
