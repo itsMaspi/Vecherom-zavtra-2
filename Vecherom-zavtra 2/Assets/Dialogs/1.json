@@ -1,0 +1,50 @@
+{
+    "dialogues": 
+    [
+        {
+            "id": "0",
+            "lines":
+            [
+                {
+                    "line": "Beep boop, I'm a dumb sprite."
+                },
+                {
+                    "line": "I'm here temporarily, until my creator decides that I'm not useful anymore."
+                },
+                {
+                    "line": "That was sad :("
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "lines":
+            [
+                {
+                    "line": "Beep boop, I'm just a test to see if json works."
+                },
+                {
+                    "line": "If it does it will be pretty cool."
+                },
+                {
+                    "line": "If you are reading this it's probably working"
+                },
+                {
+                    "line": "YAY!"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "lines":
+            [
+                {
+                    "line": "Wow, you've made it this far."
+                },
+                {
+                    "line": "I don't want to talk anymore."
+                }
+            ]
+        }
+    ]
+}
