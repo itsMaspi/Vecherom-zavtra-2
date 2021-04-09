@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public Transform background;
     public Rigidbody2D rb;
     public Animator animator;
-    //public InputMaster inputs;
 
     public float runSpeed = 30f;
 
@@ -17,14 +16,9 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
 
-    private Vector2 boxSize = new Vector2(0.1f, 1f);
-
 	void Awake()
 	{
-        /*inputs = new InputMaster();
-        inputs.Player.Movement.performed += ctx => Move(ctx.ReadValue<int>());
-        inputs.Player.Jump.performed += _ => Jump();
-        inputs.Player.Crouch.performed += _ => crouch = !crouch;*/
+        
 	}
 
 	// Update is called once per frame
@@ -47,10 +41,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
 	{
-        jump = context.ReadValue<float>() >= 0.2f;
-        if (context.ReadValue<float>() >= 0.2f)
-        {
-            Debug.Log("Abc");
+        if (context.performed)
+		{
+            jump = context.ReadValue<float>() >= 0.2f;
             animator.SetBool("isJumping", true);
         }
     }
@@ -59,25 +52,9 @@ public class PlayerMovement : MonoBehaviour
 	{
         crouch = context.ReadValue<float>() >= 0.4f;
     }
+
     public void OnLanding()
     {
         animator.SetBool("isJumping", false);
     }
-
-    /*public void CheckInteraction(InputAction.CallbackContext context)
-	{
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
-
-		if (hits.Length > 0)
-		{
-			foreach (var rc in hits)
-			{
-                if (rc.transform.GetComponent<Interactable>())
-				{
-                    rc.transform.GetComponent<Interactable>().Interact();
-                    return;
-                }
-			}
-		}
-	}*/
 }
