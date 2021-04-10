@@ -1717,7 +1717,7 @@ GameObject:
   - component: {fileID: 1503904841}
   - component: {fileID: 1503904842}
   m_Layer: 3
-  m_Name: player_base
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2019,6 +2019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionIcon: {fileID: 404478387}
+  dialogueSystem: {fileID: 365002521}
 --- !u!95 &1503904841
 Animator:
   serializedVersion: 3

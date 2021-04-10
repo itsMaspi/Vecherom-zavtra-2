@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public GameObject interactionIcon;
+    public GameObject dialogueSystem;
 
     private Vector2 boxSize = new Vector2(1f, 1f);
 
@@ -35,7 +36,11 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            //Debug.Log("PERFORMED");
+			if (dialogueSystem.GetComponent<DialogueManager>().dialoguePanel.activeSelf)
+			{
+                dialogueSystem.GetComponent<DialogueManager>().ContinueDialog();
+                return;
+			}
         
             RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
 
