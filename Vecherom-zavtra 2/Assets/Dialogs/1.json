@@ -3,46 +3,76 @@
     [
         {
             "id": "0",
-            "lines":
+            "dialogue":
             [
                 {
-                    "line": "Beep boop, I'm a dumb sprite."
+                    "name": "NPC",
+                    "lines":
+                    [
+                        {
+                            "line": "Beep boop, I'm a dumb sprite."
+                        },
+                        {
+                            "line": "I'm here temporarily, until my creator decides that I'm not useful anymore."
+                        },
+                        {
+                            "line": "That was sad :("
+                        }
+                    ]
                 },
                 {
-                    "line": "I'm here temporarily, until my creator decides that I'm not useful anymore."
-                },
-                {
-                    "line": "That was sad :("
+                    "name": "<player>",
+                    "lines":
+                    [
+                        {
+                            "line": "Yes it was."
+                        },
+                        {
+                            "line": "Bla bla bla."
+                        }
+                    ]
                 }
             ]
         },
         {
             "id": "1",
-            "lines":
+            "dialogue":
             [
                 {
-                    "line": "Beep boop, I'm just a test to see if json works."
+                    "name": "NPC",
+                    "lines":
+                    [
+                        {
+                            "line": "Beep boop, I'm just a test to see if json works."
+                        }
+                    ]
                 },
                 {
-                    "line": "If it does it will be pretty cool."
-                },
-                {
-                    "line": "If you are reading this it's probably working"
-                },
-                {
-                    "line": "YAY!"
+                    "name": "<player>",
+                    "lines":
+                    [
+                        {
+                            "line": "Wow, it works."
+                        },
+                        {
+                            "line": "Nice!"
+                        }
+                    ]
                 }
             ]
         },
         {
             "id": "2",
-            "lines":
+            "dialogue":
             [
                 {
-                    "line": "Wow, you've made it this far."
-                },
-                {
-                    "line": "I don't want to talk anymore."
+                    "name": "NPC",
+                    "lines":
+                    [
+                        {
+                            "line": "It worked <player>!"
+                        }
+                    ]
                 }
             ]
         }
