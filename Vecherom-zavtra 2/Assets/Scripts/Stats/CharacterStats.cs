@@ -19,9 +19,19 @@ public class CharacterStats : MonoBehaviour
         stats.ForEach(x => Debug.Log($"{x.StatName}: {x.GetFullValue()}"));
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddStatBonus(List<BaseStat> statBonuses)
+	{
+		foreach (BaseStat statBonus in statBonuses)
+		{
+            stats.Find(x => x.StatName == statBonus.StatName).AddStatBonus(new StatBonus(statBonus.BaseValue));
+		}
+	}
+
+    public void RemoveStatBonus(List<BaseStat> statBonuses)
     {
-        
+        foreach (BaseStat statBonus in statBonuses)
+        {
+            stats.Find(x => x.StatName.Equals(statBonus.StatName)).RemoveStatBonus(new StatBonus(statBonus.BaseValue));
+        }
     }
 }
