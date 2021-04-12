@@ -1148,7 +1148,7 @@ GameObject:
   - component: {fileID: 769365069}
   - component: {fileID: 769365072}
   m_Layer: 3
-  m_Name: player_jumpt4
+  m_Name: NPC_test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1220,7 +1220,7 @@ SpriteRenderer:
   m_SortingLayerID: -748585401
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6a66a138fc32a0d4783c30cc9861a446, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41731f1eae4ff8d48963faa47db253b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1771,7 +1771,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
