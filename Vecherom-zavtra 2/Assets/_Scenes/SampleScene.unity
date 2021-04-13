@@ -359,6 +359,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 720847642}
   npcName: 
+  dialogues:
+    dialogues: []
   dialogueLines: []
 --- !u!1 &404478387
 GameObject:
@@ -1257,12 +1259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119a2e56cb4a1d840b9d5d3bdf386c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - Beep boop, I'm a dumb sprite.
-  - I'm here temporarily, until my creator decides that I'm not useful anymore.
-  - That was sad :(
-  npcName: Mr. Dummy
-  playerWeaponController: {fileID: 1503904843}
+  npcId: 1
+  dialogueId: 0
 --- !u!1 &836697477
 GameObject:
   m_ObjectHideFlags: 0

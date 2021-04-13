@@ -1,0 +1,68 @@
+{
+    "dialogues": 
+    [
+        {
+            "id": "0",
+            "lines":
+            [
+                {
+                    "type": "0",
+                    "name": "NPC",
+                    "line": "Beep boop, I'm a dumb sprite."
+                },
+                {
+                    "type": "0",
+                    "name": "NPC",
+                    "line": "I'm here temporarily, until my creator decides that I'm not useful anymore."
+                },
+                {
+                    "type": "0",
+                    "name": "NPC",
+                    "line": "That was sad :("
+                },
+                {
+                    "type": "0",
+                    "name": "<player>",
+                    "line": "Yes it was."
+                },
+                {
+                    "type": "0",
+                    "name": "<player>",
+                    "line": "Bla bla bla."
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "lines":
+            [
+                {
+                    "type": "0",
+                    "name": "NPC",
+                    "line": "Beep boop, I'm just a test to see if json works."
+                },
+                {
+                    "type": "0",
+                    "name": "<player>",
+                    "line": "Wow, it works."
+                },
+                {
+                    "type": "1",
+                    "name": "<player>",
+                    "line": "Nice!"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "lines":
+            [
+                {
+                    "type": "0",
+                    "name": "NPC",
+                    "line": "It worked <player>!"
+                }
+            ]
+        }
+    ]
+}
