@@ -1,0 +1,42 @@
+{
+    "dialogues": 
+    [
+        {
+            "id": "0",
+            "lines":
+            [
+                {
+                    "type": "0",
+                    "name": "NPC 2",
+                    "line": "Testing testing."
+                },
+                {
+                    "type": "0",
+                    "name": "NPC 2",
+                    "line": "I'm NPC2, nice to meet you."
+                },
+                {
+                    "type": "0",
+                    "name": "<player>",
+                    "line": "Yes."
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "lines":
+            [
+                {
+                    "type": "0",
+                    "name": "NPC",
+                    "line": "Very very nice :)."
+                },
+                {
+                    "type": "1",
+                    "name": "<player>",
+                    "line": "No!"
+                }
+            ]
+        }
+    ]
+}

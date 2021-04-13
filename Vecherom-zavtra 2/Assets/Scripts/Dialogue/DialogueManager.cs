@@ -46,8 +46,6 @@ public class DialogueManager : MonoBehaviour
         // Get the dialogue with the dialogueId
         var dialogue = dialogues.dialogues.Where(x => x.id == dialogueId).FirstOrDefault();
         dialogueLines = dialogue.lines;
-        //dialogueLines.AddRange(lines);
-        //this.npcName = dialogueLines.name;
 
         CreateDialogue();
 	}
