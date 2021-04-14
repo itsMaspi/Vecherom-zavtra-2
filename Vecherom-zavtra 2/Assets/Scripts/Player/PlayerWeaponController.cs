@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerWeaponController : MonoBehaviour
 {
@@ -30,8 +31,11 @@ public class PlayerWeaponController : MonoBehaviour
 		Debug.Log(characterStats.stats[1].GetCalculatedStatValue());
 	}
 
-	public void PerformWeaponAttack()
+	public void PerformWeaponAttack(InputAction.CallbackContext context)
 	{
-		equippedWeapon.PerformAttack();
+		if (context.performed)
+		{
+			equippedWeapon.PerformAttack();
+		}
 	}
 }
