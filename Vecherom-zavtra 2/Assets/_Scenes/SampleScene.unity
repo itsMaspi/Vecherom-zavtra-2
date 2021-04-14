@@ -1786,7 +1786,7 @@ MonoBehaviour:
   currentHealth: 0
   power: 5
   toughness: 5
-  maxHealth: 100
+  maxHealth: 20
 --- !u!1 &1222971737
 GameObject:
   m_ObjectHideFlags: 0
