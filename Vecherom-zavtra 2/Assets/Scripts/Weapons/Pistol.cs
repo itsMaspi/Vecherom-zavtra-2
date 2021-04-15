@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour, IWeapon
+public class Pistol : MonoBehaviour, IWeapon
 {
 	private Animator animator;
 	public List<BaseStat> Stats { get; set; }
