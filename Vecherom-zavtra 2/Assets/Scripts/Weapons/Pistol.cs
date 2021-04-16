@@ -18,7 +18,7 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 
 	public void PerformAttack()
 	{
-		animator.SetTrigger("Attack");
+		animator.SetTrigger("Shoot");
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)
@@ -34,6 +34,8 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 	{
 		LaserBullet bulletInstance = Instantiate(laserBullet, ProjectileSpawn.position, ProjectileSpawn.rotation);
 		bulletInstance.Force = transform.parent.parent.lossyScale.normalized;
-		bulletInstance.Speed = 100f;
+		bulletInstance.Speed = 300f;
+		bulletInstance.Damage = 5;
+		bulletInstance.Range = 20f;
 	}
 }
