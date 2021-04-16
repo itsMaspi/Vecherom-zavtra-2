@@ -32,8 +32,8 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 
 	public void CastProjectile()
 	{
-		//laserBullet.Speed = 50f;
 		LaserBullet bulletInstance = Instantiate(laserBullet, ProjectileSpawn.position, ProjectileSpawn.rotation);
-		bulletInstance.Speed = 50f;
+		bulletInstance.Force = transform.parent.parent.lossyScale.normalized;
+		bulletInstance.Speed = 100f;
 	}
 }
