@@ -2,9 +2,10 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     public GameObject interactionIcon;
     public GameObject dialogueSystem;
@@ -13,10 +14,23 @@ public class PlayerController : MonoBehaviour
     private Vector2 boxSize = new Vector2(1f, 1f);
 
     // Start is called before the first frame update
+
+    public override void OnStartLocalPlayer()
+    {
+        virtualCamera = GameObject.Find("CM vcam");
+
+        if (virtualCamera != null)
+        {
+            virtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = transform;
+        }
+
+        dialogueSystem = GameObject.Find("DialogueSystem");
+    }
+
     void Start()
     {
-
-        /*GameObject[] gObjects =  FindObjectsOfType<GameObject>();
+        /*
+        GameObject[] gObjects =  FindObjectsOfType<GameObject>();
         foreach (var Object in gObjects)
         {
             if (Object.GetComponent<CinemachineVirtualCamera>() != null)
@@ -24,7 +38,9 @@ public class PlayerController : MonoBehaviour
                 virtualCamera = Object;
                 continue;
             }
-        }*/
+        }
+
+
 
         virtualCamera = GameObject.Find("CM vcam");
 
@@ -34,6 +50,7 @@ public class PlayerController : MonoBehaviour
         }
 
         dialogueSystem = GameObject.Find("DialogueSystem");
+        */
     }
 
     // Update is called once per frame
