@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,32 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject interactionIcon;
     public GameObject dialogueSystem;
+    public GameObject virtualCamera;
 
     private Vector2 boxSize = new Vector2(1f, 1f);
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        /*GameObject[] gObjects =  FindObjectsOfType<GameObject>();
+        foreach (var Object in gObjects)
+        {
+            if (Object.GetComponent<CinemachineVirtualCamera>() != null)
+            {
+                virtualCamera = Object;
+                continue;
+            }
+        }*/
+
+        virtualCamera = GameObject.Find("CM vcam");
+
+        if (virtualCamera != null)
+        {
+            virtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = transform;
+        }
+
+        dialogueSystem = GameObject.Find("DialogueSystem");
     }
 
     // Update is called once per frame

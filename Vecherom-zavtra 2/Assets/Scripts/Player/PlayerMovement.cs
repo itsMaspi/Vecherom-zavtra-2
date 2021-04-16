@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 	void Update()
     {
         animator.SetFloat("playerSpeed", Mathf.Abs(horizontalMove));
-        background.localPosition = new Vector3(background.localPosition.x + (rb.velocity.x * 0.0001f), 0, 10f);
+        //background.localPosition = new Vector3(background.localPosition.x + (rb.velocity.x * 0.0001f), 0, 10f);
     }
 
 	void FixedUpdate()
