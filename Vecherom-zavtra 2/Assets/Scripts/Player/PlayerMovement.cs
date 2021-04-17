@@ -25,43 +25,47 @@ public class PlayerMovement : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isLocalPlayer) return;
+        //if (!isLocalPlayer) return;
         animator.SetFloat("playerSpeed", Mathf.Abs(horizontalMove));
         //background.localPosition = new Vector3(background.localPosition.x + (rb.velocity.x * 0.0001f), 0, 10f);
     }
 
     void FixedUpdate()
     {
-        if (!isLocalPlayer) return;
+        //if (!isLocalPlayer) return;
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }
 
-    public void Move(InputAction.CallbackContext context)
+    public void OnMovement(InputValue value) // InputAction.CallbackContext context
     {
-        if (!isLocalPlayer) return;
-        horizontalMove = context.ReadValue<float>() * runSpeed;
+        //if (!isLocalPlayer) return;
+        //horizontalMove = context.ReadValue<float>() * runSpeed;
+        horizontalMove = value.Get<float>() * runSpeed;
     }
 
-    public void Jump(InputAction.CallbackContext context)
+    public void OnJump(InputValue value)
     {
         if (!isLocalPlayer) return;
-        if (context.performed)
+        /*if (context.performed)
         {
             jump = context.ReadValue<float>() >= 0.2f;
             animator.SetBool("isJumping", true);
-        }
+        }*/
+        jump = true;
+        animator.SetBool("isJumping", true);
     }
 
-    public void Crouch(InputAction.CallbackContext context)
+    public void OnCrouch(InputValue value)
     {
         if (!isLocalPlayer) return;
-        crouch = context.ReadValue<float>() >= 0.4f;
+        //crouch = context.ReadValue<float>() >= 0.4f;
+        crouch = value.isPressed;
     }
 
     public void OnLanding()
     {
-        if (!isLocalPlayer) return;
+        //if (!isLocalPlayer) return;
         animator.SetBool("isJumping", false);
     }
 }

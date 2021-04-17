@@ -204,6 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15c0aef27455b746a3833d2b5002d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   m_JumpForce: 400
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
@@ -245,6 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4892f83194caa4999e788a3c05df70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   controller: {fileID: 7963134727916154941}
   background: {fileID: 0}
   rb: {fileID: 7963134727916154936}
@@ -263,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 5db8ec3ee06d80b4abed51d6b2e7c057, type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -372,7 +376,7 @@ MonoBehaviour:
     m_ActionId: fb0fcdcc-c53c-4bd4-a227-d4354aa115fa
     m_ActionName: Player/Attack[/Keyboard/ctrl,/Keyboard/rightCtrl,/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -388,6 +392,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c31208c35bed214f8b8adab50a3d82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   interactionIcon: {fileID: 7963134729018731979}
   dialogueSystem: {fileID: 0}
   virtualCamera: {fileID: 0}
@@ -434,6 +440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6372c05a1d5f9a747880f901e0cfa8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   playerWeaponController: {fileID: 0}
 --- !u!114 &7963134727916154931
 MonoBehaviour:
@@ -447,6 +455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c90d4e8e74a3d439cc90485fb8fde8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   weaponPoint: {fileID: 7963134727609902135}
 --- !u!114 &6613210650112272399
 MonoBehaviour:

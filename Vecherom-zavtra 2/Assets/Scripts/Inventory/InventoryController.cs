@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Mirror;
 
-public class InventoryController : MonoBehaviour
+public class InventoryController : NetworkBehaviour
 {
 	[HideInInspector]public PlayerWeaponController playerWeaponController;
 	public Item pistol;
 
-	void Start()
+	public override void OnStartLocalPlayer()
 	{
 		playerWeaponController = GetComponent<PlayerWeaponController>();
 		List<BaseStat> pistolStats = new List<BaseStat>();
@@ -16,9 +17,10 @@ public class InventoryController : MonoBehaviour
 		pistol = new Item(pistolStats, "pistol");
 	}
 
-	public void EquipWeapon(InputAction.CallbackContext context)
+	public void OnEquipWeapon(InputValue value)
 	{
-		if (context.performed)
+		if (!isLocalPlayer) return;
+		if (value.isPressed)
 		{
 			playerWeaponController.EquipWeapon(pistol);
 		}

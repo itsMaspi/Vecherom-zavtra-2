@@ -29,6 +29,10 @@ public class PlayerController : NetworkBehaviour
 
     void Start()
     {
+        if (!isLocalPlayer)
+		{
+            GetComponent<PlayerInput>().enabled = false;
+		}
         /*
         GameObject[] gObjects =  FindObjectsOfType<GameObject>();
         foreach (var Object in gObjects)
@@ -56,7 +60,7 @@ public class PlayerController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isLocalPlayer) return;
+        //if (!isLocalPlayer) return;
     }
 
     public void OpenInteractableIcon()
@@ -69,9 +73,33 @@ public class PlayerController : NetworkBehaviour
         interactionIcon.SetActive(false);
     }
 
-    public void CheckInteraction(InputAction.CallbackContext context)
+    public void OnInteract(InputValue value)
     {
-        if (context.performed)
+        if (!isLocalPlayer) return;
+        if (value.isPressed)
+		{
+            if (dialogueSystem.GetComponent<DialogueManager>().dialoguePanel.activeSelf)
+            {
+                dialogueSystem.GetComponent<DialogueManager>().ContinueDialog();
+                return;
+            }
+
+            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
+
+            if (hits.Length > 0)
+            {
+                foreach (var rc in hits)
+                {
+                    if (rc.transform.GetComponent<Interactable>())
+                    {
+                        rc.transform.GetComponent<Interactable>().Interact();
+                        return;
+                    }
+                }
+            }
+        }
+        
+        /*if (context.performed)
         {
 			if (dialogueSystem.GetComponent<DialogueManager>().dialoguePanel.activeSelf)
 			{
@@ -92,6 +120,6 @@ public class PlayerController : NetworkBehaviour
                     }
                 }
             }
-        }
+        }*/
     }
 }

@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
+using Mirror;
 
-public class CharacterController2D : MonoBehaviour
+public class CharacterController2D : NetworkBehaviour
 {
 	[SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -31,7 +32,7 @@ public class CharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
-	private void Awake()
+	public override void OnStartLocalPlayer()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
@@ -41,9 +42,20 @@ public class CharacterController2D : MonoBehaviour
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
 	}
+	/*private void Awake()
+	{
+		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+
+		if (OnLandEvent == null)
+			OnLandEvent = new UnityEvent();
+
+		if (OnCrouchEvent == null)
+			OnCrouchEvent = new BoolEvent();
+	}*/
 
 	private void FixedUpdate()
 	{
+		if (!isLocalPlayer) return;
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
 
@@ -64,6 +76,7 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
+		if (!isLocalPlayer) return;
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
 		{

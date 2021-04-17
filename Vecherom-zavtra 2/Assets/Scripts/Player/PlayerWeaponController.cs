@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Mirror;
 
-public class PlayerWeaponController : MonoBehaviour
+public class PlayerWeaponController : NetworkBehaviour
 {
     public GameObject weaponPoint;
 	public GameObject EquippedWeapon { get; set; }
@@ -11,7 +12,7 @@ public class PlayerWeaponController : MonoBehaviour
 	IWeapon equippedWeapon;
 	CharacterStats characterStats;
 
-	void Start()
+	public override void OnStartLocalPlayer()
 	{
 		characterStats = GetComponent<CharacterStats>();
 	}
@@ -31,9 +32,10 @@ public class PlayerWeaponController : MonoBehaviour
 		Debug.Log(characterStats.stats[1].GetCalculatedStatValue());
 	}
 
-	public void PerformWeaponAttack(InputAction.CallbackContext context)
+	public void OnAttack(InputValue value)
 	{
-		if (context.performed)
+		if (!isLocalPlayer) return;
+		if (value.isPressed)
 		{
 			equippedWeapon.PerformAttack();
 		}
