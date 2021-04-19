@@ -46,7 +46,7 @@ public class PlayerMovement : NetworkBehaviour
 
     public void OnJump(InputValue value)
     {
-        if (!isLocalPlayer) return;
+        //if (!isLocalPlayer) return;
         /*if (context.performed)
         {
             jump = context.ReadValue<float>() >= 0.2f;
@@ -58,7 +58,7 @@ public class PlayerMovement : NetworkBehaviour
 
     public void OnCrouch(InputValue value)
     {
-        if (!isLocalPlayer) return;
+        //if (!isLocalPlayer) return;
         //crouch = context.ReadValue<float>() >= 0.4f;
         crouch = value.isPressed;
     }
