@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
 public class LaserBullet : MonoBehaviour
 {
@@ -40,5 +41,6 @@ public class LaserBullet : MonoBehaviour
 	public void Remove()
 	{
 		Destroy(gameObject);
+		NetworkServer.UnSpawn(gameObject);
 	}
 }

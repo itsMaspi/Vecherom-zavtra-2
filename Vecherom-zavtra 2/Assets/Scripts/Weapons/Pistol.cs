@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
 public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 {
@@ -37,5 +38,6 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		bulletInstance.Speed = 300f;
 		bulletInstance.Damage = 5;
 		bulletInstance.Range = 20f;
+		NetworkServer.Spawn(bulletInstance.gameObject);
 	}
 }

@@ -29,6 +29,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		equippedWeapon.Stats = itemToEquip.Stats;
 		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
 		characterStats.AddStatBonus(itemToEquip.Stats);
+		NetworkServer.Spawn(EquippedWeapon);
 		Debug.Log(characterStats.stats[1].GetCalculatedStatValue());
 	}
 

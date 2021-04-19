@@ -147,7 +147,6 @@ public class CharacterController2D : NetworkBehaviour
 		}
 	}
 
-
 	private void Flip()
 	{
 		// Switch the way the player is labelled as facing.
