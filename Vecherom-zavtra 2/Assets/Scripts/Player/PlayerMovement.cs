@@ -13,7 +13,7 @@ public class PlayerMovement : NetworkBehaviour
 
     public float runSpeed = 30f;
 
-    float horizontalMove = 0f;
+    public float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
 
@@ -25,7 +25,7 @@ public class PlayerMovement : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (!isLocalPlayer) return;
+        if (!isLocalPlayer) return;
         animator.SetFloat("playerSpeed", Mathf.Abs(horizontalMove));
         //background.localPosition = new Vector3(background.localPosition.x + (rb.velocity.x * 0.0001f), 0, 10f);
     }
