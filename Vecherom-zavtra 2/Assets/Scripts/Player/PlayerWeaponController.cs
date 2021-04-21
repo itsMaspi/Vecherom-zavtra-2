@@ -15,10 +15,12 @@ public class PlayerWeaponController : NetworkBehaviour
 	public override void OnStartLocalPlayer()
 	{
 		characterStats = GetComponent<CharacterStats>();
+		weaponPoint = transform.Find("WeaponPoint").gameObject;
 	}
 
 	public void EquipWeapon(Item itemToEquip) // REFACTOR: EquipItem()
 	{
+		if (!isLocalPlayer) return;
 		if (EquippedWeapon != null)
 		{
 			characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
@@ -29,16 +31,25 @@ public class PlayerWeaponController : NetworkBehaviour
 		equippedWeapon.Stats = itemToEquip.Stats;
 		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
 		characterStats.AddStatBonus(itemToEquip.Stats);
-		NetworkServer.Spawn(EquippedWeapon);
-		Debug.Log(characterStats.stats[1].GetCalculatedStatValue());
+		//NetworkServer.Spawn(EquippedWeapon);
+		SpawnWeapon(EquippedWeapon);
+		//Debug.Log(characterStats.stats[1].GetCalculatedStatValue());
+	}
+
+	[Command]
+	public void SpawnWeapon(GameObject weapon)
+	{
+		if (isServer) return;
+		NetworkServer.Spawn(weapon, gameObject);
 	}
 
 	public void OnAttack(InputValue value)
 	{
 		if (!isLocalPlayer) return;
-		if (value.isPressed)
+		/*if (value.isPressed)
 		{
 			equippedWeapon.PerformAttack();
-		}
+		}*/
+		equippedWeapon.PerformAttack(value.isPressed);
 	}
 }

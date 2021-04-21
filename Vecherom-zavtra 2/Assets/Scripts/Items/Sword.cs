@@ -12,7 +12,7 @@ public class Sword : MonoBehaviour, IWeapon
 		animator = GetComponent<Animator>();
 	}
 
-	public void PerformAttack()
+	public void PerformAttack(bool isShooting)
 	{
 		animator.SetTrigger("Attack");
 	}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class LaserBullet : MonoBehaviour
+public class LaserBullet : NetworkBehaviour
 {
 	public float Range { get; set; }
 	public int Damage { get; set; }
@@ -41,6 +41,6 @@ public class LaserBullet : MonoBehaviour
 	public void Remove()
 	{
 		Destroy(gameObject);
-		NetworkServer.UnSpawn(gameObject);
+		NetworkServer.UnSpawn(gameObject); // command?
 	}
 }
