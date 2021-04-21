@@ -98,28 +98,5 @@ public class PlayerController : NetworkBehaviour
                 }
             }
         }
-        
-        /*if (context.performed)
-        {
-			if (dialogueSystem.GetComponent<DialogueManager>().dialoguePanel.activeSelf)
-			{
-                dialogueSystem.GetComponent<DialogueManager>().ContinueDialog();
-                return;
-			}
-        
-            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
-
-            if (hits.Length > 0)
-            {
-                foreach (var rc in hits)
-                {
-                    if (rc.transform.GetComponent<Interactable>())
-                    {
-                        rc.transform.GetComponent<Interactable>().Interact();
-                        return;
-                    }
-                }
-            }
-        }*/
     }
 }

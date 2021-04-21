@@ -22,14 +22,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Crouch",
-                    "type": "Value",
-                    "id": "189e038f-924c-4bbe-a0f2-14648c3501d4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Interact",
                     "type": "Value",
                     "id": "0779251c-b886-499a-a480-54aab59c4e81",
@@ -52,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "203cb3de-6b35-4fbb-a015-3ffebcf1b092",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "MultiTap"
                 }
             ],
             "bindings": [
@@ -101,17 +101,6 @@
                 },
                 {
                     "name": "",
-                    "id": "f2da2d4f-d0aa-4429-9d40-cc794a21af72",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "77f7a290-0473-4599-8483-7bbec9f5f671",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -153,6 +142,39 @@
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "dash",
+                    "id": "84259a09-104f-4c2f-97cd-aeb7e011c8d8",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Dash",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "9910cb66-3279-4d32-9bf0-6bf4e51145d4",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "f41956e5-acd9-4cbe-9808-b6f7e3b97c16",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

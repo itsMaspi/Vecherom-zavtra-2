@@ -15,7 +15,11 @@ public class PlayerMovement : NetworkBehaviour
 
     public float horizontalMove = 0f;
     bool jump = false;
-    bool crouch = false;
+    bool dash = false;
+
+    DashState dashState = DashState.Ready;
+    float dashTimer;
+    public float maxDash = 10f;
 
     void Awake()
     {
@@ -27,14 +31,24 @@ public class PlayerMovement : NetworkBehaviour
     {
         if (!isLocalPlayer) return;
         animator.SetFloat("playerSpeed", Mathf.Abs(horizontalMove));
+        if (dashState == DashState.Cooldown)
+		{
+            dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0)
+            {
+                dashTimer = 0;
+                dashState = DashState.Ready;
+            }
+        }
         //background.localPosition = new Vector3(background.localPosition.x + (rb.velocity.x * 0.0001f), 0, 10f);
     }
 
     void FixedUpdate()
     {
         //if (!isLocalPlayer) return;
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump, dash);
         jump = false;
+        dash = false;
     }
 
     public void OnMovement(InputValue value) // InputAction.CallbackContext context
@@ -52,15 +66,22 @@ public class PlayerMovement : NetworkBehaviour
             jump = context.ReadValue<float>() >= 0.2f;
             animator.SetBool("isJumping", true);
         }*/
-        jump = true;
-        animator.SetBool("isJumping", true);
+        if (value.isPressed)
+		{
+            jump = true;
+            animator.SetBool("isJumping", true);
+        }
     }
 
-    public void OnCrouch(InputValue value)
-    {
-        //if (!isLocalPlayer) return;
-        //crouch = context.ReadValue<float>() >= 0.4f;
-        crouch = value.isPressed;
+    public void OnDash(InputValue value)
+	{
+        if (dashState == DashState.Ready)
+		{
+            dash = true;
+            dashTimer = maxDash;
+            dashState = DashState.Cooldown;
+        }
+
     }
 
     public void OnLanding()
@@ -68,4 +89,10 @@ public class PlayerMovement : NetworkBehaviour
         //if (!isLocalPlayer) return;
         animator.SetBool("isJumping", false);
     }
+}
+
+public enum DashState
+{
+    Ready,
+    Cooldown
 }
