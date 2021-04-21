@@ -3,19 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class Pistol : NetworkBehaviour, IWeapon, IProjectileWeapon
+public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 {
 	private Animator animator;
 	public List<BaseStat> Stats { get; set; }
 	public Transform ProjectileSpawn { get; set; }
 	LaserBullet laserBullet;
-
-	/*public override void OnStartLocalPlayer()
-	{
-		animator = GetComponent<Animator>();
-		ProjectileSpawn = transform.GetChild(0);
-		laserBullet = Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet");
-	}*/
 
 	void Start()
 	{
@@ -47,13 +40,5 @@ public class Pistol : NetworkBehaviour, IWeapon, IProjectileWeapon
 		bulletInstance.Damage = 5;
 		bulletInstance.Range = 20f;
 		//NetworkServer.Spawn(bulletInstance.gameObject);
-		SpawnProjectile(bulletInstance.gameObject);
-	}
-
-	[Command]
-	public void SpawnProjectile(GameObject projectile)
-	{
-		if (isServer) return;
-		NetworkServer.Spawn(projectile, transform.parent.parent.gameObject);
 	}
 }

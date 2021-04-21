@@ -7,7 +7,8 @@ using Mirror;
 public class PlayerWeaponController : NetworkBehaviour
 {
     public GameObject weaponPoint;
-	public GameObject EquippedWeapon { get; set; }
+	//[SyncVar]
+	public GameObject EquippedWeapon;
 
 	IWeapon equippedWeapon;
 	CharacterStats characterStats;
@@ -32,15 +33,23 @@ public class PlayerWeaponController : NetworkBehaviour
 		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
 		characterStats.AddStatBonus(itemToEquip.Stats);
 		//NetworkServer.Spawn(EquippedWeapon);
-		SpawnWeapon(EquippedWeapon);
+		//SpawnWeapon(EquippedWeapon);
 		//Debug.Log(characterStats.stats[1].GetCalculatedStatValue());
 	}
 
-	[Command]
-	public void SpawnWeapon(GameObject weapon)
+	//[ClientRpc]
+	public void RpcEquipWeapon(Item itemToEquip)
 	{
-		if (isServer) return;
-		NetworkServer.Spawn(weapon, gameObject);
+		if (!isLocalPlayer) return;
+		if (EquippedWeapon != null)
+		{
+			characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
+			Destroy(weaponPoint.transform.GetChild(0).gameObject);
+		}
+		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{itemToEquip.ObjectSlug}"), weaponPoint.transform);
+		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
+		equippedWeapon.Stats = itemToEquip.Stats;
+		characterStats.AddStatBonus(itemToEquip.Stats);
 	}
 
 	public void OnAttack(InputValue value)
