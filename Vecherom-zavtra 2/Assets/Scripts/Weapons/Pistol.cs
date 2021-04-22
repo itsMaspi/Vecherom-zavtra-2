@@ -17,10 +17,14 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		laserBullet = Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet");
 	}
 
-	public void PerformAttack(bool isShooting)
+	public void PerformAttack()
 	{
-		//animator.SetTrigger("Shoot");
-		animator.SetBool("isShooting", isShooting);
+		Debug.Log("Attack performed");
+
+		animator.SetTrigger("Shoot");
+
+		Debug.Log("Attack performed 2");
+		//animator.SetBool("isShooting", isShooting);
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)

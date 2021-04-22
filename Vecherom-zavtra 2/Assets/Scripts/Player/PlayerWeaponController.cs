@@ -6,9 +6,11 @@ using Mirror;
 
 public class PlayerWeaponController : NetworkBehaviour
 {
-    public GameObject weaponPoint;
-	//[SyncVar]
+	public GameObject weaponPoint;
+	[SyncVar]
 	public GameObject EquippedWeapon;
+
+	Animator animator;
 
 	IWeapon equippedWeapon;
 	CharacterStats characterStats;
@@ -16,8 +18,33 @@ public class PlayerWeaponController : NetworkBehaviour
 	public override void OnStartLocalPlayer()
 	{
 		characterStats = GetComponent<CharacterStats>();
+		
 		weaponPoint = transform.Find("WeaponPoint").gameObject;
+		Debug.Log(weaponPoint.transform.GetChild(0));
+		Debug.Log(weaponPoint.transform.GetChild(0).gameObject.name);
+		EquippedWeapon = weaponPoint.transform.GetChild(0).gameObject;
+		Debug.Log(EquippedWeapon.GetComponent<Animator>());
+		animator = EquippedWeapon.GetComponent<Animator>();
+
+		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
+		equippedWeapon.Stats = new List<BaseStat>();
+		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
+		characterStats.AddStatBonus(new List<BaseStat>());
 	}
+
+	/*void Start()
+	{
+		characterStats = GetComponent<CharacterStats>();
+
+		weaponPoint = transform.Find("WeaponPoint").gameObject;
+		EquippedWeapon = weaponPoint.transform.GetChild(0).gameObject;
+		animator = EquippedWeapon.GetComponent<Animator>();
+
+		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
+		equippedWeapon.Stats = new List<BaseStat>();
+		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
+		characterStats.AddStatBonus(new List<BaseStat>());
+	}*/
 
 	public void EquipWeapon(Item itemToEquip) // REFACTOR: EquipItem()
 	{
@@ -59,6 +86,29 @@ public class PlayerWeaponController : NetworkBehaviour
 		{
 			equippedWeapon.PerformAttack();
 		}*/
-		equippedWeapon.PerformAttack(value.isPressed);
+		//equippedWeapon.PerformAttack(value.isPressed);
+		if (value.isPressed)
+		{
+			Shoot();
+		}
+	}
+
+	[Command]
+	public void Shoot()
+	{
+		//equippedWeapon.PerformAttack();
+		LaserBullet bulletInstance = Instantiate(Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet"), EquippedWeapon.transform.GetChild(0).position, EquippedWeapon.transform.GetChild(0).rotation);
+		bulletInstance.Force = transform.lossyScale.normalized;
+		bulletInstance.Speed = 300f;
+		bulletInstance.Damage = 5;
+		bulletInstance.Range = 20f;
+		NetworkServer.Spawn(bulletInstance.gameObject);
+		RpcShoot();
+	}
+
+	[ClientRpc]
+	public void RpcShoot()
+	{
+		animator.SetTrigger("Shoot"); //EquippedWeapon.GetComponent<Animator>()
 	}
 }
