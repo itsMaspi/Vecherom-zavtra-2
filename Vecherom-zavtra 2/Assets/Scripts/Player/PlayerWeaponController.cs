@@ -10,7 +10,7 @@ public class PlayerWeaponController : NetworkBehaviour
 	[SyncVar]
 	public GameObject EquippedWeapon;
 
-	Animator animator;
+	public Animator animator;
 
 	IWeapon equippedWeapon;
 	CharacterStats characterStats;
@@ -20,7 +20,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		characterStats = GetComponent<CharacterStats>();
 		
 		weaponPoint = transform.Find("WeaponPoint").gameObject;
-		Debug.Log(weaponPoint.transform.GetChild(0));
+		/*Debug.Log(weaponPoint.transform.GetChild(0));
 		Debug.Log(weaponPoint.transform.GetChild(0).gameObject.name);
 		EquippedWeapon = weaponPoint.transform.GetChild(0).gameObject;
 		Debug.Log(EquippedWeapon.GetComponent<Animator>());
@@ -29,7 +29,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
 		equippedWeapon.Stats = new List<BaseStat>();
 		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
-		characterStats.AddStatBonus(new List<BaseStat>());
+		characterStats.AddStatBonus(new List<BaseStat>());*/
 	}
 
 	/*void Start()
@@ -97,12 +97,13 @@ public class PlayerWeaponController : NetworkBehaviour
 	public void Shoot()
 	{
 		//equippedWeapon.PerformAttack();
-		LaserBullet bulletInstance = Instantiate(Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet"), EquippedWeapon.transform.GetChild(0).position, EquippedWeapon.transform.GetChild(0).rotation);
+		/*LaserBullet bulletInstance = Instantiate(Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet"), EquippedWeapon.transform.GetChild(0).position, EquippedWeapon.transform.GetChild(0).rotation);
 		bulletInstance.Force = transform.lossyScale.normalized;
 		bulletInstance.Speed = 300f;
 		bulletInstance.Damage = 5;
-		bulletInstance.Range = 20f;
-		NetworkServer.Spawn(bulletInstance.gameObject);
+		bulletInstance.Range = 20f;*/
+		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
+		NetworkServer.Spawn(bulletInstance);
 		RpcShoot();
 	}
 

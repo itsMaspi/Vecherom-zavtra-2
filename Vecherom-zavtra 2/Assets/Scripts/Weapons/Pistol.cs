@@ -36,13 +36,14 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		}
 	}
 
-	public void CastProjectile()
+	public GameObject CastProjectile()
 	{
 		LaserBullet bulletInstance = Instantiate(laserBullet, ProjectileSpawn.position, ProjectileSpawn.rotation);
 		bulletInstance.Force = transform.parent.parent.lossyScale.normalized;
 		bulletInstance.Speed = 300f;
 		bulletInstance.Damage = 5;
 		bulletInstance.Range = 20f;
+		return bulletInstance.gameObject;
 		//NetworkServer.Spawn(bulletInstance.gameObject);
 	}
 }
