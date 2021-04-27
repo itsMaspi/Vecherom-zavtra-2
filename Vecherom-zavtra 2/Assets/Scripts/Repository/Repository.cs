@@ -1,9 +1,11 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Response
@@ -22,10 +24,10 @@ public class Repository
     private readonly static string API_URL = "https://25.71.74.254:45455/api/";
 
 
-    public static string Login(string usr, string psw)
+    public static async Task<string> Login(string usr, string psw)
     {
-        string response = (string) MakeRequest($"{API_URL}users/{usr}/{psw}", null, null, "GET", "application/json", typeof(Response));
-        return response;
+        Response response = (Response) await MakeRequest($"{API_URL}users/{usr}/{psw}", null, null, "GET", "application/json", typeof(Response));
+        return response.Message;
     }
 
 
@@ -40,7 +42,7 @@ public class Repository
     *     JSONContentType: "application/json" en els casos que el Web Service torni objectes
     *     JSONRensponseType:  tipus d'objecte que torna el Web Service (typeof(tipus))
     */
-    public static object MakeRequest(string requestUrl, string requestHeader, string strBody, string JSONmethod, string JSONContentType, Type JSONResponseType)
+    public static async Task<object> MakeRequest(string requestUrl, string requestHeader, string strBody, string JSONmethod, string JSONContentType, Type JSONResponseType)
     {
         try
         {
@@ -57,15 +59,15 @@ public class Repository
                 st.Close();
             }
 
-            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+            using (HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse)
             {
                 if (response.StatusCode != HttpStatusCode.OK)
                     throw new Exception(String.Format("Server error (HTTP {0}: {1}).", response.StatusCode, response.StatusDescription));
 
                 Stream stream1 = response.GetResponseStream();
                 StreamReader sr = new StreamReader(stream1);
-                string strsb = sr.ReadToEnd(); 
-                object objResponse = JsonUtility.FromJson(strsb, JSONResponseType);
+                string strsb = sr.ReadToEnd();
+                object objResponse = JsonConvert.DeserializeObject(strsb, JSONResponseType);
                 return objResponse;
             }
         }
@@ -86,7 +88,7 @@ public class Repository
     *     JSONContentType: "application/json" en els casos que el Web Service torni objectes
     *     JSONRensponseType:  tipus d'objecte que torna el Web Service (typeof(tipus))
     */
-    public static object MakeRequestJSON(string requestUrl, string requestHeader, object JSONRequest, string JSONmethod, string JSONContentType, Type JSONResponseType)
+    public static async Task<object> MakeRequestJSON(string requestUrl, string requestHeader, object JSONRequest, string JSONmethod, string JSONContentType, Type JSONResponseType)
     {
         try
         {
@@ -104,7 +106,7 @@ public class Repository
                 st.Close();
             }
 
-            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+            using (HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse)
             {
                 if (response.StatusCode != HttpStatusCode.OK)
                     throw new Exception(String.Format("Server error (HTTP {0}: {1}).", response.StatusCode, response.StatusDescription));
@@ -112,7 +114,7 @@ public class Repository
                 Stream stream1 = response.GetResponseStream();
                 StreamReader sr = new StreamReader(stream1);
                 string strsb = sr.ReadToEnd();
-                object objResponse = JsonUtility.FromJson(strsb, JSONResponseType);
+                object objResponse = JsonConvert.DeserializeObject(strsb, JSONResponseType);
                 return objResponse;
             }
         }
