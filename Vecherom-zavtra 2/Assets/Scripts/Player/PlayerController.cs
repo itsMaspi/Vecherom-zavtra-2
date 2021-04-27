@@ -78,7 +78,7 @@ public class PlayerController : NetworkBehaviour
         if (!isLocalPlayer) return;
         if (value.isPressed)
 		{
-            if (dialogueSystem.GetComponent<DialogueManager>().dialoguePanel.activeSelf)
+            if (dialogueSystem != null && dialogueSystem.GetComponent<DialogueManager>().dialoguePanel.activeSelf)
             {
                 dialogueSystem.GetComponent<DialogueManager>().ContinueDialog();
                 return;
