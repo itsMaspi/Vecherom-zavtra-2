@@ -9,11 +9,20 @@ public class SettingManager : MonoBehaviour
 	public AudioMixer audioMixer;
 
 	public TMPro.TMP_Dropdown resolutionDropdown;
+	public Slider volumeSlider;
+	public Toggle fullscreenToggle;
 
 	Resolution[] resolutions;
 
+	void Awake()
+	{
+		
+	}
+
 	void Start()
 	{
+		fullscreenToggle.isOn = Screen.fullScreen;
+
 		resolutions = Screen.resolutions;
 
 		resolutionDropdown.ClearOptions();
@@ -39,6 +48,7 @@ public class SettingManager : MonoBehaviour
 		resolutionDropdown.value = currentResolutionIdx;
 		resolutionDropdown.RefreshShownValue();
 	}
+
 	public void SetVolume(float volume)
 	{
 		audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
@@ -52,16 +62,10 @@ public class SettingManager : MonoBehaviour
 	public void SetResolution(int resolutionIdx)
 	{
 		//Resolution resolution = resolutions[resolutionIdx];
-		Resolution resolution = FromString(resolutionDropdown.options[resolutionDropdown.value].text);
-		Debug.LogError(resolution.ToString());
+		Resolution resolution = Utils.ResolutionFromString(resolutionDropdown.options[resolutionDropdown.value].text);
+		//Debug.LogError(resolution.ToString());
 		Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, resolution.refreshRate);
 	}
 
-	private Resolution FromString(string s)
-	{
-		int width = int.Parse(s.Split('x')[0].Trim());
-		int height = int.Parse(s.Split('x')[1].Split('@')[0].Trim());
-		int refresh = int.Parse(s.Split('@')[1].Split('H')[0].Trim());
-		return new Resolution() { width=width, height=height, refreshRate=refresh };
-	}
+	
 }
