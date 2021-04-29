@@ -76,6 +76,7 @@ public class PlayerController : NetworkBehaviour
     public void OnInteract(InputValue value)
     {
         if (!isLocalPlayer) return;
+        if (PauseManager.pauseState == PauseState.Paused) return;
         if (value.isPressed)
 		{
             if (dialogueSystem != null && dialogueSystem.GetComponent<DialogueManager>().dialoguePanel.activeSelf)
@@ -99,4 +100,13 @@ public class PlayerController : NetworkBehaviour
             }
         }
     }
+
+    public void OnPause(InputValue value)
+	{
+        if (!isLocalPlayer) return;
+        if (value.isPressed)
+		{
+            PauseManager.instance.Toggle();
+		}
+	}
 }

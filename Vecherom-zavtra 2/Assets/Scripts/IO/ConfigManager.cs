@@ -22,9 +22,7 @@ public class ConfigManager : MonoBehaviour
 
 			// Set the volume
 			volumeSlider.value = userSettings.volume;
-			Debug.Log($"TEST 20: {volumeSlider.value}");
 			audioMixer.SetFloat("Volume", Mathf.Log10(userSettings.volume) * 20);
-			Debug.Log($"TEST 30: {Mathf.Log10(userSettings.volume) * 20}");
 		}
 	}
 

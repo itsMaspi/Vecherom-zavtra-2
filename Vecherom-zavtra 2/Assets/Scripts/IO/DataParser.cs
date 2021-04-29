@@ -30,7 +30,6 @@ public static class DataParser
 		UserSettings userSettings = new UserSettings();
 
 		userSettings.volume = (float) configFile.GetValue("Sound", "volume", 0f);
-		Debug.Log($"TEST 10: {userSettings.volume}");
 		userSettings.resolution = configFile.GetValue("Screen", "resolution", "1280 x 720 @ 60Hz");
 		userSettings.isFullscreen = configFile.GetValue("Screen", "fullscreen", true);
 
