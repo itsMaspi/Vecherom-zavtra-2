@@ -11,4 +11,10 @@ public class MenuManager : MonoBehaviour
 	{
         SceneManager.LoadScene(SceneName);
 	}
+
+    public void QuitGame()
+	{
+		Debug.LogWarning("APP CLOSED!");
+		Application.Quit();
+	}
 }
