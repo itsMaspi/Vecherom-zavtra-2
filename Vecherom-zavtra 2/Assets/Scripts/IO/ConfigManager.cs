@@ -34,15 +34,16 @@ public class ConfigManager : MonoBehaviour
 
 	void OnApplicationQuit()
 	{
+		SaveUserSettings();
+	}
+
+	public void SaveUserSettings()
+	{
 		UserSettings userSettings = new UserSettings();
 		// userSettings.userID = Player.instance.userID ????
 		userSettings.resolution = Screen.currentResolution.ToString();
 		userSettings.isFullscreen = Screen.fullScreen;
 		userSettings.volume = volumeSlider.value;
-		/*if (!audioMixer.GetFloat("Volume", out userSettings.volume))
-		{
-			userSettings.volume = 0f;
-		}*/
 		DataParser.SaveUserSettings(userSettings);
 	}
 }
