@@ -14,4 +14,27 @@ public class UserSettings
     // Screen
     public string resolution;
     public bool isFullscreen;
+
+    public UserSettings()
+	{
+
+	}
+
+    public string ToJson()
+	{
+        string json = 
+            "{" +
+                "\"Sound\":" +
+                "{" +
+                    "\"volume\":" + volume +
+                "}," +
+                "\"Screen\":" +
+                "{" +
+                    "\"resolution\":\"" + resolution + "\"," +
+                    "\"isFullscreen\":\"" + isFullscreen + "\"" +
+                "}" +
+            "}";
+
+        return json;
+	}
 }

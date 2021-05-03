@@ -705,7 +705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472115515}
   m_Layer: 0
-  m_Name: ----- Lights -----
+  m_Name: ----- LIGHTS -----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1271,7 +1271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 616213606}
   m_Layer: 0
-  m_Name: ----- Scene -----
+  m_Name: ----- SCENE -----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3951,7 +3951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 853654815}
   m_Layer: 0
-  m_Name: ----- Managers -----
+  m_Name: ----- MANAGERS -----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4984,7 +4984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1822639801}
   m_Layer: 0
-  m_Name: ----- Camera -----
+  m_Name: ----- CAMERA -----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

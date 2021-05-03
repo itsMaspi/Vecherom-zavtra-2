@@ -45,5 +45,6 @@ public class ConfigManager : MonoBehaviour
 		userSettings.isFullscreen = Screen.fullScreen;
 		userSettings.volume = volumeSlider.value;
 		DataParser.SaveUserSettings(userSettings);
+		Debug.Log(userSettings.ToJson());
 	}
 }

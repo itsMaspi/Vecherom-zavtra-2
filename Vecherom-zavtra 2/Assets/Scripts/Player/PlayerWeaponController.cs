@@ -87,6 +87,7 @@ public class PlayerWeaponController : NetworkBehaviour
 			equippedWeapon.PerformAttack();
 		}*/
 		//equippedWeapon.PerformAttack(value.isPressed);
+		if (PauseManager.pauseState == PauseState.Paused) return;
 		if (value.isPressed)
 		{
 			Shoot();
@@ -107,9 +108,18 @@ public class PlayerWeaponController : NetworkBehaviour
 		RpcShoot();
 	}
 
+	/* FER QUE EL PLAYER TINGUI UN CLIP DE DISPARAR AMB UN TRIGGER QUE CRIDI LA FUNCIO ShootAnim */
+
 	[ClientRpc]
 	public void RpcShoot()
 	{
 		animator.SetTrigger("Shoot"); //EquippedWeapon.GetComponent<Animator>()
 	}
+
+	/*[Command]
+	public void ShootAnim()
+	{
+		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
+		NetworkServer.Spawn(bulletInstance);
+	}*/
 }
