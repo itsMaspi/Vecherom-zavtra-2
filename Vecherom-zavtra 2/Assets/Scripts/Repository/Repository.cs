@@ -21,13 +21,25 @@ public class Response
 }
 public class Repository
 {
-    private readonly static string API_URL = "https://25.71.74.254:45455/api/";
+    private readonly static string API_URL = "https://25.71.74.254:45455/api";
 
 
-    public static async Task<string> Login(string usr, string psw)
+    public static async Task<Response> Login(string usr, string psw)
     {
-        Response response = (Response) await MakeRequest($"{API_URL}users/{usr}/{psw}", null, null, "GET", "application/json", typeof(Response));
-        return response.Message;
+        Response response = (Response) await MakeRequest($"{API_URL}/users/{usr}/{psw}", null, null, "GET", "application/json", typeof(Response));
+        return response;
+    }
+
+    public static async Task<string> GetUserConfig(UserCfgRequest userCfg)
+	{
+        string response = (string) await MakeRequestJSON($"{API_URL}/usercfg", null, userCfg, "GET", "application/json", typeof(UserCfgRequest));
+        return response;
+	}
+
+    public static async Task<string> SetUserConfig(UserCfgRequest userCfg)
+    {
+        string response = (string)await MakeRequestJSON($"{API_URL}/usercfg", null, userCfg, "PUT", "application/json", typeof(UserCfgRequest));
+        return response;
     }
 
 
@@ -42,7 +54,7 @@ public class Repository
     *     JSONContentType: "application/json" en els casos que el Web Service torni objectes
     *     JSONRensponseType:  tipus d'objecte que torna el Web Service (typeof(tipus))
     */
-    public static async Task<object> MakeRequest(string requestUrl, string requestHeader, string strBody, string JSONmethod, string JSONContentType, Type JSONResponseType)
+    private static async Task<object> MakeRequest(string requestUrl, string requestHeader, string strBody, string JSONmethod, string JSONContentType, Type JSONResponseType)
     {
         try
         {
@@ -88,14 +100,15 @@ public class Repository
     *     JSONContentType: "application/json" en els casos que el Web Service torni objectes
     *     JSONRensponseType:  tipus d'objecte que torna el Web Service (typeof(tipus))
     */
-    public static async Task<object> MakeRequestJSON(string requestUrl, string requestHeader, object JSONRequest, string JSONmethod, string JSONContentType, Type JSONResponseType)
+    private static async Task<object> MakeRequestJSON(string requestUrl, string requestHeader, object JSONRequest, string JSONmethod, string JSONContentType, Type JSONResponseType)
     {
         try
         {
             HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest; //WebRequest WR = WebRequest.Create(requestUrl);   
-            string sb = JsonUtility.ToJson(JSONRequest);
+            //string sb = JsonUtility.ToJson(JSONRequest);
+            string sb = JsonConvert.SerializeObject(JSONRequest);
             request.Method = JSONmethod;  // "GET"/"POST"/"PUT"/"DELETE";  
-            request.Headers.Add("Authorization: " + requestHeader);
+            //request.Headers.Add("Authorization: " + requestHeader);
 
             if (JSONmethod != "GET")
             {

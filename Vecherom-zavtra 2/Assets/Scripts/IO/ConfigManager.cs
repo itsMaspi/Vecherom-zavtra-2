@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -34,7 +35,10 @@ public class ConfigManager : MonoBehaviour
 
 	void OnApplicationQuit()
 	{
-		SaveUserSettings();
+		//SaveUserSettings();
+		// Borrar
+		string path = Application.persistentDataPath + "/usr.vz";
+		if (File.Exists(path)) File.Delete(path);
 	}
 
 	public void SaveUserSettings()
@@ -44,7 +48,6 @@ public class ConfigManager : MonoBehaviour
 		userSettings.resolution = Screen.currentResolution.ToString();
 		userSettings.isFullscreen = Screen.fullScreen;
 		userSettings.volume = volumeSlider.value;
-		DataParser.SaveUserSettings(userSettings);
-		Debug.Log(userSettings.ToJson());
+		_ = DataParser.SaveUserSettings(userSettings);
 	}
 }
