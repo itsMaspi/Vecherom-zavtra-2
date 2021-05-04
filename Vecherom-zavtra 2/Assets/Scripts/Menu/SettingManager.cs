@@ -49,9 +49,17 @@ public class SettingManager : MonoBehaviour
 		resolutionDropdown.RefreshShownValue();
 	}
 
-	public void SetVolume(float volume)
+	public void SetMasterVolume(float volume)
 	{
-		audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+		audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
+	}
+	public void SetMusicVolume(float volume)
+	{
+		audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+	}
+	public void SetEffectsVolume(float volume)
+	{
+		audioMixer.SetFloat("EffectsVolume", Mathf.Log10(volume) * 20);
 	}
 
 	public void SetFullscreen(bool isFullscreen)

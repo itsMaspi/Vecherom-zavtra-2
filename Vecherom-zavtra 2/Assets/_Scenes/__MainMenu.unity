@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 123145704}
   - component: {fileID: 123145703}
   m_Layer: 5
-  m_Name: Music (1)
+  m_Name: Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5210,7 +5210,7 @@ GameObject:
   - component: {fileID: 1295213875}
   - component: {fileID: 1295213876}
   m_Layer: 5
-  m_Name: MusicVolumeSlider (2)
+  m_Name: EffectsVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5291,7 +5291,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 36626658}
         m_TargetAssemblyTypeName: SettingManager, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetEffectsVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6658,7 +6658,7 @@ GameObject:
   - component: {fileID: 1800670237}
   - component: {fileID: 1800670238}
   m_Layer: 5
-  m_Name: MusicVolumeSlider (1)
+  m_Name: MusicVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6739,7 +6739,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 36626658}
         m_TargetAssemblyTypeName: SettingManager, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7177,7 +7177,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 36626658}
         m_TargetAssemblyTypeName: SettingManager, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
