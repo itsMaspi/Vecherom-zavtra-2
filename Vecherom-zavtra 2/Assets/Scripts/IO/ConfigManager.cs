@@ -27,13 +27,13 @@ public class ConfigManager : MonoBehaviour
 
 	void OnApplicationQuit()
 	{
-		//SaveUserSettings();
+		SaveUserSettingsToDB();
 		// Borrar
 		string path = Application.persistentDataPath + "/usr.vz";
 		if (File.Exists(path)) File.Delete(path);
 	}
 
-	public void SaveUserSettingsToDB()
+	public async void SaveUserSettingsToDB()
 	{
 		UserCfg userSettings = new UserCfg();
 		// userSettings.userID = Player.instance.userID ????
@@ -42,7 +42,7 @@ public class ConfigManager : MonoBehaviour
 		userSettings.Sound.masterVolume = masterVolumeSlider.value;
 		userSettings.Sound.musicVolume = musicVolumeSlider.value;
 		userSettings.Sound.effectsVolume = effectsVolumeSlider.value;
-		_ = DataParser.SaveUserSettings(userSettings);
+		await DataParser.SaveUserSettings(userSettings);
 	}
 
 	public async Task LoadUserSettingsFromDB()

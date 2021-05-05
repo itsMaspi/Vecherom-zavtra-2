@@ -58,7 +58,7 @@ public static class DataParser
 		userSettings.Sound.musicVolume = (float)configFile.GetValue("Sound", "musicVolume", .3f);
 		userSettings.Sound.effectsVolume = (float)configFile.GetValue("Sound", "effectsVolume", 1f);
 		userSettings.Screen.resolution = configFile.GetValue("Screen", "resolution", "1280 x 720 @ 60Hz");
-		userSettings.Screen.fullscreen = configFile.GetValue("Screen", "fullscreen", true);
+		userSettings.Screen.fullscreen = configFile.GetValue("Screen", "fullscreen", false);
 
 		return userSettings;
 	}

@@ -6,6 +6,12 @@ public class UserCfg
 {
     public SoundCfg Sound;
     public ScreenCfg Screen;
+
+    public UserCfg()
+	{
+        Sound = new SoundCfg();
+        Screen = new ScreenCfg();
+	}
 }
 
 [System.Serializable]
