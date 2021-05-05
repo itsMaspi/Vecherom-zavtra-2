@@ -4547,7 +4547,7 @@ MonoBehaviour:
   sounds:
   - name: MainMenuTheme
     clip: {fileID: 8300000, guid: cd57dbaff53973b43b071d259ed99cbd, type: 3}
-    volume: 0.3
+    volume: 1
     pitch: 1
     loop: 1
     audioMixerGroup: {fileID: 7487254939088639973, guid: 135a3fcadc1b1e44abb47ce07be2b752, type: 2}
@@ -7426,7 +7426,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 135a3fcadc1b1e44abb47ce07be2b752, type: 2}
-  volumeSlider: {fileID: 1900844585}
+  masterVolumeSlider: {fileID: 1900844585}
+  musicVolumeSlider: {fileID: 1800670238}
+  effectsVolumeSlider: {fileID: 1295213876}
 --- !u!4 &1934314576
 Transform:
   m_ObjectHideFlags: 0

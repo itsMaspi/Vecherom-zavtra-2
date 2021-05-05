@@ -6,6 +6,12 @@ public class UserCfg
 {
     public SoundCfg Sound;
     public ScreenCfg Screen;
+
+    public UserCfg()
+	{
+        Sound = new SoundCfg();
+        Screen = new ScreenCfg();
+	}
 }
 
 [System.Serializable]
@@ -18,5 +24,7 @@ public class ScreenCfg
 [System.Serializable]
 public class SoundCfg
 {
-    public float volume;
+    public float masterVolume;
+    public float musicVolume;
+    public float effectsVolume;
 }

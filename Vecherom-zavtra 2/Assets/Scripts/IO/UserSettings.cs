@@ -9,7 +9,9 @@ public class UserSettings
     public int userID;
 
     // Sound
-    public float volume;
+    public float masterVolume;
+    public float musicVolume;
+    public float effectsVolume;
 
     // Screen
     public string resolution;
@@ -26,7 +28,9 @@ public class UserSettings
             "{" +
                 "\"Sound\":" +
                 "{" +
-                    "\"volume\":" + volume +
+                    "\"masterVolume\":" + masterVolume + "\"," +
+                    "\"musicVolume\":" + musicVolume + "\"," +
+                    "\"effectsVolume\":" + effectsVolume +
                 "}," +
                 "\"Screen\":" +
                 "{" +
