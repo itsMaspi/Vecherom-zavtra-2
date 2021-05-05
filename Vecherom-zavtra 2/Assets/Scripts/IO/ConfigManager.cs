@@ -28,6 +28,9 @@ public class ConfigManager : MonoBehaviour
 	void OnApplicationQuit()
 	{
 		SaveUserSettingsToDB();
+		// Borrar fitxer d'usuari
+		string path = Application.persistentDataPath + "/usr.vz";
+		if (File.Exists(path)) File.Delete(path);
 	}
 
 	public async void SaveUserSettingsToDB()
@@ -41,10 +44,6 @@ public class ConfigManager : MonoBehaviour
 		userSettings.Sound.effectsVolume = effectsVolumeSlider.value;
 
 		await DataParser.SaveUserSettings(userSettings);
-		
-		// Borrar fitxer d'usuari
-		string path = Application.persistentDataPath + "/usr.vz";
-		if (File.Exists(path)) File.Delete(path);
 	}
 
 	public async Task LoadUserSettingsFromDB()
