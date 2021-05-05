@@ -30,14 +30,6 @@ public class PlayerController : NetworkBehaviour
         }
 
         dialogueSystem = GameObject.Find("DialogueSystem");
-
-        string path = Application.persistentDataPath + "/usr.vz";
-        using (BinaryReader r = new BinaryReader(File.Open(path, FileMode.Open)))
-        {
-            r.ReadInt32();
-            nickname = r.ReadString();
-        }
-        nickText.text = nickname;
     }
 
     void Start()
@@ -46,6 +38,13 @@ public class PlayerController : NetworkBehaviour
 		{
             GetComponent<PlayerInput>().enabled = false;
 		}
+        string path = Application.persistentDataPath + "/usr.vz";
+        using (BinaryReader r = new BinaryReader(File.Open(path, FileMode.Open)))
+        {
+            r.ReadInt32();
+            nickname = r.ReadString();
+        }
+        nickText.text = nickname;
         /*
         GameObject[] gObjects =  FindObjectsOfType<GameObject>();
         foreach (var Object in gObjects)
