@@ -7,7 +7,7 @@ using Salaros.Configuration;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-public static class DataParser
+public class DataParser
 {
     public static async Task SaveUserSettings(UserCfg settings)
 	{
@@ -16,8 +16,11 @@ public static class DataParser
 		string path2 = Application.persistentDataPath + "/usr.vz";
 		
 		if (!File.Exists(path))
-			File.Create(path);
-		var configFile = new ConfigParser(path);
+		{
+			FileStream fs = File.Create(path);
+			fs.Close();
+		}
+		var configFile = new ConfigParser();
 		
 		configFile.SetValue("Sound", "masterVolume", settings.Sound.masterVolume);
 		configFile.SetValue("Sound", "musicVolume", settings.Sound.musicVolume);
@@ -41,15 +44,19 @@ public static class DataParser
 		string path2 = Application.persistentDataPath + "/usr.vz";
 
 		UserCfg userSettings = new UserCfg();
-
+		bool download = !File.Exists(path) && File.Exists(path2);
 		// If there isn't a user.cfg but the user is logged in, import the config from the database
-		if (!File.Exists(path) && File.Exists(path2))
+		if (download)
 		{
 			int UserID;
 			using (BinaryReader r = new BinaryReader(File.Open(path2, FileMode.Open)))
+			{
 				UserID = r.ReadInt32();
-			string json = await Repository.GetUserConfig(new UserCfgRequest(UserID, ""));
+			}
+			string json = await Repository.GetUserConfig(new UserCfgRequest(UserID, "{}"));
+			Debug.Log($"TEST 10: usercfg json ==>{json}");
 			userSettings = JsonConvert.DeserializeObject<UserCfg>(json);
+			await SaveUserSettings(userSettings);
 			return userSettings;
 		}
 		var configFile = new ConfigParser(path);

@@ -31,14 +31,15 @@ public class Repository
     }
 
     public static async Task<string> GetUserConfig(UserCfgRequest userCfg)
-	{
-        string response = (string) await MakeRequestJSON($"{API_URL}/usercfg", null, userCfg, "GET", "application/json", typeof(UserCfgRequest));
+    {
+        // !!! NO ES POT ENVIAR BODY EN UN GET !!!
+        string response = (string) await MakeRequestJSON($"{API_URL}/usercfg", null, userCfg, "POST", "application/json", typeof(string));
         return response;
 	}
 
-    public static async Task<string> SetUserConfig(UserCfgRequest userCfg)
+    public static async Task<bool> SetUserConfig(UserCfgRequest userCfg)
     {
-        string response = (string)await MakeRequestJSON($"{API_URL}/usercfg", null, userCfg, "PUT", "application/json", typeof(UserCfgRequest));
+        bool response = (bool)await MakeRequestJSON($"{API_URL}/usercfg", null, userCfg, "PUT", "application/json", typeof(bool));
         return response;
     }
 
