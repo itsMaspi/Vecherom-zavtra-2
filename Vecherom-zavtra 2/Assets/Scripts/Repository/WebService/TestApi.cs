@@ -42,6 +42,7 @@ public class TestApi : MonoBehaviour
             }
             loginPanel.SetActive(false);
             menuPanel.SetActive(true);
+            await GameObject.Find("ConfigManager").GetComponent<ConfigManager>().LoadUserSettingsFromDB();
         }
     }
 

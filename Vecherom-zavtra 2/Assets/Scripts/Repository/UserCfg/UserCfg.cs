@@ -18,5 +18,7 @@ public class ScreenCfg
 [System.Serializable]
 public class SoundCfg
 {
-    public float volume;
+    public float masterVolume;
+    public float musicVolume;
+    public float effectsVolume;
 }
