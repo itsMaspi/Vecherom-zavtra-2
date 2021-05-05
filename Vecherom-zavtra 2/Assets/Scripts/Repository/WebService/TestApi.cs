@@ -39,6 +39,7 @@ public class TestApi : MonoBehaviour
             using (BinaryWriter w = new BinaryWriter(File.Open(path, FileMode.Create)))
             {
                 w.Write(res.UserID);
+                w.Write(name);
             }
             loginPanel.SetActive(false);
             menuPanel.SetActive(true);

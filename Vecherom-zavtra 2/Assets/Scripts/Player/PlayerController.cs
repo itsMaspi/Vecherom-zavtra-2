@@ -4,9 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using UnityEngine.InputSystem;
+using System.IO;
 
 public class PlayerController : NetworkBehaviour
 {
+    [SyncVar(hook = nameof(ChangeNickname))]
+    string nickname;
+
+    public TMPro.TextMeshProUGUI nickText;
     public GameObject interactionIcon;
     public GameObject dialogueSystem;
     public GameObject virtualCamera;
@@ -25,6 +30,14 @@ public class PlayerController : NetworkBehaviour
         }
 
         dialogueSystem = GameObject.Find("DialogueSystem");
+
+        string path = Application.persistentDataPath + "/usr.vz";
+        using (BinaryReader r = new BinaryReader(File.Open(path, FileMode.Open)))
+        {
+            r.ReadInt32();
+            nickname = r.ReadString();
+        }
+        nickText.text = nickname;
     }
 
     void Start()
@@ -108,5 +121,10 @@ public class PlayerController : NetworkBehaviour
 		{
             PauseManager.instance.Toggle();
 		}
+	}
+
+    void ChangeNickname(string oldNick, string newNick)
+	{
+        nickText.text = newNick;
 	}
 }

@@ -232,7 +232,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &7963134727916154938
@@ -517,6 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  nickText: {fileID: 6335085998581298570}
   interactionIcon: {fileID: 7963134729018731979}
   dialogueSystem: {fileID: 0}
   virtualCamera: {fileID: 0}
