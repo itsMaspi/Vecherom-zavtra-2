@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using Salaros.Configuration;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Globalization;
 
 public class DataParser
 {
@@ -20,7 +21,7 @@ public class DataParser
 			FileStream fs = File.Create(path);
 			fs.Close();
 		}
-		var configFile = new ConfigParser();
+		var configFile = new ConfigParser(new ConfigParserSettings() { Culture = new CultureInfo("en-US") });
 		
 		configFile.SetValue("Sound", "masterVolume", settings.Sound.masterVolume);
 		configFile.SetValue("Sound", "musicVolume", settings.Sound.musicVolume);
@@ -59,7 +60,7 @@ public class DataParser
 			await SaveUserSettings(userSettings);
 			return userSettings;
 		}
-		var configFile = new ConfigParser(path);
+		var configFile = new ConfigParser(path, new ConfigParserSettings() { Culture = new CultureInfo("en-US") });
 
 		userSettings.Sound.masterVolume = (float) configFile.GetValue("Sound", "masterVolume", 1f);
 		userSettings.Sound.musicVolume = (float)configFile.GetValue("Sound", "musicVolume", .3f);

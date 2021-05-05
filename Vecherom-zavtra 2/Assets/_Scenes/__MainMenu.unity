@@ -3192,7 +3192,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1934314575}
         m_TargetAssemblyTypeName: ConfigManager, Assembly-CSharp
-        m_MethodName: SaveUserSettings
+        m_MethodName: SaveUserSettingsToDB
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
