@@ -1,0 +1,12 @@
+[
+    {
+        "objectSlug": "pistol",
+        "itemName": "Pistol",
+        "description": "A nice pistol",
+        "actionName": "Equip",
+        "itemModifier": 0,
+        "Stats": [
+            
+        ]
+    }
+]

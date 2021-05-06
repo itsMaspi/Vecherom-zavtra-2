@@ -6,14 +6,17 @@ using Mirror;
 
 public class InventoryController : NetworkBehaviour
 {
-	[HideInInspector]public PlayerWeaponController playerWeaponController;
-	public ConsumableController consumableController;
+	public static InventoryController Instance { get; set; }
+
+	[HideInInspector] public PlayerWeaponController playerWeaponController;
+	[HideInInspector] public ConsumableController consumableController;
 	public Item pistol;
 	public Item PotionLog;
 
 	public override void OnStartLocalPlayer()
 	{
 		playerWeaponController = GetComponent<PlayerWeaponController>();
+		consumableController = GetComponent<ConsumableController>();
 		List<BaseStat> pistolStats = new List<BaseStat>();
 		pistolStats.Add(new BaseStat(6, "Attack", "The attack power"));
 		pistol = new Item(pistolStats, "pistol");
@@ -21,13 +24,12 @@ public class InventoryController : NetworkBehaviour
 		PotionLog = new Item(new List<BaseStat>(), "potion_log", "Drink this to log something cool!", "Drink", "Log Potion", false);
 	}
 
-	public void OnEquipWeapon(InputValue value)
+	void Start()
 	{
-		if (!isLocalPlayer) return;
-		if (value.isPressed)
-		{
-			//playerWeaponController.EquipWeapon(pistol);
-			consumableController.ConsumeItem(PotionLog);
-		}
+		if (Instance != null && Instance != this)
+			Destroy(gameObject);
+		else
+			Instance = this;
+
 	}
 }
