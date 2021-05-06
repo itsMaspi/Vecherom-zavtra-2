@@ -12,7 +12,7 @@ public class PlayerWeaponController : NetworkBehaviour
 
 	public Animator pistolAnimator;
 
-	private Animator playerAnimator;
+	public Animator playerAnimator;
 
 
 
@@ -25,7 +25,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		
 		weaponPoint = transform.Find("WeaponPoint").gameObject;
 
-		playerAnimator = GetComponent<Animator>();
+		//playerAnimator = GetComponent<Animator>();
 		/*Debug.Log(weaponPoint.transform.GetChild(0));
 		Debug.Log(weaponPoint.transform.GetChild(0).gameObject.name);
 		EquippedWeapon = weaponPoint.transform.GetChild(0).gameObject;

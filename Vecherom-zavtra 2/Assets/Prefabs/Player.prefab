@@ -564,7 +564,8 @@ MonoBehaviour:
   syncInterval: 0.1
   weaponPoint: {fileID: 7963134727609902135}
   EquippedWeapon: {fileID: 4775549580935754252}
-  animator: {fileID: 3303117616749674834}
+  pistolAnimator: {fileID: 3303117616749674834}
+  playerAnimator: {fileID: 7963134727916154929}
 --- !u!114 &6613210650112272399
 MonoBehaviour:
   m_ObjectHideFlags: 0
