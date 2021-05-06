@@ -49,6 +49,24 @@ public class SettingManager : MonoBehaviour
 		resolutionDropdown.RefreshShownValue();
 	}
 
+	// Screen
+	public void SetResolution(int resolutionIdx)
+	{
+		//Resolution resolution = resolutions[resolutionIdx];
+		Resolution resolution = Utils.ResolutionFromString(resolutionDropdown.options[resolutionDropdown.value].text);
+		//Debug.LogError(resolution.ToString());
+		Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, resolution.refreshRate);
+	}
+	public void SetFullscreen(bool isFullscreen)
+	{
+		Screen.fullScreen = isFullscreen;
+	}
+	public void SetQuality(int qualityIdx)
+	{
+		QualitySettings.SetQualityLevel(qualityIdx);
+	}
+
+	// Sound
 	public void SetMasterVolume(float volume)
 	{
 		audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
@@ -62,18 +80,9 @@ public class SettingManager : MonoBehaviour
 		audioMixer.SetFloat("EffectsVolume", Mathf.Log10(volume) * 20);
 	}
 
-	public void SetFullscreen(bool isFullscreen)
-	{
-		Screen.fullScreen = isFullscreen;
-	}
+	
 
-	public void SetResolution(int resolutionIdx)
-	{
-		//Resolution resolution = resolutions[resolutionIdx];
-		Resolution resolution = Utils.ResolutionFromString(resolutionDropdown.options[resolutionDropdown.value].text);
-		//Debug.LogError(resolution.ToString());
-		Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, resolution.refreshRate);
-	}
+	
 
 	
 }
