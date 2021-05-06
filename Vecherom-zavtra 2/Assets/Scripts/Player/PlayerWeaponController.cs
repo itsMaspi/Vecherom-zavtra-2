@@ -7,10 +7,14 @@ using Mirror;
 public class PlayerWeaponController : NetworkBehaviour
 {
 	public GameObject weaponPoint;
-	[SyncVar]
+	
 	public GameObject EquippedWeapon;
 
-	public Animator animator;
+	public Animator pistolAnimator;
+
+	private Animator playerAnimator;
+
+
 
 	IWeapon equippedWeapon;
 	CharacterStats characterStats;
@@ -20,6 +24,8 @@ public class PlayerWeaponController : NetworkBehaviour
 		characterStats = GetComponent<CharacterStats>();
 		
 		weaponPoint = transform.Find("WeaponPoint").gameObject;
+
+		playerAnimator = GetComponent<Animator>();
 		/*Debug.Log(weaponPoint.transform.GetChild(0));
 		Debug.Log(weaponPoint.transform.GetChild(0).gameObject.name);
 		EquippedWeapon = weaponPoint.transform.GetChild(0).gameObject;
@@ -88,14 +94,14 @@ public class PlayerWeaponController : NetworkBehaviour
 		}*/
 		//equippedWeapon.PerformAttack(value.isPressed);
 		if (PauseManager.pauseState == PauseState.Paused) return;
-		if (value.isPressed)
-		{
-			Shoot();
-		}
+
+		
+		playerAnimator.SetBool("isShooting", value.isPressed);
+
 	}
 
 	[Command]
-	public void Shoot()
+	public void CmdShoot()
 	{
 		//equippedWeapon.PerformAttack();
 		/*LaserBullet bulletInstance = Instantiate(Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet"), EquippedWeapon.transform.GetChild(0).position, EquippedWeapon.transform.GetChild(0).rotation);
@@ -103,6 +109,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		bulletInstance.Speed = 300f;
 		bulletInstance.Damage = 5;
 		bulletInstance.Range = 20f;*/
+		
 		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
 		NetworkServer.Spawn(bulletInstance);
 		RpcShoot();
@@ -113,7 +120,7 @@ public class PlayerWeaponController : NetworkBehaviour
 	[ClientRpc]
 	public void RpcShoot()
 	{
-		animator.SetTrigger("Shoot"); //EquippedWeapon.GetComponent<Animator>()
+		pistolAnimator.SetTrigger("Shoot"); //EquippedWeapon.GetComponent<Animator>()
 	}
 
 	/*[Command]

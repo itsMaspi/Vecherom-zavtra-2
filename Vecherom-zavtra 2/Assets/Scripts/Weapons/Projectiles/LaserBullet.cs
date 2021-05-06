@@ -12,22 +12,35 @@ public class LaserBullet : NetworkBehaviour
 
 	private Vector3 spawnPosition;
 
-	// Start is called before the first frame update
-	void Start()
+    public override void OnStartServer()
+    {
+		Invoke(nameof(DestroySelf), Range);
+    }
+
+    // Start is called before the first frame update
+    void Start()
 	{
+
 		GetComponent<Rigidbody2D>().AddForce(Force * Speed); // el fill no es mou, transform.right sempre es positiu
-		spawnPosition = transform.position;
+		//spawnPosition = transform.position;
 		//Debug.Log(Force * Speed);
     }
 
-	void Update()
-	{
-		if (Vector3.Distance(spawnPosition, transform.position) >= Range)
-		{
-			Remove();
-		}
-	}
+	//void Update()
+	//{
+	//	if (Vector3.Distance(spawnPosition, transform.position) >= Range)
+	//	{
+	//		Remove();
+	//	}
+	//}
 
+	[Server]
+	void DestroySelf()
+    {
+		NetworkServer.Destroy(gameObject);
+    }
+
+	[ServerCallback]
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.tag == "Enemy")
@@ -35,12 +48,15 @@ public class LaserBullet : NetworkBehaviour
 			Debug.Log($"Hit: {collision.name}");
 			collision.GetComponent<IEnemy>().TakeDamage(Damage);
 		}
-		Remove();
+		NetworkServer.Destroy(gameObject);
+		//Remove();
 	}
 
+	/*
 	public void Remove()
 	{
 		Destroy(gameObject);
 		NetworkServer.UnSpawn(gameObject); // command?
 	}
+	*/
 }
