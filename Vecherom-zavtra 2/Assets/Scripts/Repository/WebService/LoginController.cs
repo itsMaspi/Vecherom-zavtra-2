@@ -2,27 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoginController : MonoBehaviour
 {
     public GameObject loginPanel;
     public GameObject menuPanel;
 
-    //TMPro.TextMeshProUGUI username;
-    //TMPro.TextMeshProUGUI password;
     TMPro.TMP_InputField username;
     TMPro.TMP_InputField password;
     TMPro.TextMeshProUGUI response;
+    [SerializeField] Toggle savePasswordToggle;
+
+    private bool savePassword;
 
     void Start()
     {
-        //username = loginPanel.transform.Find("Username").GetChild(0).Find("Text").GetComponent<TMPro.TextMeshProUGUI>(); //.GetComponent<TMPro.TMP_InputField>()
-        //password = loginPanel.transform.Find("Password").GetChild(0).Find("Text").GetComponent<TMPro.TextMeshProUGUI>(); //.GetComponent<TMPro.TMP_InputField>()
         username = loginPanel.transform.Find("Username").GetComponent<TMPro.TMP_InputField>();
         password = loginPanel.transform.Find("Password").GetComponent<TMPro.TMP_InputField>();
 
         response = loginPanel.transform.Find("Response").GetComponent<TMPro.TextMeshProUGUI>();
 
+
+        LoadSavedParameters();
     }
 
     public async void Login()
@@ -44,12 +46,17 @@ public class LoginController : MonoBehaviour
 
         if (res.Message.Equals("User successfully logged in"))
 		{
+            // Write session user info
             string path = Application.persistentDataPath + "/usr.vz";
             using (BinaryWriter w = new BinaryWriter(File.Open(path, FileMode.Create)))
             {
                 w.Write(res.UserID);
                 w.Write(name);
             }
+
+            // Write user login info
+            SaveUserLoginInfo(name, pass, savePassword);
+
             loginPanel.SetActive(false);
             menuPanel.SetActive(true);
             await GameObject.Find("ConfigManager").GetComponent<ConfigManager>().LoadUserSettingsFromDB();
@@ -75,4 +82,63 @@ public class LoginController : MonoBehaviour
         response.text = res.Message;
     }
 
+    public void SetRememberPassword(bool remember)
+	{
+        savePassword = remember;
+    }
+
+    private void LoadSavedParameters()
+	{
+        string path = Application.persistentDataPath + "/loginInfo.vz";
+        if (!File.Exists(path)) return;
+
+        bool savePass;
+        string usrname, passw;
+
+        using (BinaryReader r = new BinaryReader(File.Open(path, FileMode.Open)))
+		{
+            savePass = r.ReadBoolean();
+            usrname = r.ReadString();
+            passw = savePass ? r.ReadString() : "";
+        }
+
+        username.text = usrname;
+        password.text = passw;
+        savePasswordToggle.isOn = savePass;
+        savePassword = savePass;
+	}
+
+    /// <summary>Creates a file (<c>loginInfo.vz</c>) with:
+    /// <list type="bullet">
+    ///   <item>
+    ///      <term>bool</term>
+    ///      <description>savePassword</description>
+    ///   </item>
+    ///   <item>
+    ///      <term>string</term>
+    ///      <description>username</description>
+    ///   </item>
+    ///   <item>
+    ///      <term>bool</term>
+    ///      <description>password</description>
+    ///   </item>
+    /// </list>
+    /// </summary>
+    ///
+    private void SaveUserLoginInfo(string username, string password, bool savePassword = false)
+	{
+        string path = Application.persistentDataPath + "/loginInfo.vz";
+        if (!File.Exists(path))
+        {
+            FileStream fs = File.Create(path);
+            fs.Close();
+        }
+
+        using (BinaryWriter w = new BinaryWriter(File.Open(path, FileMode.Create)))
+        {
+            w.Write(savePassword);
+            w.Write(username);
+            if (savePassword) w.Write(password);
+        }
+    }
 }
