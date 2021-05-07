@@ -30,6 +30,9 @@ public class LoginController : MonoBehaviour
         var name = username.text;
         var pass = password.text;
 
+        if (name.Length == 0 || pass.Length == 0) return;
+
+        response.color = new Color(1f, 0.4f, 0.4f);
         Response res = await Repository.Login(name, pass);
         if (res == null)
 		{
@@ -37,6 +40,7 @@ public class LoginController : MonoBehaviour
             return;
 		}
         response.text = res.Message;
+        
 
         if (res.Message.Equals("User successfully logged in"))
 		{
@@ -57,12 +61,17 @@ public class LoginController : MonoBehaviour
         var name = username.text;
         var pass = password.text;
 
-        Response res = await Repository.Login(name, pass);
+        if (name.Length == 0 || pass.Length == 0) return;
+
+        response.color = new Color(1f, 1f, 1f);
+        Response res = await Repository.Signup(name, pass);
         if (res == null)
         {
+            response.color = new Color(1f, 0.4f, 0.4f);
             response.text = "Connection timed out...";
             return;
         }
+        if (res.Message == "Success") response.color = new Color(0.2f, 1f, 0.2f);
         response.text = res.Message;
     }
 

@@ -26,20 +26,20 @@ public class Repository
 
     public static async Task<Response> Login(string usr, string psw)
     {
-        Response response = (Response) await MakeRequest($"{API_URL}/users/{usr}/{psw}", null, null, "GET", "application/json", typeof(Response));
+        UserLogin userLogin = new UserLogin(usr, psw);
+        Response response = (Response) await MakeRequestJSON($"{API_URL}/users", null, userLogin, "PUT", "application/json", typeof(Response));
         return response;
     }
 
     public static async Task<Response> Signup(string usr, string psw)
 	{
         UserLogin userLogin = new UserLogin(usr, psw);
-        Response response = (Response)await MakeRequestJSON($"{API_URL}/users", null, userLogin, "PUT", "application/json", typeof(Response));
+        Response response = (Response)await MakeRequestJSON($"{API_URL}/users", null, userLogin, "POST", "application/json", typeof(Response));
         return response;
     }
 
     public static async Task<string> GetUserConfig(UserCfgRequest userCfg)
     {
-        // !!! NO ES POT ENVIAR BODY EN UN GET !!!
         string response = (string) await MakeRequestJSON($"{API_URL}/usercfg", null, userCfg, "POST", "application/json", typeof(string));
         return response;
 	}
