@@ -30,6 +30,13 @@ public class Repository
         return response;
     }
 
+    public static async Task<Response> Signup(string usr, string psw)
+	{
+        UserLogin userLogin = new UserLogin(usr, psw);
+        Response response = (Response)await MakeRequestJSON($"{API_URL}/users", null, userLogin, "PUT", "application/json", typeof(Response));
+        return response;
+    }
+
     public static async Task<string> GetUserConfig(UserCfgRequest userCfg)
     {
         // !!! NO ES POT ENVIAR BODY EN UN GET !!!

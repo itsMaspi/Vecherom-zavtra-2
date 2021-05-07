@@ -75,6 +75,11 @@ public class PlayerController : NetworkBehaviour
         //if (!isLocalPlayer) return;
     }
 
+    void OnApplicationQuit()
+    {
+        Utils.DeleteUserInfo();
+    }
+
     public void OpenInteractableIcon()
 	{
         interactionIcon.SetActive(true);

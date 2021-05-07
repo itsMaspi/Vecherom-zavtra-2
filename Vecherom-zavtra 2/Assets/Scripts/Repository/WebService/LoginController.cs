@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class TestApi : MonoBehaviour
+public class LoginController : MonoBehaviour
 {
     public GameObject loginPanel;
     public GameObject menuPanel;
@@ -31,6 +31,11 @@ public class TestApi : MonoBehaviour
         var pass = password.text;
 
         Response res = await Repository.Login(name, pass);
+        if (res == null)
+		{
+            response.text = "Connection timed out...";
+            return;
+		}
         response.text = res.Message;
 
         if (res.Message.Equals("User successfully logged in"))
@@ -47,6 +52,18 @@ public class TestApi : MonoBehaviour
         }
     }
 
+    public async void Singup()
+	{
+        var name = username.text;
+        var pass = password.text;
 
+        Response res = await Repository.Login(name, pass);
+        if (res == null)
+        {
+            response.text = "Connection timed out...";
+            return;
+        }
+        response.text = res.Message;
+    }
 
 }

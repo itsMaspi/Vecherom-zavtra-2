@@ -14,9 +14,9 @@ public class ConfigManager : MonoBehaviour
 	public Slider effectsVolumeSlider;
 
 	// Start is called before the first frame update
-	void Start()
+	async void Start()
     {
-		
+		await LoadUserSettingsFromDB();
 	}
 
     // Update is called once per frame
@@ -28,9 +28,7 @@ public class ConfigManager : MonoBehaviour
 	void OnApplicationQuit()
 	{
 		SaveUserSettingsToDB();
-		// Borrar fitxer d'usuari
-		string path = Application.persistentDataPath + "/usr.vz";
-		if (File.Exists(path)) File.Delete(path);
+		Utils.DeleteUserInfo();
 	}
 
 	public async void SaveUserSettingsToDB()
