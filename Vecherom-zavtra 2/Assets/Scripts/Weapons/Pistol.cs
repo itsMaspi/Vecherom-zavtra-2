@@ -9,9 +9,11 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 	public List<BaseStat> Stats { get; set; }
 	public Transform ProjectileSpawn { get; set; }
 	LaserBullet laserBullet;
+	AudioSource audioSource;
 
 	void Start()
 	{
+		audioSource = GetComponent<AudioSource>();
 		animator = GetComponent<Animator>();
 		ProjectileSpawn = transform.GetChild(0);
 		laserBullet = Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet");
@@ -43,7 +45,10 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		bulletInstance.Speed = 300f;
 		bulletInstance.Damage = 5;
 		bulletInstance.Range = 2f;
+		audioSource.Play();
+
 		return bulletInstance.gameObject;
+
 		//NetworkServer.Spawn(bulletInstance.gameObject);
 	}
 }

@@ -109,7 +109,10 @@ public class PlayerWeaponController : NetworkBehaviour
 		bulletInstance.Speed = 300f;
 		bulletInstance.Damage = 5;
 		bulletInstance.Range = 20f;*/
-		
+
+		playerAnimator.speed = 0.5f;
+		pistolAnimator.speed = 0.5f;
+
 		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
 		NetworkServer.Spawn(bulletInstance);
 		RpcShoot();
