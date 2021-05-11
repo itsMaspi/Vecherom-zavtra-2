@@ -5764,6 +5764,13 @@ MonoBehaviour:
     loop: 1
     audioMixerGroup: {fileID: 7487254939088639973, guid: 135a3fcadc1b1e44abb47ce07be2b752, type: 2}
     source: {fileID: 0}
+  - name: bulletHit
+    clip: {fileID: 8300000, guid: 1d1d902f9e7c3734a8534ec0626772cb, type: 3}
+    volume: 1
+    pitch: 0.5
+    loop: 0
+    audioMixerGroup: {fileID: -9139883705081574305, guid: 135a3fcadc1b1e44abb47ce07be2b752, type: 2}
+    source: {fileID: 0}
 --- !u!1 &1131805623
 GameObject:
   m_ObjectHideFlags: 0
