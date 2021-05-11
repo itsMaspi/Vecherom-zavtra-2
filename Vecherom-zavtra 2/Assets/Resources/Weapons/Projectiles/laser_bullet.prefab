@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  hitSound: {fileID: 8300000, guid: 1d1d902f9e7c3734a8534ec0626772cb, type: 3}
 --- !u!114 &5180858100416520583
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -42,7 +42,7 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		bulletInstance.Force = transform.parent.parent.lossyScale.normalized;
 		bulletInstance.Speed = 300f;
 		bulletInstance.Damage = 5;
-		bulletInstance.Range = 20f;
+		bulletInstance.Range = 2f;
 		return bulletInstance.gameObject;
 		//NetworkServer.Spawn(bulletInstance.gameObject);
 	}

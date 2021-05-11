@@ -48,6 +48,7 @@ public class LaserBullet : NetworkBehaviour
 			Debug.Log($"Hit: {collision.name}");
 			collision.GetComponent<IEnemy>().TakeDamage(Damage);
 		}
+		AudioManager.instance.Play("bulletHit");
 		NetworkServer.Destroy(gameObject);
 		//Remove();
 	}
