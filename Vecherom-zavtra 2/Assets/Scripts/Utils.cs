@@ -13,6 +13,18 @@ public static class Utils
 		return new Resolution() { width = width, height = height, refreshRate = refresh };
 	}
 
+	public static string GetUserNickname()
+	{
+		string nick = "";
+		string path = Application.persistentDataPath + "/usr.vz";
+		using (BinaryReader r = new BinaryReader(File.Open(path, FileMode.Open)))
+		{
+			r.ReadInt32();
+			nick = r.ReadString();
+		}
+		return nick;
+	}
+
 	public static void DeleteUserInfo()
 	{
 		string path = Application.persistentDataPath + "/usr.vz";

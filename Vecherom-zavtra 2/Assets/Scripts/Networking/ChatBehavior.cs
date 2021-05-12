@@ -40,15 +40,15 @@ public class ChatBehavior : NetworkBehaviour
     {
         //if (!Input.GetKeyDown(KeyCode.Return)) { return; }
         if (string.IsNullOrWhiteSpace(inputField.text)) { return; }
-        CmdSendMessage(inputField.text);
+        CmdSendMessage(Utils.GetUserNickname(), inputField.text);
         inputField.text = string.Empty;
     }
 
     [Command]
-    private void CmdSendMessage(string message)
+    private void CmdSendMessage(string nickname, string message)
     {
         // Validate message
-        RpcHandleMessage($"[{connectionToClient.connectionId}]: {message}");
+        RpcHandleMessage($"[{nickname}]: {message}");
     }
 
     [ClientRpc]
