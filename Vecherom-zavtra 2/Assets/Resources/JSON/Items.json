@@ -3,6 +3,7 @@
     "objectSlug": "j_pistol",
     "itemName": "JK 11",
     "description": "A standard Jakob's pistol",
+    "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
     "stats": [
@@ -24,6 +25,7 @@
     "objectSlug": "m_pistol",
     "itemName": "MM18",
     "description": "A regular Maliwan manufactured pistol",
+    "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
     "stats": [
@@ -45,6 +47,7 @@
     "objectSlug": "b_pistol",
     "itemName": "Glock 17",
     "description": "A strangely crafted pistol. Who knows where the bandits got it from...",
+    "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
     "stats": [
