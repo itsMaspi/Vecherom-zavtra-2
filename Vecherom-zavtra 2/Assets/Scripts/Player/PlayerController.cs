@@ -9,7 +9,7 @@ using System.IO;
 public class PlayerController : NetworkBehaviour
 {
     [SyncVar(hook = nameof(ChangeNickname))]
-    string nickname;
+    public string nickname;
 
     public TMPro.TextMeshProUGUI nickText;
     public GameObject interactionIcon;
@@ -32,12 +32,9 @@ public class PlayerController : NetworkBehaviour
         dialogueSystem = GameObject.Find("DialogueSystem");
     }
 
-    void Start()
-    {
-        if (!isLocalPlayer)
-		{
-            GetComponent<PlayerInput>().enabled = false;
-		}
+	public override void OnStartServer()
+	{
+		base.OnStartServer();
         string path = Application.persistentDataPath + "/usr.vz";
         using (BinaryReader r = new BinaryReader(File.Open(path, FileMode.Open)))
         {
@@ -45,6 +42,16 @@ public class PlayerController : NetworkBehaviour
             nickname = r.ReadString();
         }
         nickText.text = nickname;
+        //CmdSetNickname();
+    }
+
+	void Start()
+    {
+        if (!isLocalPlayer)
+		{
+            GetComponent<PlayerInput>().enabled = false;
+		}
+        
         /*
         GameObject[] gObjects =  FindObjectsOfType<GameObject>();
         foreach (var Object in gObjects)
@@ -130,5 +137,11 @@ public class PlayerController : NetworkBehaviour
     void ChangeNickname(string oldNick, string newNick)
 	{
         nickText.text = newNick;
+	}
+
+    [Command]
+    public void CmdSetNickname()
+	{
+        nickText.text = nickname;
 	}
 }
