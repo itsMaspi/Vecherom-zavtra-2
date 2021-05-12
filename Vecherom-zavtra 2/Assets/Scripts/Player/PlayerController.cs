@@ -10,6 +10,7 @@ public class PlayerController : NetworkBehaviour
 {
     [SyncVar(hook = nameof(ChangeNickname))]
     public string nickname;
+    private string localNickname;
 
     public TMPro.TextMeshProUGUI nickText;
     public GameObject interactionIcon;
@@ -30,18 +31,23 @@ public class PlayerController : NetworkBehaviour
         }
 
         dialogueSystem = GameObject.Find("DialogueSystem");
+
+        // Get the player nickname and apply the nickname
+        string path = Application.persistentDataPath + "/usr.vz";
+        using (BinaryReader r = new BinaryReader(File.Open(path, FileMode.Open)))
+        {
+            r.ReadInt32();
+            localNickname = r.ReadString();
+        }
+        CmdSetNickname(localNickname);
     }
 
 	public override void OnStartServer()
 	{
 		base.OnStartServer();
-        string path = Application.persistentDataPath + "/usr.vz";
-        using (BinaryReader r = new BinaryReader(File.Open(path, FileMode.Open)))
-        {
-            r.ReadInt32();
-            nickname = r.ReadString();
-        }
-        nickText.text = nickname;
+
+        
+        //nickText.text = nickname;
         //CmdSetNickname();
     }
 
@@ -50,6 +56,7 @@ public class PlayerController : NetworkBehaviour
         if (!isLocalPlayer)
 		{
             GetComponent<PlayerInput>().enabled = false;
+            transform.Find("HUD Canvas").gameObject.SetActive(false);
 		}
         
         /*
@@ -137,11 +144,11 @@ public class PlayerController : NetworkBehaviour
     void ChangeNickname(string oldNick, string newNick)
 	{
         nickText.text = newNick;
-	}
+    }
 
     [Command]
-    public void CmdSetNickname()
+    public void CmdSetNickname(string n)
 	{
-        nickText.text = nickname;
+        nickname = n;
 	}
 }
