@@ -36,6 +36,12 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(SceneName);
 	}
 
+	public void LogOut()
+	{
+		Utils.DeleteUserInfo();
+		SceneManager.LoadScene(0);
+	}
+
     public void QuitGame()
 	{
 		Debug.LogWarning("APP CLOSED!");

@@ -59,6 +59,7 @@ public class LoginController : MonoBehaviour
 
             loginPanel.SetActive(false);
             menuPanel.SetActive(true);
+            menuPanel.transform.Find("Username").GetComponent<TMPro.TextMeshProUGUI>().text = $"Logged in: {name}";
             await GameObject.Find("ConfigManager").GetComponent<ConfigManager>().LoadUserSettingsFromDB();
         }
     }

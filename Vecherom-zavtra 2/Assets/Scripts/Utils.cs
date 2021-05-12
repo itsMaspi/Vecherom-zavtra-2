@@ -18,4 +18,10 @@ public static class Utils
 		string path = Application.persistentDataPath + "/usr.vz";
 		if (File.Exists(path)) File.Delete(path);
 	}
+
+	public static void DeleteLoginUserInfo()
+	{
+		string path = Application.persistentDataPath + "/loginInfo.vz";
+		if (File.Exists(path)) File.Delete(path);
+	}
 }
