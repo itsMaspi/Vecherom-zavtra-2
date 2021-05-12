@@ -48,10 +48,20 @@ public class LaserBullet : NetworkBehaviour
 			Debug.Log($"Hit: {collision.name}");
 			collision.GetComponent<IEnemy>().TakeDamage(Damage);
 		}
-		AudioManager.instance.Play("bulletHit");
+		CmdLaserHit();
 		NetworkServer.Destroy(gameObject);
 		//Remove();
 	}
+
+	[Command(requiresAuthority = false)]
+	public void CmdLaserHit()
+    {
+		GameObject hit = (GameObject)Instantiate(Resources.Load("Weapons/Projectiles/laser_hit"), transform.position, transform.rotation);
+		NetworkServer.Spawn(hit);
+		//RPC Client animation
+	}
+
+	
 
 	/*
 	public void Remove()

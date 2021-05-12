@@ -122,8 +122,8 @@ public class PlayerWeaponController : NetworkBehaviour
 	[ClientRpc]
 	public void RpcShoot()
 	{
-		playerAnimator.speed = 0.5f;
-		pistolAnimator.speed = 0.5f;
+		//playerAnimator.speed = 0.5f;
+		//pistolAnimator.speed = 0.5f;
 		pistolAnimator.SetTrigger("Shoot"); //EquippedWeapon.GetComponent<Animator>()
 	}
 
