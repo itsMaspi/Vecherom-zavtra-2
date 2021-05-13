@@ -26,7 +26,7 @@
                     "line": "Yes it was."
                 },
                 {
-                    "type": "0",
+                    "type": "1",
                     "name": "<player>",
                     "line": "Bla bla bla."
                 }
@@ -58,7 +58,7 @@
             "lines":
             [
                 {
-                    "type": "0",
+                    "type": "2",
                     "name": "NPC",
                     "line": "It worked <player>!"
                 }

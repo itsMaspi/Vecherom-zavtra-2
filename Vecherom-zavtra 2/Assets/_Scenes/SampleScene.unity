@@ -5725,7 +5725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcId: 1
-  dialogueId: 0
+  dialogueId: 2
 --- !u!1 &830804242
 GameObject:
   m_ObjectHideFlags: 0

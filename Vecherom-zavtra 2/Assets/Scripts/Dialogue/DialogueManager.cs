@@ -6,6 +6,12 @@ using System.Linq;
 
 public class DialogueManager : MonoBehaviour
 {
+	enum DialogueTypes
+	{
+        Normal,
+        Thinking,
+        Shouting
+	}
 	public static DialogueManager Instance { get; set; }
 
     public GameObject dialoguePanel;
@@ -47,6 +53,17 @@ public class DialogueManager : MonoBehaviour
         var dialogue = dialogues.dialogues.Where(x => x.id == dialogueId).FirstOrDefault();
         dialogueLines = dialogue.lines;
 
+        string nick = Utils.GetUserNickname();
+        foreach (var line in dialogueLines)
+		{
+            // Replace player name in dialogue name
+            if (line.name.Equals("<player>")) line.name = nick;
+            // Replace player name in the line
+            line.line = line.line.Replace("<player>", nick);
+            // Manage dialogue type
+            ManageDialogueType(line.type);
+		}
+
         CreateDialogue();
 	}
 
@@ -54,7 +71,7 @@ public class DialogueManager : MonoBehaviour
 	{
         dialogueText.text = dialogueLines[dialogueIndex].line;
         nameText.text = dialogueLines[dialogueIndex].name;
-        // canviar el tipus amb dialogueLines[dialogueIndex].type (0 = normal, 1 = pensant, etc)
+        ManageDialogueType(dialogueLines[dialogueIndex].type);
         dialoguePanel.SetActive(true);
 	}
 
@@ -64,11 +81,29 @@ public class DialogueManager : MonoBehaviour
 		{
             dialogueText.text = dialogueLines[++dialogueIndex].line;
             nameText.text = dialogueLines[dialogueIndex].name;
-            // canviar el tipus amb dialogueLines[dialogueIndex].type (0 = normal, 1 = pensant, etc)
+            ManageDialogueType(dialogueLines[dialogueIndex].type);
         }
         else
 		{
             dialoguePanel.SetActive(false);
+		}
+	}
+
+    private void ManageDialogueType(int type)
+	{
+		switch ((DialogueTypes)type)
+		{
+            case DialogueTypes.Normal:
+                dialoguePanel.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.3f);
+                break;
+            case DialogueTypes.Thinking:
+                dialoguePanel.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.1f);
+                break;
+            case DialogueTypes.Shouting:
+                dialoguePanel.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.7f);
+                break;
+            default:
+				break;
 		}
 	}
 }

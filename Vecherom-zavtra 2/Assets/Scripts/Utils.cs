@@ -15,7 +15,7 @@ public static class Utils
 
 	public static string GetUserNickname()
 	{
-		string nick = "";
+		string nick = "Username123";
 		string path = Application.persistentDataPath + "/usr.vz";
 		using (BinaryReader r = new BinaryReader(File.Open(path, FileMode.Open)))
 		{
