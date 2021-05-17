@@ -7,8 +7,11 @@ public class WildBeast : MonoBehaviour, IEnemy
 	public float currentHealth, power, toughness;
 	public float maxHealth;
 
+	private CharacterStats characterStats;
+
 	void Start()
 	{
+		characterStats = new CharacterStats(6, 2, 10);
 		currentHealth = maxHealth;
 	}
 
@@ -19,6 +22,7 @@ public class WildBeast : MonoBehaviour, IEnemy
 
 	public void TakeDamage(int amount)
 	{
+		Debug.Log($"Ouch! -{amount}hp");
 		currentHealth -= amount;
 		if (currentHealth <= 0) 
 		{

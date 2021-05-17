@@ -7,17 +7,15 @@ using Mirror;
 public class PlayerWeaponController : NetworkBehaviour
 {
 	public GameObject weaponPoint;
-	[SyncVar]
+	//[SyncVar]
 	public GameObject EquippedWeapon;
-
-	public Animator animator;
 
 	IWeapon equippedWeapon;
 	CharacterStats characterStats;
 
 	public override void OnStartLocalPlayer()
 	{
-		characterStats = GetComponent<CharacterStats>();
+		characterStats = GetComponent<Player>().characterStats;
 		
 		weaponPoint = transform.Find("WeaponPoint").gameObject;
 		/*Debug.Log(weaponPoint.transform.GetChild(0));
@@ -58,7 +56,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
 		equippedWeapon.Stats = itemToEquip.Stats;
 		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
-		characterStats.AddStatBonus(itemToEquip.Stats);
+		GetComponent<Player>().characterStats.AddStatBonus(itemToEquip.Stats);
 		//NetworkServer.Spawn(EquippedWeapon);
 		//SpawnWeapon(EquippedWeapon);
 		//Debug.Log(characterStats.stats[1].GetCalculatedStatValue());
@@ -113,7 +111,8 @@ public class PlayerWeaponController : NetworkBehaviour
 	[ClientRpc]
 	public void RpcShoot()
 	{
-		animator.SetTrigger("Shoot"); //EquippedWeapon.GetComponent<Animator>()
+		weaponPoint.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Shoot"); //EquippedWeapon.GetComponent<Animator>()
+		//animator.SetTrigger("Shoot");
 	}
 
 	/*[Command]

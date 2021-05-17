@@ -8,16 +8,19 @@
     "itemModifier": 0,
     "stats": [
       {
+        "StatType": "Damage",
         "baseValue": 10,
         "statName": "Damage"
       },
       {
+        "StatType": "AttackSpeed",
         "baseValue": 10,
-        "statName": "FireRate"
+        "statName": "Fire rate"
       },
       {
+        "StatType": "Critic",
         "baseValue": 15,
-        "statName": "Critical"
+        "statName": "Critical chance"
       }
     ]
   },
@@ -30,16 +33,19 @@
     "itemModifier": 0,
     "stats": [
       {
+        "StatType": "Damage",
         "baseValue": 4,
         "statName": "Damage"
       },
       {
+        "StatType": "AttackSpeed",
         "baseValue": 6,
-        "statName": "FireRate"
+        "statName": "Fire rate"
       },
       {
+        "StatType": "Critic",
         "baseValue": 10,
-        "statName": "Critical"
+        "statName": "Critical chance"
       }
     ]
   },
@@ -52,16 +58,19 @@
     "itemModifier": 0,
     "stats": [
       {
+        "StatType": "Damage",
         "baseValue": 8,
         "statName": "Damage"
       },
       {
+        "StatType": "AttackSpeed",
         "baseValue": 8,
-        "statName": "FireRate"
+        "statName": "Fire rate"
       },
       {
+        "StatType": "Critic",
         "baseValue": 10,
-        "statName": "Critical"
+        "statName": "Critical chance"
       }
     ]
   }
