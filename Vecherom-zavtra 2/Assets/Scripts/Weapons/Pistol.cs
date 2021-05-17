@@ -16,7 +16,7 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		animator = GetComponent<Animator>();
 		CharacterStats = transform.parent.parent.GetComponent<Player>().characterStats;
 		ProjectileSpawn = transform.GetChild(0);
-		laserBullet = Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet");
+		laserBullet = Resources.Load<LaserBullet>("Weapons/Projectiles/pistol_j_bullet");
 	}
 
 	public void PerformAttack()

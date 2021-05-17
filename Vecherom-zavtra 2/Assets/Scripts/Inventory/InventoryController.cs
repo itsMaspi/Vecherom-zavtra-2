@@ -42,7 +42,9 @@ public class InventoryController : NetworkBehaviour
 		playerWeaponController = GetComponent<PlayerWeaponController>();
 		consumableController = GetComponent<ConsumableController>();
 
-		GiveItem("j_pistol");
+		GiveItem("pistol_j");
+		GiveItem("pistol_b");
+		GiveItem("pistol_m");
 	}
 
 	public void GiveItem(string itemSlug)

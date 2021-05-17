@@ -8,7 +8,8 @@ public class LaserBulletHit : NetworkBehaviour
     // Start is called before the first frame update
     public override void OnStartServer()
     {
-        Invoke(nameof(DestroySelf), 1f);    
+        float t = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+        Invoke(nameof(DestroySelf), t);    
     }
 
 

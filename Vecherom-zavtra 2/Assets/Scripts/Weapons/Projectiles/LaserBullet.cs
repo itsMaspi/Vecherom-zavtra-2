@@ -56,7 +56,13 @@ public class LaserBullet : NetworkBehaviour
 	[Command(requiresAuthority = false)]
 	public void CmdLaserHit()
     {
-		GameObject hit = (GameObject)Instantiate(Resources.Load("Weapons/Projectiles/laser_hit"), transform.position, transform.rotation);
+		GameObject hit = (GameObject)Instantiate(Resources.Load("Weapons/Projectiles/pistol_j_hit"), transform.position, transform.rotation);
+
+
+		Vector3 theScale = hit.transform.localScale;
+		theScale.x *= Force.x;
+		hit.transform.localScale = theScale;
+
 		NetworkServer.Spawn(hit);
 		//RPC Client animation
 	}

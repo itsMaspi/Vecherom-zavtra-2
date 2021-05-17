@@ -1,6 +1,6 @@
 [
   {
-    "objectSlug": "j_pistol",
+    "objectSlug": "pistol_j",
     "itemName": "JK 11",
     "description": "A standard Jakob's pistol",
     "itemType": "Weapon",
@@ -25,7 +25,7 @@
     ]
   },
   {
-    "objectSlug": "m_pistol",
+    "objectSlug": "pistol_m",
     "itemName": "MM18",
     "description": "A regular Maliwan manufactured pistol",
     "itemType": "Weapon",
@@ -50,7 +50,7 @@
     ]
   },
   {
-    "objectSlug": "b_pistol",
+    "objectSlug": "pistol_b",
     "itemName": "Glock 17",
     "description": "A strangely crafted pistol. Who knows where the bandits got it from...",
     "itemType": "Weapon",

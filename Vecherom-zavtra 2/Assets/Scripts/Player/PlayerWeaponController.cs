@@ -92,9 +92,10 @@ public class PlayerWeaponController : NetworkBehaviour
 		}*/
 		//equippedWeapon.PerformAttack(value.isPressed);
 		if (PauseManager.pauseState == PauseState.Paused) return;
+		if (EquippedWeapon == null) return; 
 
 		
-		playerAnimator.SetBool("isShooting", value.isPressed);
+		GetComponent<Animator>().SetBool("isShooting", value.isPressed);
 
 	}
 
