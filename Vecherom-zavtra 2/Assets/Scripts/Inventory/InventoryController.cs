@@ -45,6 +45,7 @@ public class InventoryController : NetworkBehaviour
 		GiveItem("pistol_j");
 		GiveItem("pistol_b");
 		GiveItem("pistol_m");
+		GiveItem("potion_log");
 	}
 
 	public void GiveItem(string itemSlug)
