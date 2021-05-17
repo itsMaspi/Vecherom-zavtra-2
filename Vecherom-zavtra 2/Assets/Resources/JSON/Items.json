@@ -1,0 +1,77 @@
+[
+  {
+    "objectSlug": "j_pistol",
+    "itemName": "JK 11",
+    "description": "A standard Jakob's pistol",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 10,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 10,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 15,
+        "statName": "Critical chance"
+      }
+    ]
+  },
+  {
+    "objectSlug": "m_pistol",
+    "itemName": "MM18",
+    "description": "A regular Maliwan manufactured pistol",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 4,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 10,
+        "statName": "Critical chance"
+      }
+    ]
+  },
+  {
+    "objectSlug": "b_pistol",
+    "itemName": "Glock 17",
+    "description": "A strangely crafted pistol. Who knows where the bandits got it from...",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 8,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 8,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 10,
+        "statName": "Critical chance"
+      }
+    ]
+  }
+]
