@@ -24,6 +24,7 @@ public class WildBeast : MonoBehaviour, IEnemy
 	{
 		Debug.Log($"Ouch! -{amount}hp");
 		currentHealth -= amount;
+		transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = currentHealth.ToString();
 		if (currentHealth <= 0) 
 		{
 			Die();
