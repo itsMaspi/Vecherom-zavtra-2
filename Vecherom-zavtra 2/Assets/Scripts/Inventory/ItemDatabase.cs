@@ -9,7 +9,7 @@ public class ItemDatabase : MonoBehaviour
     private List<Item> Items { get; set; }
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         if (Instance != null && Instance != this)
         {

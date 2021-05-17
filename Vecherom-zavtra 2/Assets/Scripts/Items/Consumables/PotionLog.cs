@@ -7,6 +7,7 @@ public class PotionLog : MonoBehaviour, IConsumable
 	public void Consume()
 	{
 		Debug.Log("Potion logged");
+		Destroy(gameObject);
 	}
 
 	public void Consume(CharacterStats stats)

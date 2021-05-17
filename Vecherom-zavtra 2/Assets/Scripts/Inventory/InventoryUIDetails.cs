@@ -7,7 +7,7 @@ public class InventoryUIDetails : MonoBehaviour
 {
     Item item;
     Button selectedItemButton, itemInteractButton;
-    TMPro.TextMeshProUGUI itemNameText, itemDescriptionText, itemInteractButtonText;
+    TMPro.TextMeshProUGUI itemNameText, itemDescriptionText, itemInteractButtonText, statText;
 
     void Start()
 	{
@@ -15,10 +15,22 @@ public class InventoryUIDetails : MonoBehaviour
         itemDescriptionText = transform.Find("Item_Description").GetComponent<TMPro.TextMeshProUGUI>();
         itemInteractButton = transform.Find("Interact_Button").GetComponent<Button>();
         itemInteractButtonText = itemInteractButton.transform.Find("Text").GetComponent<TMPro.TextMeshProUGUI>();
+        statText = transform.Find("Stats_List").GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
+        gameObject.SetActive(false);
     }
 
     public void SetItem(Item item, Button selectedButton) 
     {
+        gameObject.SetActive(true);
+        statText.text = "";
+        if (item.Stats != null)
+		{
+			foreach (BaseStat stat in item.Stats)
+			{
+                statText.text += $"{stat.StatName}: {stat.BaseValue}\n";
+			}
+		}
+        itemInteractButton.onClick.RemoveAllListeners();
         this.item = item;
         selectedItemButton = selectedButton;
         itemNameText.text = item.ItemName;
@@ -39,5 +51,7 @@ public class InventoryUIDetails : MonoBehaviour
             InventoryController.Instance.EquipItem(item);
             Destroy(selectedItemButton.gameObject);
         }
+        item = null;
+        gameObject.SetActive(false);
 	}
 }
