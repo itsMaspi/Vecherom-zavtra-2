@@ -13,7 +13,7 @@ public class InventoryController : NetworkBehaviour
 	[HideInInspector] public ConsumableController consumableController;
 	public InventoryUIDetails inventoryDetailsPanel;
 
-	public List<Item> playerItems = new List<Item>();
+	public List<Item> playerItems;
 
 	public Item pistol;
 	public Item PotionLog;
@@ -21,15 +21,11 @@ public class InventoryController : NetworkBehaviour
 
 	public override void OnStartLocalPlayer()
 	{
-		/*playerWeaponController = GetComponent<PlayerWeaponController>();
-		consumableController = GetComponent<ConsumableController>();
-
-		GiveItem("j_pistol");*/
-		//List<BaseStat> pistolStats = new List<BaseStat>();
-		//pistolStats.Add(new BaseStat(6, "Attack", "The attack power"));
-		//pistol = new Item(pistolStats, "pistol");
-
-		//PotionLog = new Item(new List<BaseStat>(), "potion_log", "Drink this to log something cool!",Item.ItemTypes.Consumable, "Drink", "Log Potion", false);
+		playerItems = new List<Item>();
+		GiveItem("pistol_j");
+		GiveItem("pistol_b");
+		GiveItem("pistol_m");
+		GiveItem("potion_log");
 	}
 
 	void Start()
@@ -38,14 +34,6 @@ public class InventoryController : NetworkBehaviour
 			Destroy(gameObject);
 		else
 			Instance = this;
-
-		playerWeaponController = GetComponent<PlayerWeaponController>();
-		consumableController = GetComponent<ConsumableController>();
-
-		GiveItem("pistol_j");
-		GiveItem("pistol_b");
-		GiveItem("pistol_m");
-		GiveItem("potion_log");
 	}
 
 	public void GiveItem(string itemSlug)
@@ -63,11 +51,11 @@ public class InventoryController : NetworkBehaviour
 
 	public void EquipItem(Item itemToEquip)
 	{
-		playerWeaponController.EquipWeapon(itemToEquip);
+		GetComponent<PlayerWeaponController>().EquipWeapon(itemToEquip);
 	}
 
 	public void ConsumeItem(Item itemToConsume)
 	{
-		consumableController.ConsumeItem(itemToConsume);
+		GetComponent<ConsumableController>().ConsumeItem(itemToConsume);
 	}
 }

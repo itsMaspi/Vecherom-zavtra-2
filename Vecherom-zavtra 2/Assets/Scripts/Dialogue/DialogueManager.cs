@@ -44,7 +44,12 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
     }
 
-    public void AddNewDialogue(int npcId, int dialogueId)
+	void OnApplicationQuit()
+	{
+        Utils.DeleteUserInfo();
+	}
+
+	public void AddNewDialogue(int npcId, int dialogueId)
 	{
         // Get the DialoguesRoot object from the json file {npcId}.json
         dialogues = JsonUtility.FromJson<DialoguesRoot>(Resources.Load<TextAsset>($"Dialogues/{npcId}").text);
