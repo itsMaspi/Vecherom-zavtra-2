@@ -55,7 +55,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		if (!isLocalPlayer) return;
 		if (EquippedWeapon != null)
 		{
-			characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
+			GetComponent<Player>().characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
 			Destroy(weaponPoint.transform.GetChild(0).gameObject);
 		}
 		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{itemToEquip.ObjectSlug}"), weaponPoint.transform);
