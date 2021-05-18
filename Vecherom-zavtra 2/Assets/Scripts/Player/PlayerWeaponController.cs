@@ -55,6 +55,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		if (!isLocalPlayer) return;
 		if (EquippedWeapon != null)
 		{
+			InventoryController.Instance.GiveItem(EquippedWeapon.name.Replace("(Clone)", ""));
 			GetComponent<Player>().characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
 			Destroy(weaponPoint.transform.GetChild(0).gameObject);
 		}
