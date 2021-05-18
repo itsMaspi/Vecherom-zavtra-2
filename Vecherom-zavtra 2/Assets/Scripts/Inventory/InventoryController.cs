@@ -7,8 +7,6 @@ using Mirror;
 
 public class InventoryController : NetworkBehaviour
 {
-	public static InventoryController Instance { get; set; }
-
 	[HideInInspector] public PlayerWeaponController playerWeaponController;
 	[HideInInspector] public ConsumableController consumableController;
 	public InventoryUIDetails inventoryDetailsPanel;
@@ -30,15 +28,12 @@ public class InventoryController : NetworkBehaviour
 
 	void Start()
 	{
-		if (Instance != null && Instance != this)
-			Destroy(gameObject);
-		else
-			Instance = this;
+
 	}
 
 	public void GiveItem(string itemSlug)
 	{
-		Item item = ItemDatabase.Instance.GetItem(itemSlug);
+		Item item = GetComponent<ItemDatabase>().GetItem(itemSlug);
 		playerItems.Add(item);
 		Debug.Log($"{playerItems.Count} items in inventory. Added: {itemSlug}");
 		UIEventHandler.ItemAddedToInventory(item);

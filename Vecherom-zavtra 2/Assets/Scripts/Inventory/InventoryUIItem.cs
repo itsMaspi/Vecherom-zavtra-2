@@ -30,6 +30,6 @@ public class InventoryUIItem : MonoBehaviour
 
 	public void OnSelectItemButton()
 	{
-		InventoryController.Instance.SetItemDetails(item, GetComponent<Button>());
+		transform.GetComponentInParent<InventoryController>().SetItemDetails(item, GetComponent<Button>());
 	}
 }

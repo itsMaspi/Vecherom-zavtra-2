@@ -43,12 +43,13 @@ public class InventoryUIDetails : MonoBehaviour
 	{
         if (item.ItemType == Item.ItemTypes.Consumable)
 		{
-            InventoryController.Instance.ConsumeItem(item);
+            //transform.parent.parent.parent.parent.GetComponent<InventoryController>().ConsumeItem(item);
+            transform.GetComponentInParent<InventoryController>().ConsumeItem(item);
             Destroy(selectedItemButton.gameObject);
         }
         else if (item.ItemType == Item.ItemTypes.Weapon)
 		{
-            InventoryController.Instance.EquipItem(item);
+            transform.GetComponentInParent<InventoryController>().EquipItem(item);
             Destroy(selectedItemButton.gameObject);
         }
         item = null;

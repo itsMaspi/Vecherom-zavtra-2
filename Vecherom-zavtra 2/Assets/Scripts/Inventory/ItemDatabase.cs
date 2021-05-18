@@ -2,22 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using Mirror;
 
-public class ItemDatabase : MonoBehaviour
+public class ItemDatabase : NetworkBehaviour
 {
-    public static ItemDatabase Instance { get; set; }
     private List<Item> Items { get; set; }
 
     // Start is called before the first frame update
     void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        } else
-        {
-            Instance = this;
-        }
         BuildDatabase();
     }
 
