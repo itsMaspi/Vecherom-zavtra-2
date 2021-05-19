@@ -7,7 +7,9 @@ using Mirror;
 public class PlayerWeaponController : NetworkBehaviour
 {
 	public GameObject weaponPoint;
-	
+
+	[SyncVar(hook = nameof(ChangeEquippedWeapon))]
+	public string EquippedWeaponSlug;
 	public GameObject EquippedWeapon;
 
 	public Animator pistolAnimator;
@@ -59,14 +61,27 @@ public class PlayerWeaponController : NetworkBehaviour
 			GetComponent<Player>().characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
 			Destroy(weaponPoint.transform.GetChild(0).gameObject);
 		}
-		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{itemToEquip.ObjectSlug}"), weaponPoint.transform);
+		CmdEquipWeapon(itemToEquip.ObjectSlug);
+		//EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{itemToEquip.ObjectSlug}"), weaponPoint.transform);
 		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
 		equippedWeapon.Stats = itemToEquip.Stats;
 		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
 		GetComponent<Player>().characterStats.AddStatBonus(itemToEquip.Stats);
+
+		
 		//NetworkServer.Spawn(EquippedWeapon);
 		//SpawnWeapon(EquippedWeapon);
 		//Debug.Log(characterStats.stats[1].GetCalculatedStatValue());
+	}
+
+	public void ChangeEquippedWeapon(string oldSlug, string newSlug)
+	{
+		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{newSlug}"), weaponPoint.transform);
+	}
+
+	public void CmdEquipWeapon(string slug)
+	{
+		EquippedWeaponSlug = slug;
 	}
 
 	//[ClientRpc]
