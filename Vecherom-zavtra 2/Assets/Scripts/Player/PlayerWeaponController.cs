@@ -71,9 +71,12 @@ public class PlayerWeaponController : NetworkBehaviour
 		{
 			GetComponent<InventoryController>().GiveItem(EquippedWeapon.name.Replace("(Clone)", ""));
 			GetComponent<Player>().characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
-			Destroy(weaponPoint.transform.GetChild(0).gameObject);
+			//Destroy(weaponPoint.transform.GetChild(0).gameObject);
+			NetworkServer.UnSpawn(weaponPoint.transform.GetChild(0).gameObject);
 		}
 		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{newSlug}"), weaponPoint.transform);
+		NetworkServer.Spawn(EquippedWeapon);
+		Debug.Log("Syncvar Hook called.");
 		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
 
 
@@ -87,20 +90,6 @@ public class PlayerWeaponController : NetworkBehaviour
 		EquippedWeaponSlug = slug;
 	}
 
-	//[ClientRpc]
-	public void RpcEquipWeapon(Item itemToEquip)
-	{
-		if (!isLocalPlayer) return;
-		if (EquippedWeapon != null)
-		{
-			characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
-			Destroy(weaponPoint.transform.GetChild(0).gameObject);
-		}
-		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{itemToEquip.ObjectSlug}"), weaponPoint.transform);
-		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
-		equippedWeapon.Stats = itemToEquip.Stats;
-		characterStats.AddStatBonus(itemToEquip.Stats);
-	}
 
 	public void OnAttack(InputValue value)
 	{
