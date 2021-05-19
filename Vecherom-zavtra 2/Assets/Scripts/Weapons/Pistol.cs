@@ -40,7 +40,7 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 
 	public GameObject CastProjectile()
 	{
-		LaserBullet bulletInstance = Instantiate(laserBullet, ProjectileSpawn.position, ProjectileSpawn.rotation);
+		LaserBullet bulletInstance = Instantiate(laserBullet, ProjectileSpawn.position, Quaternion.identity);
 		bulletInstance.Force = transform.parent.parent.lossyScale.normalized;
 		bulletInstance.Speed = 300f;
 		bulletInstance.Damage = CharacterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue();
@@ -48,4 +48,10 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		return bulletInstance.gameObject;
 		//NetworkServer.Spawn(bulletInstance.gameObject);
 	}
+
+	public void Shoot()
+    {
+		transform.GetComponentInParent<PlayerWeaponController>().CmdShoot();
+	}
+
 }

@@ -94,8 +94,11 @@ public class PlayerWeaponController : NetworkBehaviour
 		Debug.Log("Equipped weapon instanciated.");
 
 		//equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
-		EquippedWeapon.GetComponent<IWeapon>().Stats = GetComponent<ItemDatabase>().GetItem(itemToEquip).Stats;
-		GetComponent<Player>().characterStats.AddStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
+		if (isLocalPlayer)
+		{
+			EquippedWeapon.GetComponent<IWeapon>().Stats = GetComponent<ItemDatabase>().GetItem(itemToEquip).Stats;
+			GetComponent<Player>().characterStats.AddStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
+		}
 		Debug.Log("Syncvar Hook ended.");
 	}
 
@@ -127,7 +130,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		}*/
 		//equippedWeapon.PerformAttack(value.isPressed);
 		if (PauseManager.pauseState == PauseState.Paused) return;
-		if (EquippedWeapon == null) return; 
+		if (EquippedWeapon == null) return;
 
 		
 		GetComponent<Animator>().SetBool("isShooting", value.isPressed);
@@ -148,6 +151,12 @@ public class PlayerWeaponController : NetworkBehaviour
 
 		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
 		NetworkServer.Spawn(bulletInstance);
+		//RpcShoot();
+	}
+
+	[Command]
+	public void CmdShootAnim()
+	{
 		RpcShoot();
 	}
 
