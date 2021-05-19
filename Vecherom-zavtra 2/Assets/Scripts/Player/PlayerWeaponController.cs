@@ -38,8 +38,9 @@ public class PlayerWeaponController : NetworkBehaviour
 		characterStats.AddStatBonus(new List<BaseStat>());*/
 	}
 
-	/*void Start()
+	void Start()
 	{
+		/*
 		characterStats = GetComponent<CharacterStats>();
 
 		weaponPoint = transform.Find("WeaponPoint").gameObject;
@@ -50,7 +51,8 @@ public class PlayerWeaponController : NetworkBehaviour
 		equippedWeapon.Stats = new List<BaseStat>();
 		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
 		characterStats.AddStatBonus(new List<BaseStat>());
-	}*/
+		*/
+	}
 
 	public void EquipWeapon(Item itemToEquip) // REFACTOR: EquipItem()
 	{
