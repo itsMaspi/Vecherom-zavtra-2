@@ -8,7 +8,7 @@ public class PlayerWeaponController : NetworkBehaviour
 {
 	public GameObject weaponPoint;
 
-	[SyncVar(hook = nameof(ChangeEquippedWeapon))]
+	[SyncVar(hook = nameof(OnChangeEquippedWeapon))]
 	public string EquippedWeaponSlug;
 	public GameObject EquippedWeapon;
 
@@ -55,33 +55,46 @@ public class PlayerWeaponController : NetworkBehaviour
 	public void EquipWeapon(Item itemToEquip) // REFACTOR: EquipItem()
 	{
 		if (!isLocalPlayer) return;
+		Debug.Log("Method EquipWeapon called :)");
 
 		CmdEquipWeapon(itemToEquip.ObjectSlug);
 
+		Debug.Log("Command CmdEquipWeapon finished.");
 
-		
+
 		//NetworkServer.Spawn(EquippedWeapon);
 		//SpawnWeapon(EquippedWeapon);
 		//Debug.Log(characterStats.stats[1].GetCalculatedStatValue());
 	}
 
-	public void ChangeEquippedWeapon(string oldSlug, string newSlug)
+	public void OnChangeEquippedWeapon(string oldSlug, string newSlug)
 	{
-		if (EquippedWeapon != null)
+		StartCoroutine(ChangeEquippedWeapon(newSlug));
+	}
+
+	IEnumerator ChangeEquippedWeapon(string itemToEquip)
+    {
+		Debug.Log("Syncvar Hook called.");
+
+		if (transform.Find("WeaponPoint").childCount > 0)
 		{
-			GetComponent<InventoryController>().GiveItem(EquippedWeapon.name.Replace("(Clone)", ""));
-			GetComponent<Player>().characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
+			Debug.Log("Player already has a weapon equipped!");
+			GetComponent<InventoryController>().GiveItem(itemToEquip);
+			GetComponent<Player>().characterStats.RemoveStatBonus(GetComponent<ItemDatabase>().GetItem(itemToEquip).Stats);
 			Destroy(transform.Find("WeaponPoint").GetChild(0).gameObject);
 			//CmdServerUnpawnWeapon(weaponPoint.transform.GetChild(0).gameObject);
+			Debug.Log("Player weapon destroyed.");
+			yield return null;
 		}
-		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{newSlug}"), transform.Find("WeaponPoint"));
+
+		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{itemToEquip}"), transform.Find("WeaponPoint"));
 		//CmdServerSpawnWeapon(EquippedWeapon);
-		Debug.Log("Syncvar Hook called.");
-		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
+		Debug.Log("Equipped weapon instanciated.");
 
-
-		equippedWeapon.Stats = GetComponent<ItemDatabase>().GetItem(newSlug).Stats;
-		GetComponent<Player>().characterStats.AddStatBonus(GetComponent<ItemDatabase>().GetItem(newSlug).Stats);
+		//equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
+		EquippedWeapon.GetComponent<IWeapon>().Stats = GetComponent<ItemDatabase>().GetItem(itemToEquip).Stats;
+		GetComponent<Player>().characterStats.AddStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
+		Debug.Log("Syncvar Hook ended.");
 	}
 
 	[Command]
@@ -94,14 +107,12 @@ public class PlayerWeaponController : NetworkBehaviour
 	public void CmdServerSpawnWeapon(GameObject Weapon)
 	{
 		NetworkServer.Spawn(Weapon);
-
 	}
 
 	[Command]
 	public void CmdServerUnpawnWeapon(GameObject Weapon)
 	{
 		NetworkServer.UnSpawn(Weapon);
-
 	}
 
 
