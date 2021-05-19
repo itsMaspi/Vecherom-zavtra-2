@@ -6,6 +6,7 @@ using Mirror;
 
 public class PlayerMovement : NetworkBehaviour
 {
+    public Joystick joystick;
     public CharacterController2D controller;
     public Transform background;
     public Rigidbody2D rb;
@@ -30,7 +31,30 @@ public class PlayerMovement : NetworkBehaviour
     void Update()
     {
         if (!isLocalPlayer) return;
+        if (joystick.Horizontal >= .2f)
+        {
+            horizontalMove = runSpeed;
+        } else if (joystick.Horizontal <= -.2f)
+        {
+            horizontalMove = -runSpeed;
+        } else
+        {
+            horizontalMove = 0;
+        }
+
         animator.SetFloat("playerSpeed", Mathf.Abs(horizontalMove));
+
+        if (joystick.Vertical >= .5f)
+        {
+            jump = true;
+            animator.SetBool("isJumping", true);
+        }
+        else if (joystick.Vertical <= .5f)
+        {
+            jump = false;
+        }
+
+
         if (dashState == DashState.Cooldown)
 		{
             dashTimer -= Time.deltaTime;
