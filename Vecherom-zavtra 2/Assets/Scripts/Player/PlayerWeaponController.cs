@@ -55,18 +55,9 @@ public class PlayerWeaponController : NetworkBehaviour
 	public void EquipWeapon(Item itemToEquip) // REFACTOR: EquipItem()
 	{
 		if (!isLocalPlayer) return;
-		if (EquippedWeapon != null)
-		{
-			GetComponent<InventoryController>().GiveItem(EquippedWeapon.name.Replace("(Clone)", ""));
-			GetComponent<Player>().characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
-			Destroy(weaponPoint.transform.GetChild(0).gameObject);
-		}
+
 		CmdEquipWeapon(itemToEquip.ObjectSlug);
-		//EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{itemToEquip.ObjectSlug}"), weaponPoint.transform);
-		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
-		equippedWeapon.Stats = itemToEquip.Stats;
-		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
-		GetComponent<Player>().characterStats.AddStatBonus(itemToEquip.Stats);
+
 
 		
 		//NetworkServer.Spawn(EquippedWeapon);
@@ -76,9 +67,21 @@ public class PlayerWeaponController : NetworkBehaviour
 
 	public void ChangeEquippedWeapon(string oldSlug, string newSlug)
 	{
+		if (EquippedWeapon != null)
+		{
+			GetComponent<InventoryController>().GiveItem(EquippedWeapon.name.Replace("(Clone)", ""));
+			GetComponent<Player>().characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
+			Destroy(weaponPoint.transform.GetChild(0).gameObject);
+		}
 		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{newSlug}"), weaponPoint.transform);
+		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
+
+
+		equippedWeapon.Stats = GetComponent<ItemDatabase>().GetItem(newSlug).Stats;
+		GetComponent<Player>().characterStats.AddStatBonus(GetComponent<ItemDatabase>().GetItem(newSlug).Stats);
 	}
 
+	[Command]
 	public void CmdEquipWeapon(string slug)
 	{
 		EquippedWeaponSlug = slug;
