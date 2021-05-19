@@ -71,11 +71,11 @@ public class PlayerWeaponController : NetworkBehaviour
 		{
 			GetComponent<InventoryController>().GiveItem(EquippedWeapon.name.Replace("(Clone)", ""));
 			GetComponent<Player>().characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
-			//Destroy(weaponPoint.transform.GetChild(0).gameObject);
-			CmdServerUnpawnWeapon(weaponPoint.transform.GetChild(0).gameObject);
+			Destroy(transform.Find("WeaponPoint").GetChild(0).gameObject);
+			//CmdServerUnpawnWeapon(weaponPoint.transform.GetChild(0).gameObject);
 		}
-		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{newSlug}"), weaponPoint.transform);
-		CmdServerSpawnWeapon(EquippedWeapon);
+		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{newSlug}"), transform.Find("WeaponPoint"));
+		//CmdServerSpawnWeapon(EquippedWeapon);
 		Debug.Log("Syncvar Hook called.");
 		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
 
