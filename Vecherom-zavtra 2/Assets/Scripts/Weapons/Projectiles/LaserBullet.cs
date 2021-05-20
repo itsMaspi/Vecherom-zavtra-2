@@ -10,15 +10,12 @@ public class LaserBullet : NetworkBehaviour
 	public float Speed { get; set; }
 	public Vector3 Force { get; set; }
 
+	private Vector3 spawnPosition;
+
     public override void OnStartServer()
     {
 		Invoke(nameof(DestroySelf), Range);
     }
-
-	public LaserBullet(float Range, int Damage, float Speed, Vector3 Force)
-	{
-
-	}
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +53,7 @@ public class LaserBullet : NetworkBehaviour
 		//Remove();
 	}
 
-	//[Command(requiresAuthority = false)]
+	[Command(requiresAuthority = false)]
 	public void CmdLaserHit()
     {
 		GameObject hit = (GameObject)Instantiate(Resources.Load("Weapons/Projectiles/pistol_j_hit"), transform.position, transform.rotation);
@@ -79,20 +76,4 @@ public class LaserBullet : NetworkBehaviour
 		NetworkServer.UnSpawn(gameObject); // command?
 	}
 	*/
-}
-
-public static class CustomReadWriteFunctions
-{
-	public static void WriteLaserBullet(this NetworkWriter writer, LaserBullet value)
-	{
-		writer.WriteSingle(value.Range);
-		writer.WriteInt32(value.Damage);
-		writer.WriteSingle(value.Speed);
-		writer.WriteVector3(value.Force);
-	}
-
-	public static LaserBullet ReadLaserBullet(this NetworkReader reader)
-	{
-		return new LaserBullet(reader.ReadSingle(), reader.ReadInt32(), reader.ReadSingle(), reader.ReadVector3());
-	}
 }

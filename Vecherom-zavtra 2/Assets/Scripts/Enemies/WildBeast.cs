@@ -30,7 +30,6 @@ public class WildBeast : NetworkBehaviour, IEnemy
 		if (currentHealth <= 0)
 		{
 			Debug.Log($"CmdTakeDamage: Dead!");
-
 			NetworkServer.UnSpawn(gameObject);
 		}
 	}
@@ -38,7 +37,5 @@ public class WildBeast : NetworkBehaviour, IEnemy
 	public void OnChangedHealth(int oldHealth, int newHealth)
 	{
 		transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = newHealth.ToString();
-		if (newHealth <= 0)
-			Destroy(gameObject);
 	}
 }

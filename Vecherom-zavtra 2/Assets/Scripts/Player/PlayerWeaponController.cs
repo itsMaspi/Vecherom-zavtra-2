@@ -75,7 +75,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		EquippedWeaponSlug = slug;
 	}
 
-	/*[Command]
+	[Command]
 	public void CmdServerSpawnWeapon(GameObject Weapon)
 	{
 		NetworkServer.Spawn(Weapon);
@@ -85,7 +85,7 @@ public class PlayerWeaponController : NetworkBehaviour
 	public void CmdServerUnpawnWeapon(GameObject Weapon)
 	{
 		NetworkServer.UnSpawn(Weapon);
-	}*/
+	}
 
 
 	public void OnAttack(InputValue value)
@@ -104,15 +104,21 @@ public class PlayerWeaponController : NetworkBehaviour
 
 	}
 
-	public void TriggerWeaponShoot()
-	{
-		transform.Find("WeaponPoint").GetChild(0).GetComponent<Animator>().SetTrigger("Shoot");
-	}
-
 	[Command]
-	public void CmdShoot(GameObject bulletInstance)
+	public void CmdShoot()
 	{
+		//equippedWeapon.PerformAttack();
+		/*LaserBullet bulletInstance = Instantiate(Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet"), EquippedWeapon.transform.GetChild(0).position, EquippedWeapon.transform.GetChild(0).rotation);
+		bulletInstance.Force = transform.lossyScale.normalized;
+		bulletInstance.Speed = 300f;
+		bulletInstance.Damage = 5;
+		bulletInstance.Range = 20f;*/
+
+
+
+		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
 		NetworkServer.Spawn(bulletInstance);
+		//RpcShoot();
 	}
 
 	[Command]

@@ -31,28 +31,19 @@ public class Pistol : NetworkBehaviour, IWeapon, IProjectileWeapon
 
 	public GameObject CastProjectile()
 	{
-		LaserBullet bulletInstance = Instantiate<LaserBullet>(laserBullet, transform.GetChild(0).position, Quaternion.identity);
+		LaserBullet bulletInstance = Instantiate(laserBullet, transform.GetChild(0).position, Quaternion.identity);
 		bulletInstance.Force = transform.parent.parent.lossyScale.normalized;
 		bulletInstance.Speed = 300f;
-		bulletInstance.Damage = transform.GetComponentInParent<Player>().characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue();
+		if (isLocalPlayer)
+			bulletInstance.Damage = transform.GetComponentInParent<Player>().characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue();
 		bulletInstance.Range = 20f;
-		Debug.Log(bulletInstance.Damage);
-		CmdShoot(bulletInstance.gameObject);
 		return bulletInstance.gameObject;
 		//NetworkServer.Spawn(bulletInstance.gameObject);
 	}
 
 	public void Shoot()
     {
-		GameObject bullet = CastProjectile();
-		Debug.Log($"Pistol.cs Shoot: bullet = {bullet.GetComponent<LaserBullet>().Damage}");
-		transform.GetComponentInParent<PlayerWeaponController>().CmdShoot(bullet);
-	}
-
-	[Command(requiresAuthority = false)]
-	public void CmdShoot(GameObject bullet)
-	{
-		NetworkServer.Spawn(bullet.gameObject);
+		transform.GetComponentInParent<PlayerWeaponController>().CmdShoot();
 	}
 
 }
