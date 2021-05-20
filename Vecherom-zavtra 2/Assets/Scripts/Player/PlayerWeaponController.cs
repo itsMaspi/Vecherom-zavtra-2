@@ -105,7 +105,7 @@ public class PlayerWeaponController : NetworkBehaviour
 	}
 
 	[Command]
-	public void CmdShoot()
+	public void CmdShoot(int dmg)
 	{
 		//equippedWeapon.PerformAttack();
 		/*LaserBullet bulletInstance = Instantiate(Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet"), EquippedWeapon.transform.GetChild(0).position, EquippedWeapon.transform.GetChild(0).rotation);
@@ -114,9 +114,10 @@ public class PlayerWeaponController : NetworkBehaviour
 		bulletInstance.Damage = 5;
 		bulletInstance.Range = 20f;*/
 
-
+		Debug.Log(dmg);
 
 		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
+		bulletInstance.GetComponent<LaserBullet>().Damage = dmg;
 		NetworkServer.Spawn(bulletInstance);
 		//RpcShoot();
 	}
