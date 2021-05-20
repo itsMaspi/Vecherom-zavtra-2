@@ -29,15 +29,6 @@ public class Pistol : NetworkBehaviour, IWeapon, IProjectileWeapon
 		//animator.SetBool("isShooting", isShooting);
 	}
 
-	void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.tag == "Enemy")
-		{
-			Debug.Log($"Hit: {collision.name}");
-			collision.GetComponent<IEnemy>().TakeDamage(transform.GetComponentInParent<Player>().characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue());
-		}
-	}
-
 	public GameObject CastProjectile()
 	{
 		LaserBullet bulletInstance = Instantiate(laserBullet, transform.GetChild(0).position, Quaternion.identity);

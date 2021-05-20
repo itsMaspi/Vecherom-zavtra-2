@@ -3,6 +3,6 @@ using System.Collections.Generic;
 
 public interface IEnemy 
 {
-    void TakeDamage(int amount);
+    void CmdTakeDamage(int amount);
     void PerformAttack();
 }

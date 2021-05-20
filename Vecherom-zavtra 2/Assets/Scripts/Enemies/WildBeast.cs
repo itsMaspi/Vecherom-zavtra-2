@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class WildBeast : MonoBehaviour, IEnemy
+public class WildBeast : NetworkBehaviour, IEnemy
 {
-	public float currentHealth, power, toughness;
-	public float maxHealth;
+	[SyncVar(hook = nameof(OnChangedHealth))]
+	public int currentHealth;
+	public int maxHealth;
 
 	private CharacterStats characterStats;
 
-	void Start()
+	public override void OnStartServer()
 	{
+		base.OnStartServer();
 		characterStats = new CharacterStats(6, 2, 10);
 		currentHealth = maxHealth;
 	}
@@ -20,19 +23,19 @@ public class WildBeast : MonoBehaviour, IEnemy
 		throw new System.NotImplementedException();
 	}
 
-	public void TakeDamage(int amount)
+	public void CmdTakeDamage(int amount)
 	{
-		Debug.Log($"Ouch! -{amount}hp");
 		currentHealth -= amount;
-		transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = currentHealth.ToString();
-		if (currentHealth <= 0) 
+		Debug.Log($"CmdTakeDamage: Ouch! -{amount}hp");
+		if (currentHealth <= 0)
 		{
-			Die();
+			Debug.Log($"CmdTakeDamage: Dead!");
+			NetworkServer.UnSpawn(gameObject);
 		}
 	}
 
-	void Die()
+	public void OnChangedHealth(int oldHealth, int newHealth)
 	{
-		Destroy(gameObject);
+		transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = newHealth.ToString();
 	}
 }
