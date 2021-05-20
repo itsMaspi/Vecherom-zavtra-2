@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
+public class Pistol : NetworkBehaviour, IWeapon, IProjectileWeapon
 {
 	private Animator animator;
 	public List<BaseStat> Stats { get; set; }
@@ -43,7 +43,8 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		LaserBullet bulletInstance = Instantiate(laserBullet, transform.GetChild(0).position, Quaternion.identity);
 		bulletInstance.Force = transform.parent.parent.lossyScale.normalized;
 		bulletInstance.Speed = 300f;
-		bulletInstance.Damage = transform.GetComponentInParent<Player>().characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue();
+		if (isLocalPlayer)
+			bulletInstance.Damage = transform.GetComponentInParent<Player>().characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue();
 		bulletInstance.Range = 20f;
 		return bulletInstance.gameObject;
 		//NetworkServer.Spawn(bulletInstance.gameObject);

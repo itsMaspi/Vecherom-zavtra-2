@@ -82,7 +82,8 @@ public class PlayerWeaponController : NetworkBehaviour
 		{
 			Debug.Log("Player already has a weapon equipped!");
 			GetComponent<InventoryController>().GiveItem(itemToEquip);
-			GetComponent<Player>().characterStats.RemoveStatBonus(GetComponent<ItemDatabase>().GetItem(itemToEquip).Stats);
+			if (isLocalPlayer)
+				GetComponent<Player>().characterStats.RemoveStatBonus(GetComponent<ItemDatabase>().GetItem(itemToEquip).Stats);
 			Destroy(transform.Find("WeaponPoint").GetChild(0).gameObject);
 			//CmdServerUnpawnWeapon(weaponPoint.transform.GetChild(0).gameObject);
 			Debug.Log("Player weapon destroyed.");
