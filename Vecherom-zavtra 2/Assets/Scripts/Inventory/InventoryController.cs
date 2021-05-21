@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Mirror;
 
@@ -23,7 +22,6 @@ public class InventoryController : NetworkBehaviour
 		GiveItem("pistol_j");
 		GiveItem("pistol_b");
 		GiveItem("pistol_m");
-		GiveItem("potion_log");
 	}
 
 	void Start()

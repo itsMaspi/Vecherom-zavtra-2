@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Mirror;
 
 public class PlayerMovement : NetworkBehaviour
@@ -31,6 +30,7 @@ public class PlayerMovement : NetworkBehaviour
     void Update()
     {
         if (!isLocalPlayer) return;
+        if (PauseManager.pauseState == PauseState.Paused) return;
         if (joystick.Horizontal >= .2f)
         {
             horizontalMove = runSpeed;
@@ -75,31 +75,7 @@ public class PlayerMovement : NetworkBehaviour
         dash = false;
     }
 
-    public void OnMovement(InputValue value) // InputAction.CallbackContext context
-    {
-        //if (!isLocalPlayer) return;
-        //horizontalMove = context.ReadValue<float>() * runSpeed;
-        if (PauseManager.pauseState == PauseState.Paused) return;
-        horizontalMove = value.Get<float>() * runSpeed;
-    }
-
-    public void OnJump(InputValue value)
-    {
-        //if (!isLocalPlayer) return;
-        /*if (context.performed)
-        {
-            jump = context.ReadValue<float>() >= 0.2f;
-            animator.SetBool("isJumping", true);
-        }*/
-        if (PauseManager.pauseState == PauseState.Paused) return;
-        if (value.isPressed)
-		{
-            jump = true;
-            animator.SetBool("isJumping", true);
-        }
-    }
-
-    public void OnDash(InputValue value)
+    public void OnDash()
     {
         if (PauseManager.pauseState == PauseState.Paused) return;
         if (dashState == DashState.Ready)

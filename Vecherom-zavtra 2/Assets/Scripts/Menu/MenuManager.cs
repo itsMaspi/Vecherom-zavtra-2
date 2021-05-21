@@ -14,21 +14,9 @@ public class MenuManager : MonoBehaviour
 
 	void Start()
 	{
-		string path = Application.persistentDataPath + "/usr.vz";
-		if (File.Exists(path))
-		{
-			// If the user is logged in show the menu
-			menuPanel.SetActive(true);
-			optionsPanel.SetActive(false);
-			loginPanel.SetActive(false);
-		}
-		else
-		{
-			// If the user isn't logged in show the login panel
-			menuPanel.SetActive(false);
-			optionsPanel.SetActive(false);
-			loginPanel.SetActive(true);
-		}
+		menuPanel.SetActive(true);
+		optionsPanel.SetActive(false);
+		loginPanel.SetActive(false);
 	}
 
     public void Play()

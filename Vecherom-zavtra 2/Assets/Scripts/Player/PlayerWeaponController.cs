@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Mirror;
 
 public class PlayerWeaponController : NetworkBehaviour
@@ -88,7 +87,7 @@ public class PlayerWeaponController : NetworkBehaviour
 	}
 
 
-	public void OnAttack(InputValue value)
+	public void OnAttack()
 	{
 		if (!isLocalPlayer) return;
 		/*if (value.isPressed)
@@ -100,8 +99,22 @@ public class PlayerWeaponController : NetworkBehaviour
 		if (EquippedWeapon == null) return;
 
 		
-		GetComponent<Animator>().SetBool("isShooting", value.isPressed);
+		GetComponent<Animator>().SetBool("isShooting", true);
+	}
 
+	public void OnReleaseAttack()
+	{
+		if (!isLocalPlayer) return;
+		/*if (value.isPressed)
+		{
+			equippedWeapon.PerformAttack();
+		}*/
+		//equippedWeapon.PerformAttack(value.isPressed);
+		if (PauseManager.pauseState == PauseState.Paused) return;
+		if (EquippedWeapon == null) return;
+
+
+		GetComponent<Animator>().SetBool("isShooting", false);
 	}
 
 	[Command]

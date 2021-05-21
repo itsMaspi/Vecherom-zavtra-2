@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
-using UnityEngine.InputSystem;
 using System.IO;
 
 public class PlayerController : NetworkBehaviour
@@ -55,7 +54,6 @@ public class PlayerController : NetworkBehaviour
     {
         if (!isLocalPlayer)
 		{
-            GetComponent<PlayerInput>().enabled = false;
             transform.Find("HUD Canvas").gameObject.SetActive(false);
 		}
         
@@ -86,7 +84,7 @@ public class PlayerController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (!isLocalPlayer) return;
+        if (!isLocalPlayer) return;
     }
 
     void OnApplicationQuit()
@@ -104,41 +102,37 @@ public class PlayerController : NetworkBehaviour
         interactionIcon.SetActive(false);
     }
 
-    public void OnInteract(InputValue value)
+    public void OnInteract()
     {
         if (!isLocalPlayer) return;
         if (PauseManager.pauseState == PauseState.Paused) return;
-        if (value.isPressed)
-		{
-            if (dialogueSystem != null && dialogueSystem.GetComponent<DialogueManager>().dialoguePanel.activeSelf)
-            {
-                dialogueSystem.GetComponent<DialogueManager>().ContinueDialog();
-                return;
-            }
+        
+        if (dialogueSystem != null && dialogueSystem.GetComponent<DialogueManager>().dialoguePanel.activeSelf)
+        {
+            dialogueSystem.GetComponent<DialogueManager>().ContinueDialog();
+            return;
+        }
 
-            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
 
-            if (hits.Length > 0)
+        if (hits.Length > 0)
+        {
+            foreach (var rc in hits)
             {
-                foreach (var rc in hits)
+                if (rc.transform.GetComponent<Interactable>())
                 {
-                    if (rc.transform.GetComponent<Interactable>())
-                    {
-                        rc.transform.GetComponent<Interactable>().Interact();
-                        return;
-                    }
+                    rc.transform.GetComponent<Interactable>().Interact();
+                    return;
                 }
             }
         }
     }
 
-    public void OnPause(InputValue value)
+    public void OnPause()
 	{
         if (!isLocalPlayer) return;
-        if (value.isPressed)
-		{
-            PauseManager.instance.Toggle();
-		}
+
+        PauseManager.instance.Toggle();
 	}
 
     void ChangeNickname(string oldNick, string newNick)
