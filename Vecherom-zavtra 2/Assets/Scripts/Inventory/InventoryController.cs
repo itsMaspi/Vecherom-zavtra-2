@@ -33,6 +33,7 @@ public class InventoryController : NetworkBehaviour
 
 	public void GiveItem(string itemSlug)
 	{
+		if (!isLocalPlayer) return;
 		Item item = GetComponent<ItemDatabase>().GetItem(itemSlug);
 		playerItems.Add(item);
 		Debug.Log($"{playerItems.Count} items in inventory. Added: {itemSlug}");

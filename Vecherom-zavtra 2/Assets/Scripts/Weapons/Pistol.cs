@@ -29,23 +29,20 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		//animator.SetBool("isShooting", isShooting);
 	}
 
-	void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.tag == "Enemy")
-		{
-			Debug.Log($"Hit: {collision.name}");
-			collision.GetComponent<IEnemy>().TakeDamage(CharacterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue());
-		}
-	}
-
 	public GameObject CastProjectile()
 	{
-		LaserBullet bulletInstance = Instantiate(laserBullet, ProjectileSpawn.position, ProjectileSpawn.rotation);
+		LaserBullet bulletInstance = Instantiate(laserBullet, transform.GetChild(0).position, Quaternion.identity);
 		bulletInstance.Force = transform.parent.parent.lossyScale.normalized;
 		bulletInstance.Speed = 300f;
-		bulletInstance.Damage = CharacterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue();
+		//bulletInstance.Damage = transform.GetComponentInParent<Player>().characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue();
 		bulletInstance.Range = 20f;
 		return bulletInstance.gameObject;
 		//NetworkServer.Spawn(bulletInstance.gameObject);
 	}
+
+	public void Shoot()
+    {
+		transform.GetComponentInParent<PlayerWeaponController>().CmdShoot(transform.GetComponentInParent<Player>().characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue());
+	}
+
 }

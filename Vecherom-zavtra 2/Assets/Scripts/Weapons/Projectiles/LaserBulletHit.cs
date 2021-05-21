@@ -13,7 +13,7 @@ public class LaserBulletHit : NetworkBehaviour
     }
 
 
-    [Server]
+    [ServerCallback]
     void DestroySelf()
     {
         NetworkServer.Destroy(gameObject);

@@ -8,7 +8,7 @@ public class PlayerWeaponController : NetworkBehaviour
 {
 	public GameObject weaponPoint;
 
-	[SyncVar(hook = nameof(ChangeEquippedWeapon))]
+	[SyncVar(hook = nameof(OnChangeEquippedWeapon))]
 	public string EquippedWeaponSlug;
 	public GameObject EquippedWeapon;
 
@@ -25,63 +25,48 @@ public class PlayerWeaponController : NetworkBehaviour
 		
 		weaponPoint = transform.Find("WeaponPoint").gameObject;
 
-		//playerAnimator = GetComponent<Animator>();
-		/*Debug.Log(weaponPoint.transform.GetChild(0));
-		Debug.Log(weaponPoint.transform.GetChild(0).gameObject.name);
-		EquippedWeapon = weaponPoint.transform.GetChild(0).gameObject;
-		Debug.Log(EquippedWeapon.GetComponent<Animator>());
-		animator = EquippedWeapon.GetComponent<Animator>();
-
-		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
-		equippedWeapon.Stats = new List<BaseStat>();
-		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
-		characterStats.AddStatBonus(new List<BaseStat>());*/
 	}
 
-	/*void Start()
+	void Start()
 	{
-		characterStats = GetComponent<CharacterStats>();
 
-		weaponPoint = transform.Find("WeaponPoint").gameObject;
-		EquippedWeapon = weaponPoint.transform.GetChild(0).gameObject;
-		animator = EquippedWeapon.GetComponent<Animator>();
-
-		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
-		equippedWeapon.Stats = new List<BaseStat>();
-		//EquippedWeapon.transform.SetParent(weaponPoint.transform); necessari ?????
-		characterStats.AddStatBonus(new List<BaseStat>());
-	}*/
+	}
 
 	public void EquipWeapon(Item itemToEquip) // REFACTOR: EquipItem()
 	{
 		if (!isLocalPlayer) return;
+		Debug.Log("Method EquipWeapon called :)");
 
 		CmdEquipWeapon(itemToEquip.ObjectSlug);
 
+		Debug.Log("Command CmdEquipWeapon finished.");
 
-		
-		//NetworkServer.Spawn(EquippedWeapon);
-		//SpawnWeapon(EquippedWeapon);
-		//Debug.Log(characterStats.stats[1].GetCalculatedStatValue());
 	}
 
-	public void ChangeEquippedWeapon(string oldSlug, string newSlug)
+	public void OnChangeEquippedWeapon(string oldSlug, string newSlug)
 	{
-		if (EquippedWeapon != null)
+		StartCoroutine(ChangeEquippedWeapon(oldSlug, newSlug));
+	}
+
+	IEnumerator ChangeEquippedWeapon(string oldItem ,string itemToEquip)
+    {
+
+		if (transform.Find("WeaponPoint").childCount > 0)
 		{
-			GetComponent<InventoryController>().GiveItem(EquippedWeapon.name.Replace("(Clone)", ""));
-			GetComponent<Player>().characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
+			GetComponent<InventoryController>().GiveItem(oldItem);
+			if (isLocalPlayer)
+				GetComponent<Player>().characterStats.RemoveStatBonus(GetComponent<ItemDatabase>().GetItem(oldItem).Stats);
 			Destroy(transform.Find("WeaponPoint").GetChild(0).gameObject);
-			//CmdServerUnpawnWeapon(weaponPoint.transform.GetChild(0).gameObject);
+			yield return null;
 		}
-		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{newSlug}"), transform.Find("WeaponPoint"));
-		//CmdServerSpawnWeapon(EquippedWeapon);
-		Debug.Log("Syncvar Hook called.");
-		equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
 
+		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{itemToEquip}"), transform.Find("WeaponPoint"));
 
-		equippedWeapon.Stats = GetComponent<ItemDatabase>().GetItem(newSlug).Stats;
-		GetComponent<Player>().characterStats.AddStatBonus(GetComponent<ItemDatabase>().GetItem(newSlug).Stats);
+		if (isLocalPlayer)
+		{
+			EquippedWeapon.GetComponent<IWeapon>().Stats = GetComponent<ItemDatabase>().GetItem(itemToEquip).Stats;
+			GetComponent<Player>().characterStats.AddStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
+		}
 	}
 
 	[Command]
@@ -94,14 +79,12 @@ public class PlayerWeaponController : NetworkBehaviour
 	public void CmdServerSpawnWeapon(GameObject Weapon)
 	{
 		NetworkServer.Spawn(Weapon);
-
 	}
 
 	[Command]
 	public void CmdServerUnpawnWeapon(GameObject Weapon)
 	{
 		NetworkServer.UnSpawn(Weapon);
-
 	}
 
 
@@ -114,7 +97,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		}*/
 		//equippedWeapon.PerformAttack(value.isPressed);
 		if (PauseManager.pauseState == PauseState.Paused) return;
-		if (EquippedWeapon == null) return; 
+		if (EquippedWeapon == null) return;
 
 		
 		GetComponent<Animator>().SetBool("isShooting", value.isPressed);
@@ -122,7 +105,7 @@ public class PlayerWeaponController : NetworkBehaviour
 	}
 
 	[Command]
-	public void CmdShoot()
+	public void CmdShoot(int dmg)
 	{
 		//equippedWeapon.PerformAttack();
 		/*LaserBullet bulletInstance = Instantiate(Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet"), EquippedWeapon.transform.GetChild(0).position, EquippedWeapon.transform.GetChild(0).rotation);
@@ -131,10 +114,17 @@ public class PlayerWeaponController : NetworkBehaviour
 		bulletInstance.Damage = 5;
 		bulletInstance.Range = 20f;*/
 
-
+		Debug.Log(dmg);
 
 		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
+		bulletInstance.GetComponent<LaserBullet>().Damage = dmg;
 		NetworkServer.Spawn(bulletInstance);
+		//RpcShoot();
+	}
+
+	[Command]
+	public void CmdShootAnim()
+	{
 		RpcShoot();
 	}
 
