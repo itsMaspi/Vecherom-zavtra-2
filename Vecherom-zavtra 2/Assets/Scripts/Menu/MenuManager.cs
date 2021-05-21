@@ -14,9 +14,9 @@ public class MenuManager : MonoBehaviour
 
 	void Start()
 	{
-		menuPanel.SetActive(true);
-		optionsPanel.SetActive(false);
-		loginPanel.SetActive(false);
+		//menuPanel.SetActive(true);
+		//optionsPanel.SetActive(false);
+		//loginPanel.SetActive(false);
 	}
 
     public void Play()
