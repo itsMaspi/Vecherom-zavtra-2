@@ -176,7 +176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &19164654
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2451,7 +2451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -30.600006, y: 41.199997}
+  m_AnchoredPosition: {x: -30.599976, y: 41.19998}
   m_SizeDelta: {x: 243.4, y: 231.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &545402896
@@ -3722,6 +3722,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659491607}
   m_CullTransparentMesh: 1
+--- !u!114 &667733187 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8055973496839878039, guid: 05e456940b2758c438c5e93b10048fef, type: 3}
+  m_PrefabInstance: {fileID: 1842784638}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &669716200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4404,7 +4415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loginPanel: {fileID: 19164653}
   menuPanel: {fileID: 1933527388}
-  savePasswordToggle: {fileID: 0}
+  savePasswordToggle: {fileID: 667733187}
 --- !u!4 &762824609
 Transform:
   m_ObjectHideFlags: 0
@@ -7608,7 +7619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.32069612, y: 0}
   m_AnchorMax: {x: 1, y: 0.66811115}
-  m_AnchoredPosition: {x: 24.25, y: -0.22000122}
+  m_AnchoredPosition: {x: 24.25, y: -0.2199707}
   m_SizeDelta: {x: 50.539978, y: -0.44000244}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1606598584
@@ -9761,7 +9772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1933527389
 RectTransform:
   m_ObjectHideFlags: 0
