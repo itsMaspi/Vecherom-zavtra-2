@@ -1,6 +1,7 @@
 using Mirror;
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ChatBehavior : NetworkBehaviour
@@ -26,6 +27,13 @@ public class ChatBehavior : NetworkBehaviour
         GetComponent<PlayerController>().SetChatting(inputField.isFocused);
 	}
 
+    public void SetFocus()
+	{
+        var m_EventSystem = EventSystem.current;
+        m_EventSystem.SetSelectedGameObject(null);
+        m_EventSystem.SetSelectedGameObject(inputField.gameObject);
+	}
+
 	// Called when a client has exited the server
 	[ClientCallback]
     private void OnDestroy()
@@ -49,6 +57,7 @@ public class ChatBehavior : NetworkBehaviour
         if (string.IsNullOrWhiteSpace(inputField.text)) { return; }
         CmdSendMessage(Utils.GetUserNickname(), inputField.text);
         inputField.text = string.Empty;
+        SetFocus();
     }
 
     [Command]

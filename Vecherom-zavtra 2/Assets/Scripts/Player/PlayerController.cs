@@ -153,6 +153,7 @@ public class PlayerController : NetworkBehaviour
         if (value.isPressed)
         {
             chatPanel.SetActive(!chatPanel.activeSelf);
+            GetComponent<ChatBehavior>().SetFocus();
         }
     }
 
