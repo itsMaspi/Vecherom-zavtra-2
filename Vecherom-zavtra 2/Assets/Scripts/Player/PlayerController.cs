@@ -14,8 +14,11 @@ public class PlayerController : NetworkBehaviour
 
     public TMPro.TextMeshProUGUI nickText;
     public GameObject interactionIcon;
-    public GameObject dialogueSystem;
-    public GameObject virtualCamera;
+    [HideInInspector] public GameObject dialogueSystem;
+    [HideInInspector] public GameObject chatPanel;
+    [HideInInspector] public GameObject virtualCamera;
+
+    public bool isChatting = true;
 
     private Vector2 boxSize = new Vector2(1f, 1f);
 
@@ -31,6 +34,7 @@ public class PlayerController : NetworkBehaviour
         }
 
         dialogueSystem = GameObject.Find("DialogueSystem");
+        chatPanel = transform.Find("Chat").GetChild(0).gameObject;
 
         // Get the player nickname and apply the nickname
         string path = Application.persistentDataPath + "/usr.vz";
@@ -108,6 +112,7 @@ public class PlayerController : NetworkBehaviour
     {
         if (!isLocalPlayer) return;
         if (PauseManager.pauseState == PauseState.Paused) return;
+        if (isChatting) return;
         if (value.isPressed)
 		{
             if (dialogueSystem != null && dialogueSystem.GetComponent<DialogueManager>().dialoguePanel.activeSelf)
@@ -135,10 +140,26 @@ public class PlayerController : NetworkBehaviour
     public void OnPause(InputValue value)
 	{
         if (!isLocalPlayer) return;
+        if (isChatting) return;
         if (value.isPressed)
 		{
             PauseManager.instance.Toggle();
 		}
+	}
+
+    public void OnToggleChat(InputValue value)
+	{
+        if (!isLocalPlayer) return;
+        if (isChatting) return;
+        if (value.isPressed)
+        {
+            chatPanel.SetActive(!chatPanel.activeSelf);
+        }
+    }
+
+    public void SetChatting(bool isChatting)
+	{
+        this.isChatting = isChatting;
 	}
 
     void ChangeNickname(string oldNick, string newNick)

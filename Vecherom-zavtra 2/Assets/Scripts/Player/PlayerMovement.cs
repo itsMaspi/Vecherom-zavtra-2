@@ -56,6 +56,7 @@ public class PlayerMovement : NetworkBehaviour
         //if (!isLocalPlayer) return;
         //horizontalMove = context.ReadValue<float>() * runSpeed;
         if (PauseManager.pauseState == PauseState.Paused) return;
+        if (GetComponent<PlayerController>().isChatting) return;
         horizontalMove = value.Get<float>() * runSpeed;
     }
 
@@ -68,6 +69,7 @@ public class PlayerMovement : NetworkBehaviour
             animator.SetBool("isJumping", true);
         }*/
         if (PauseManager.pauseState == PauseState.Paused) return;
+        if (GetComponent<PlayerController>().isChatting) return;
         if (value.isPressed)
 		{
             jump = true;
@@ -78,6 +80,7 @@ public class PlayerMovement : NetworkBehaviour
     public void OnDash(InputValue value)
     {
         if (PauseManager.pauseState == PauseState.Paused) return;
+        if (GetComponent<PlayerController>().isChatting) return;
         if (dashState == DashState.Ready)
 		{
             dash = true;

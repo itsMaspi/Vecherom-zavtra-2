@@ -9,7 +9,7 @@ public class NPC : Interactable
 
 	public override void Interact()
 	{
-		Debug.Log("Interacted with NPC");
+		//Debug.Log("Interacted with NPC");
 		DialogueManager.Instance.AddNewDialogue(npcId, dialogueId);
 	}
 }

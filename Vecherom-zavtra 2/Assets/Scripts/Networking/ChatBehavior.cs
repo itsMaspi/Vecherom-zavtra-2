@@ -19,8 +19,15 @@ public class ChatBehavior : NetworkBehaviour
         OnMessage += HandleNewMessage;
     }
 
-    // Called when a client has exited the server
-    [ClientCallback]
+	void Update()
+	{
+        if (!isLocalPlayer) return;
+        //Debug.Log(inputField.isFocused);
+        GetComponent<PlayerController>().SetChatting(inputField.isFocused);
+	}
+
+	// Called when a client has exited the server
+	[ClientCallback]
     private void OnDestroy()
     {
         if (!hasAuthority) { return; }

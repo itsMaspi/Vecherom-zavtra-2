@@ -68,6 +68,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ToggleChat",
+                    "type": "Button",
+                    "id": "f87091d0-7acf-47e0-9626-fa9d4ed813e4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -211,6 +219,28 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "ToggleInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b23f6425-3076-470c-9cdd-087b94425c05",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ToggleChat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36b5c714-07b1-42f1-8ec5-4ef8fbc6eaa4",
+                    "path": "<Keyboard>/numpadEnter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ToggleChat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

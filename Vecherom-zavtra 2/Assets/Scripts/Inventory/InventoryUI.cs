@@ -27,6 +27,7 @@ public class InventoryUI : MonoBehaviour
     public void OnToggleInventory(InputValue value)
 	{
         if (PauseManager.pauseState == PauseState.Paused) return;
+        if (GetComponent<PlayerController>().isChatting) return;
         if (value.isPressed)
         {
             menuIsActive = !menuIsActive;
@@ -36,7 +37,7 @@ public class InventoryUI : MonoBehaviour
 
     public void ItemAdded(Item item)
 	{
-        Debug.Log($"InventoryUI.cs: ItemAdded({item.ObjectSlug})");
+        //Debug.Log($"InventoryUI.cs: ItemAdded({item.ObjectSlug})");
         InventoryUIItem emptyItem = Instantiate(itemContainer);
         emptyItem.SetItem(item);
         emptyItem.transform.SetParent(scrollViewContent);

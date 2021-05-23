@@ -81,6 +81,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToggleChat"",
+                    ""type"": ""Button"",
+                    ""id"": ""f87091d0-7acf-47e0-9626-fa9d4ed813e4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -226,6 +234,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""ToggleInventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b23f6425-3076-470c-9cdd-087b94425c05"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ToggleChat"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""36b5c714-07b1-42f1-8ec5-4ef8fbc6eaa4"",
+                    ""path"": ""<Keyboard>/numpadEnter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ToggleChat"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -254,6 +284,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_ToggleInventory = m_Player.FindAction("ToggleInventory", throwIfNotFound: true);
+        m_Player_ToggleChat = m_Player.FindAction("ToggleChat", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -311,6 +342,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_ToggleInventory;
+    private readonly InputAction m_Player_ToggleChat;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -323,6 +355,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @ToggleInventory => m_Wrapper.m_Player_ToggleInventory;
+        public InputAction @ToggleChat => m_Wrapper.m_Player_ToggleChat;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -356,6 +389,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @ToggleInventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInventory;
                 @ToggleInventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInventory;
                 @ToggleInventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInventory;
+                @ToggleChat.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleChat;
+                @ToggleChat.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleChat;
+                @ToggleChat.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleChat;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -384,6 +420,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @ToggleInventory.started += instance.OnToggleInventory;
                 @ToggleInventory.performed += instance.OnToggleInventory;
                 @ToggleInventory.canceled += instance.OnToggleInventory;
+                @ToggleChat.started += instance.OnToggleChat;
+                @ToggleChat.performed += instance.OnToggleChat;
+                @ToggleChat.canceled += instance.OnToggleChat;
             }
         }
     }
@@ -407,5 +446,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnToggleInventory(InputAction.CallbackContext context);
+        void OnToggleChat(InputAction.CallbackContext context);
     }
 }

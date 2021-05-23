@@ -20,7 +20,7 @@ public class EnemyController2D : NetworkBehaviour
 	private Vector3 m_Velocity = Vector3.zero;
 
 	public GameObject healthBar;
-	Transform targetPlayer;
+	[HideInInspector] public Transform targetPlayer;
 	[SerializeField] float aggroDistance = 30f;
 	[SerializeField] float jumpCooldown = 2f;
 	float jumpTime = 0f;
@@ -48,14 +48,18 @@ public class EnemyController2D : NetworkBehaviour
 	{
 		TrySwitchTarget();
 
-		if (targetPlayer.transform.position.x - transform.position.x > 0 && !m_FacingRight)
+		if (targetPlayer != null)
 		{
-			Flip();
+			if (targetPlayer.transform.position.x - transform.position.x > 0 && !m_FacingRight)
+			{
+				Flip();
+			}
+			else if (targetPlayer.transform.position.x - transform.position.x < 0 && m_FacingRight)
+			{
+				Flip();
+			}
 		}
-		else if (targetPlayer.transform.position.x - transform.position.x < 0 && m_FacingRight)
-		{
-			Flip();
-		}
+		
 	}
 
 	private void FixedUpdate()
@@ -165,8 +169,8 @@ public class EnemyController2D : NetworkBehaviour
 	}
 	private void FlipHealthBar()
 	{
-		Vector3 thePosition = healthBar.transform.localPosition;
-		thePosition.x *= -1;
-		healthBar.transform.localPosition = thePosition;
+		Vector3 theScale = healthBar.transform.localScale;
+		theScale.x *= -1;
+		healthBar.transform.localScale = theScale;
 	}
 }

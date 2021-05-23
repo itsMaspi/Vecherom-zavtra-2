@@ -35,11 +35,11 @@ public class PlayerWeaponController : NetworkBehaviour
 	public void EquipWeapon(Item itemToEquip) // REFACTOR: EquipItem()
 	{
 		if (!isLocalPlayer) return;
-		Debug.Log("Method EquipWeapon called :)");
+		//Debug.Log("Method EquipWeapon called :)");
 
 		CmdEquipWeapon(itemToEquip.ObjectSlug);
 
-		Debug.Log("Command CmdEquipWeapon finished.");
+		//Debug.Log("Command CmdEquipWeapon finished.");
 
 	}
 
@@ -114,7 +114,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		bulletInstance.Damage = 5;
 		bulletInstance.Range = 20f;*/
 
-		Debug.Log(dmg);
+		//Debug.Log(dmg);
 
 		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
 		bulletInstance.GetComponent<LaserBullet>().Damage = dmg;

@@ -21,11 +21,11 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 
 	public void PerformAttack()
 	{
-		Debug.Log("Attack performed");
+		//Debug.Log("Attack performed");
 
 		animator.SetTrigger("Shoot");
 
-		Debug.Log("Attack performed 2");
+		//Debug.Log("Attack performed 2");
 		//animator.SetBool("isShooting", isShooting);
 	}
 

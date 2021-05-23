@@ -8,14 +8,25 @@ public class WildBeast : NetworkBehaviour, IEnemy
 	[SyncVar(hook = nameof(OnChangedHealth))]
 	public int currentHealth;
 	public int maxHealth;
+	[SerializeField] float attackDistance = 5f;
 
 	private CharacterStats characterStats;
+	private EnemyController2D controller;
 
 	public override void OnStartServer()
 	{
 		base.OnStartServer();
 		characterStats = new CharacterStats(6, 2, 10);
 		currentHealth = maxHealth;
+		controller = GetComponent<EnemyController2D>();
+	}
+
+	void Update()
+	{
+		if (controller.targetPlayer != null && Vector3.Distance(controller.targetPlayer.position, transform.position) <= attackDistance)
+		{
+			PerformAttack();
+		}
 	}
 
 	public void PerformAttack()

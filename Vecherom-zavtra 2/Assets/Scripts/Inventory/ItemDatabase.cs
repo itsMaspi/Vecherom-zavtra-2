@@ -17,7 +17,7 @@ public class ItemDatabase : NetworkBehaviour
     private void BuildDatabase()
     {
         Items = JsonConvert.DeserializeObject<List<Item>>(Resources.Load<TextAsset>("JSON/Items").ToString());
-        Debug.Log(Items[2].ItemName + "'s " + Items[2].Stats[0].StatName + " is " + Items[2].Stats[0].GetCalculatedStatValue());
+        //Debug.Log(Items[2].ItemName + "'s " + Items[2].Stats[0].StatName + " is " + Items[2].Stats[0].GetCalculatedStatValue());
     }
 
     public Item GetItem(string itemSlug)
