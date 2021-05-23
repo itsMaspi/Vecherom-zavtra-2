@@ -9,7 +9,7 @@ public class EnemySpawnerController : NetworkBehaviour
 	{
 		base.OnStartServer();
 
-		Invoke(nameof(SpawnEnemy), 10f);
+		Invoke(nameof(SpawnEnemy), 3f);
 	}
 
 	// Update is called once per frame
@@ -20,7 +20,7 @@ public class EnemySpawnerController : NetworkBehaviour
 
 	void SpawnEnemy()
 	{
-		GameObject enemy = Instantiate(Resources.Load<GameObject>($"Enemies/WildBeast"), transform.position, transform.rotation);
+		GameObject enemy = Instantiate(Resources.Load<GameObject>($"Enemies/Maliwan/Soldier"), transform.position, transform.rotation);
 		NetworkServer.Spawn(enemy);
 	}
 }

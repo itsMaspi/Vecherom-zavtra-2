@@ -9,20 +9,20 @@ public class EnemyController2D : NetworkBehaviour
 {
 	[SerializeField] private float m_JumpForce = 100f;                          // Amount of force added when the player jumps.
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
-	[SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	private Rigidbody2D m_Rigidbody2D;
-	private bool m_FacingRight = false;  // For determining which way the player is currently facing.
+	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
 	public GameObject healthBar;
 	[HideInInspector] public Transform targetPlayer;
 	[SerializeField] float aggroDistance = 30f;
 	[SerializeField] float jumpCooldown = 2f;
+	[SerializeField] bool canJump = true;
 	float jumpTime = 0f;
 
 	[Header("Events")]
@@ -40,8 +40,10 @@ public class EnemyController2D : NetworkBehaviour
 	void Update()
 	{
 		TryMoveToPlayer();
-
-		TryJump();
+		if (canJump)
+		{
+			TryJump();
+		}
 	}
 
 	void LateUpdate()
@@ -128,33 +130,7 @@ public class EnemyController2D : NetworkBehaviour
 		}
 	}
 
-	public void Move(float move, bool jump, bool dash)
-	{
-		//only control the enemy if grounded or airControl is turned on
-		if (m_Grounded || m_AirControl)
-		{
-			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
-			// And then smoothing it out and applying it to the character
-			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
-			if (move > 0 && !m_FacingRight)
-			{
-				Flip();
-			}
-			else if (move < 0 && m_FacingRight)
-			{
-				Flip();
-			}
-		}
-		// If the enemy should jump...
-		if (jump)
-		{
-			// Add a vertical force to the player.
-			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce), ForceMode2D.Impulse);
-		}
-	}
 
 	private void Flip()
 	{
