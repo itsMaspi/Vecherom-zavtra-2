@@ -15,7 +15,7 @@ public class PlayerController : NetworkBehaviour
     public TMPro.TextMeshProUGUI nickText;
     public GameObject interactionIcon;
     [HideInInspector] public GameObject dialogueSystem;
-    [HideInInspector] public GameObject chatPanel;
+    public GameObject chatPanel;
     [HideInInspector] public GameObject virtualCamera;
 
     public bool isChatting = true;
@@ -34,7 +34,6 @@ public class PlayerController : NetworkBehaviour
         }
 
         dialogueSystem = GameObject.Find("DialogueSystem");
-        chatPanel = transform.Find("Chat").GetChild(0).gameObject;
 
         // Get the player nickname and apply the nickname
         string path = Application.persistentDataPath + "/usr.vz";
