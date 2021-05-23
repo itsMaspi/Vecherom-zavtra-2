@@ -9,6 +9,7 @@ public class WildBeast : NetworkBehaviour, IEnemy
 	public int currentHealth;
 	public int maxHealth;
 	[SerializeField] float attackDistance = 5f;
+	[SerializeField] private LayerMask whatCanDamage;
 
 	private CharacterStats characterStats;
 	private EnemyController2D controller;
@@ -32,7 +33,14 @@ public class WildBeast : NetworkBehaviour, IEnemy
 
 	public void PerformAttack()
 	{
-		throw new System.NotImplementedException();
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackDistance, whatCanDamage);
+		for (int i = 0; i < colliders.Length; i++)
+		{
+			if (colliders[i].tag == "Player")
+			{
+				colliders[i].GetComponent<Player>().TakeDamage(characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue());
+			}
+		}
 	}
 
 	public void CmdTakeDamage(int amount)
