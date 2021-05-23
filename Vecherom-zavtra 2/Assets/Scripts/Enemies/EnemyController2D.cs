@@ -24,6 +24,7 @@ public class EnemyController2D : NetworkBehaviour
 	[SerializeField] float jumpCooldown = 2f;
 	[SerializeField] bool canJump = true;
 	float jumpTime = 0f;
+	public bool canMove = true;
 
 	[Header("Events")]
 	[Space]
@@ -39,6 +40,7 @@ public class EnemyController2D : NetworkBehaviour
 	}
 	void Update()
 	{
+		if (!canMove) return;
 		TryMoveToPlayer();
 		if (canJump)
 		{

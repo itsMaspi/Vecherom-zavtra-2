@@ -14,17 +14,17 @@ public class Soldier : NetworkBehaviour, IEnemy
 	float attackTime = 0f;
 
 	public Animator animator;
+	public TMPro.TextMeshProUGUI healthBar;
 
 	private CharacterStats characterStats;
 	public EnemyController2D controller;
 
-	public override void OnStartServer()
+	public void Awake()
 	{
-		base.OnStartServer();
 		characterStats = new CharacterStats(6, 2, 10);
 		currentHealth = maxHealth;
-		//controller = GetComponent<EnemyController2D>();
-		//animator = GetComponent<Animator>();
+		controller = GetComponent<EnemyController2D>();
+		animator = GetComponent<Animator>();
 	}
 
 	void Update()
@@ -42,10 +42,12 @@ public class Soldier : NetworkBehaviour, IEnemy
 			{
 				//PerformAttack();
 				animator.SetBool("isAttacking", true);
+				controller.canMove = false;
 			}
 			else
 			{
 				animator.SetBool("isAttacking", false);
+				controller.canMove = true;
 			}
 		}
 	}
@@ -92,7 +94,7 @@ public class Soldier : NetworkBehaviour, IEnemy
 
 	public void OnChangedHealth(int oldHealth, int newHealth)
 	{
-		transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = newHealth.ToString();
+		healthBar.text = newHealth.ToString();
 		if (newHealth <= 0)
 			Destroy(gameObject);
 	}

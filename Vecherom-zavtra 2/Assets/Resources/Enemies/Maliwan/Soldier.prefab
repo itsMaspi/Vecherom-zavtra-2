@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  m_JumpForce: 0.1
+  m_JumpForce: 1
   m_MovementSmoothing: 0.05
   m_WhatIsGround:
     serializedVersion: 2
@@ -182,6 +182,7 @@ MonoBehaviour:
   aggroDistance: 30
   jumpCooldown: 1
   canJump: 0
+  canMove: 1
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -201,13 +202,14 @@ MonoBehaviour:
   syncInterval: 0.1
   currentHealth: 0
   maxHealth: 100
-  attackDistance: 5
+  attackDistance: 8.5
   whatCanDamage:
     serializedVersion: 2
     m_Bits: 8
   attackCooldown: 1
-  animator: {fileID: 5573356406776745373}
-  controller: {fileID: 5573356406776745349}
+  animator: {fileID: 0}
+  healthBar: {fileID: 5573356408429934491}
+  controller: {fileID: 0}
 --- !u!95 &5573356406776745373
 Animator:
   serializedVersion: 3
@@ -302,7 +304,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   clientAuthority: 0
-  animator: {fileID: 0}
+  animator: {fileID: 5573356406776745373}
 --- !u!1 &5573356407070365381
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +447,7 @@ GameObject:
   - component: {fileID: 5573356408429934484}
   - component: {fileID: 5573356408429934491}
   m_Layer: 5
-  m_Name: HealtBar
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
