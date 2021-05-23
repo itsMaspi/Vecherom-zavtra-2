@@ -39,6 +39,7 @@ public class WildBeast : NetworkBehaviour, IEnemy
 			if (colliders[i].tag == "Player")
 			{
 				colliders[i].GetComponent<Player>().TakeDamage(characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue());
+				Debug.Log($"DmgDealt = {characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue()}");
 			}
 		}
 	}
