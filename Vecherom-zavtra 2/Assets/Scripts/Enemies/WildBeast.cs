@@ -10,6 +10,8 @@ public class WildBeast : NetworkBehaviour, IEnemy
 	public int maxHealth;
 	[SerializeField] float attackDistance = 5f;
 	[SerializeField] private LayerMask whatCanDamage;
+	[SerializeField] float attackCooldown = 1f;
+	float attackTime = 0f;
 
 	private CharacterStats characterStats;
 	private EnemyController2D controller;
@@ -25,9 +27,11 @@ public class WildBeast : NetworkBehaviour, IEnemy
 	void Update()
 	{
 		if (!isServer) return;
+		attackTime += Time.deltaTime;
 		if (controller.targetPlayer != null && Vector3.Distance(controller.targetPlayer.position, transform.position) <= attackDistance)
 		{
-			PerformAttack();
+			if (attackTime >= attackCooldown)
+				PerformAttack();
 		}
 	}
 
@@ -42,6 +46,7 @@ public class WildBeast : NetworkBehaviour, IEnemy
 				Debug.Log($"DmgDealt = {characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue()}");
 			}
 		}
+		attackTime = 0;
 	}
 
 	public void CmdTakeDamage(int amount)
