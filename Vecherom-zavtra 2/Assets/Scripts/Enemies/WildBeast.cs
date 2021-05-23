@@ -23,6 +23,7 @@ public class WildBeast : NetworkBehaviour, IEnemy
 
 	void Update()
 	{
+		if (!isServer) return;
 		if (controller.targetPlayer != null && Vector3.Distance(controller.targetPlayer.position, transform.position) <= attackDistance)
 		{
 			PerformAttack();
