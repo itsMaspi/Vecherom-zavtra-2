@@ -91,12 +91,8 @@ public class PlayerWeaponController : NetworkBehaviour
 	public void OnAttack(InputValue value)
 	{
 		if (!isLocalPlayer) return;
-		/*if (value.isPressed)
-		{
-			equippedWeapon.PerformAttack();
-		}*/
-		//equippedWeapon.PerformAttack(value.isPressed);
 		if (PauseManager.pauseState == PauseState.Paused) return;
+		if (GetComponent<PlayerController>().isChatting) return;
 		if (EquippedWeapon == null) return;
 
 		
@@ -107,19 +103,9 @@ public class PlayerWeaponController : NetworkBehaviour
 	[Command]
 	public void CmdShoot(int dmg)
 	{
-		//equippedWeapon.PerformAttack();
-		/*LaserBullet bulletInstance = Instantiate(Resources.Load<LaserBullet>("Weapons/Projectiles/laser_bullet"), EquippedWeapon.transform.GetChild(0).position, EquippedWeapon.transform.GetChild(0).rotation);
-		bulletInstance.Force = transform.lossyScale.normalized;
-		bulletInstance.Speed = 300f;
-		bulletInstance.Damage = 5;
-		bulletInstance.Range = 20f;*/
-
-		//Debug.Log(dmg);
-
 		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
 		bulletInstance.GetComponent<LaserBullet>().Damage = dmg;
 		NetworkServer.Spawn(bulletInstance);
-		//RpcShoot();
 	}
 
 	[Command]
@@ -128,19 +114,9 @@ public class PlayerWeaponController : NetworkBehaviour
 		RpcShoot();
 	}
 
-	/* FER QUE EL PLAYER TINGUI UN CLIP DE DISPARAR AMB UN TRIGGER QUE CRIDI LA FUNCIO ShootAnim */
-
 	[ClientRpc]
 	public void RpcShoot()
 	{
-		weaponPoint.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Shoot"); //EquippedWeapon.GetComponent<Animator>()
-		//animator.SetTrigger("Shoot");
+		weaponPoint.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Shoot");
 	}
-
-	/*[Command]
-	public void ShootAnim()
-	{
-		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
-		NetworkServer.Spawn(bulletInstance);
-	}*/
 }

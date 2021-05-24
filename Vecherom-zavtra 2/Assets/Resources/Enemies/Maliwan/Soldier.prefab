@@ -201,13 +201,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  currentHealth: 0
-  maxHealth: 100
+  maxHealth: 40
   attackDistance: 11
+  attackCooldown: 1
   whatCanDamage:
     serializedVersion: 2
     m_Bits: 8
-  attackCooldown: 1
+  currentHealth: 0
   animator: {fileID: 0}
   healthBar: {fileID: 5573356408429934491}
   controller: {fileID: 0}

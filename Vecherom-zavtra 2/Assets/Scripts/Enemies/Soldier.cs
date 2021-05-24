@@ -5,19 +5,24 @@ using UnityEngine;
 
 public class Soldier : NetworkBehaviour, IEnemy
 {
-	[SyncVar(hook = nameof(OnChangedHealth))]
-	public int currentHealth;
+	[Header("Stats")]
 	public int maxHealth;
 	[SerializeField] float attackDistance = 5f;
-	[SerializeField] private LayerMask whatCanDamage;
 	[SerializeField] float attackCooldown = 1f;
 	float attackTime = 0f;
+	[SerializeField] private LayerMask whatCanDamage;
 
-	public Animator animator;
+	[Space]
+	[Header("Other")]
+
+	[SyncVar(hook = nameof(OnChangedHealth))]
+	[HideInInspector] public int currentHealth;
+
+	[HideInInspector] public Animator animator;
 	public TMPro.TextMeshProUGUI healthBar;
 
 	private CharacterStats characterStats;
-	public EnemyController2D controller;
+	[HideInInspector] public EnemyController2D controller;
 
 	public void Awake()
 	{
