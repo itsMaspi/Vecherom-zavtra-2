@@ -1,4 +1,3 @@
-using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +7,7 @@ public class SceneChanger : Interactable
 {
 	public string SceneName;
 
-	public override void Interact()
+	public override void Interact(GameObject gameObject)
 	{
 		SceneManager.LoadScene(SceneName);
 	}

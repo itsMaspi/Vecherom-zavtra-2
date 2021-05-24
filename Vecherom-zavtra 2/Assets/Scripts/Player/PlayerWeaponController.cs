@@ -48,6 +48,20 @@ public class PlayerWeaponController : NetworkBehaviour
 		StartCoroutine(ChangeEquippedWeapon(oldSlug, newSlug));
 	}
 
+	public void DropItem()
+	{
+		var itemSlug = GetComponent<InventoryUI>().inventoryPanel.Find("Inventory_Details").GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text;
+		CmdDropItem(itemSlug);
+	}
+
+	[Command]
+	public void CmdDropItem(string itemSlug)
+    {
+		GameObject weapon = Instantiate<GameObject>(Resources.Load<GameObject>($"Drops/{itemSlug}_drop"), transform.position, transform.rotation);
+
+		NetworkServer.Spawn(weapon);
+    }
+
 	IEnumerator ChangeEquippedWeapon(string oldItem ,string itemToEquip)
     {
 

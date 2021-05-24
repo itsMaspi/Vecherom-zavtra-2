@@ -22,8 +22,9 @@ public class InventoryController : NetworkBehaviour
 		playerItems = new List<Item>();
 		GiveItem("pistol_j");
 		GiveItem("pistol_b");
-		GiveItem("pistol_m");
-		GiveItem("potion_log");
+		
+		/*GiveItem("pistol_m");
+		GiveItem("potion_log");*/
 	}
 
 	void Start()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using Mirror;
+using System.Linq;
 
 public class ItemDatabase : NetworkBehaviour
 {
@@ -22,14 +23,19 @@ public class ItemDatabase : NetworkBehaviour
 
     public Item GetItem(string itemSlug)
     {
-        foreach(Item item in Items)
+        Debug.Log($"Item slug: {itemSlug}");
+        var item = Items.Where(x => x.ObjectSlug == itemSlug).FirstOrDefault();
+        /*foreach(Item item in Items)
         {
             if (item.ObjectSlug == itemSlug)
             {
                 return item;
             }
+        }*/
+        if (item == null)
+        {
+            Debug.LogWarning("Couldn't find the item " + itemSlug);
         }
-        Debug.LogWarning("Couldn't find the item " + itemSlug);
-        return null;
+        return item;
     }
 }

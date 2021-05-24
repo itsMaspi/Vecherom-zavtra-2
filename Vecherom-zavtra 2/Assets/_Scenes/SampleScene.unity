@@ -3496,6 +3496,7 @@ GameObject:
   - component: {fileID: 769365070}
   - component: {fileID: 769365069}
   - component: {fileID: 769365072}
+  - component: {fileID: 769365073}
   m_Layer: 3
   m_Name: NPC_test
   m_TagString: Untagged
@@ -3606,8 +3607,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119a2e56cb4a1d840b9d5d3bdf386c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   npcId: 1
   dialogueId: 2
+--- !u!114 &769365073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769365068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3496766765
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1 &830804242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4621,6 +4641,7 @@ MonoBehaviour:
   - {fileID: 9076313720314890045, guid: e4303232b2179cc428b774d0aa7d1bf1, type: 3}
   - {fileID: 6061377962765550610, guid: 9eb14e5c8a1a49b4a8b38f179d83fa43, type: 3}
   - {fileID: 5573356406776745348, guid: d47cdc865a241e44aa4dd0d26f402884, type: 3}
+  - {fileID: 1911283631773122519, guid: c1b58cfa4f70ad543a6c4ed8e3504ca2, type: 3}
 --- !u!4 &1570335820
 Transform:
   m_ObjectHideFlags: 0
