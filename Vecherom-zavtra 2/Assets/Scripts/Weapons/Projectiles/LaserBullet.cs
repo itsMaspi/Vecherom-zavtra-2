@@ -47,9 +47,9 @@ public class LaserBullet : NetworkBehaviour
 		{
 			Debug.Log($"Hit: {collision.name}");
 			collision.GetComponent<IEnemy>().CmdTakeDamage(Damage);
+			CmdLaserHit();
+			NetworkServer.Destroy(gameObject);
 		}
-		CmdLaserHit();
-		NetworkServer.Destroy(gameObject);
 		//Remove();
 	}
 

@@ -107,18 +107,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.7265748}
+  m_Offset: {x: -0.06781387, y: 0.9478256}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.165, y: 0.14}
-    oldSize: {x: 10.6, y: 2.2}
+    oldSize: {x: 13.25, y: 2.75}
     newSize: {x: 0.16, y: 0.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 1.4394519}
+  m_Size: {x: 1.9164658, y: 1.8819536}
   m_EdgeRadius: 0
 --- !u!50 &5573356406776745351
 Rigidbody2D:
@@ -154,8 +154,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.9027877, y: 0.7139636}
-  m_Size: {x: 7.9313974, y: 0.97392833}
+  m_Offset: {x: 6.0082884, y: 0.8521507}
+  m_Size: {x: 10.142402, y: 1.2503046}
   m_Direction: 1
 --- !u!114 &5573356406776745349
 MonoBehaviour:
@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  moveSpeed: 10
   m_JumpForce: 1
   m_MovementSmoothing: 0.05
   m_WhatIsGround:
@@ -202,7 +203,7 @@ MonoBehaviour:
   syncInterval: 0.1
   currentHealth: 0
   maxHealth: 100
-  attackDistance: 8.5
+  attackDistance: 11
   whatCanDamage:
     serializedVersion: 2
     m_Bits: 8
@@ -371,7 +372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.15, y: 2.43}
+  m_AnchoredPosition: {x: 0.15, y: 2.67}
   m_SizeDelta: {x: 3.4002, y: 0.9385}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5573356407107309547

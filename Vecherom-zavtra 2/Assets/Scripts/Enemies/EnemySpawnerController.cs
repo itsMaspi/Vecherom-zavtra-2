@@ -5,11 +5,12 @@ using Mirror;
 
 public class EnemySpawnerController : NetworkBehaviour
 {
+	public Transform[] SpawnPositions;
 	public override void OnStartServer()
 	{
 		base.OnStartServer();
 
-		Invoke(nameof(SpawnEnemy), 3f);
+		InvokeRepeating(nameof(SpawnEnemy), 3f, 5f);
 	}
 
 	// Update is called once per frame
@@ -20,7 +21,12 @@ public class EnemySpawnerController : NetworkBehaviour
 
 	void SpawnEnemy()
 	{
-		GameObject enemy = Instantiate(Resources.Load<GameObject>($"Enemies/Maliwan/Soldier"), transform.position, transform.rotation);
+		Transform spawnPos = transform;
+		if (SpawnPositions.Length > 0)
+		{
+			spawnPos = SpawnPositions[Random.Range(0, SpawnPositions.Length)];
+		}
+		GameObject enemy = Instantiate(Resources.Load<GameObject>($"Enemies/Maliwan/Soldier"), spawnPos.position, spawnPos.rotation);
 		NetworkServer.Spawn(enemy);
 	}
 }

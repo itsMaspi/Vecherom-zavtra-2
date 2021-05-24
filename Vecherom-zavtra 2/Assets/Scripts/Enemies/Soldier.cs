@@ -40,14 +40,11 @@ public class Soldier : NetworkBehaviour, IEnemy
         {
 			if (Vector3.Distance(controller.targetPlayer.position, transform.position) <= attackDistance)
 			{
-				//PerformAttack();
 				animator.SetBool("isAttacking", true);
-				controller.canMove = false;
 			}
 			else
 			{
 				animator.SetBool("isAttacking", false);
-				controller.canMove = true;
 			}
 		}
 	}
@@ -65,37 +62,28 @@ public class Soldier : NetworkBehaviour, IEnemy
     public void PerformAttack()
 	{
 
-
-
-		/*
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackDistance, whatCanDamage);
-		for (int i = 0; i < colliders.Length; i++)
-		{
-			if (colliders[i].tag == "Player")
-			{
-				colliders[i].GetComponent<Player>().TakeDamage(characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue());
-				Debug.Log($"DmgDealt = {characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue()}");
-			}
-		}
-		attackTime = 0;
-		*/
 	}
 
+	[Server]
 	public void CmdTakeDamage(int amount)
 	{
 		currentHealth -= amount;
-		Debug.Log($"CmdTakeDamage: Ouch! -{amount}hp");
+		animator.SetTrigger("Hit");
 		if (currentHealth <= 0)
 		{
-			Debug.Log($"CmdTakeDamage: Dead!");
-			NetworkServer.UnSpawn(gameObject);
+			currentHealth = 0;
+			animator.SetTrigger("Death");
 		}
 	}
 
 	public void OnChangedHealth(int oldHealth, int newHealth)
 	{
 		healthBar.text = newHealth.ToString();
-		if (newHealth <= 0)
-			Destroy(gameObject);
+	}
+
+	[Server]
+	public void CmdDie()
+	{
+		NetworkServer.Destroy(gameObject);
 	}
 }

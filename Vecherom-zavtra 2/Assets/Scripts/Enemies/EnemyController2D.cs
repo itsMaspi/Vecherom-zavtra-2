@@ -7,6 +7,7 @@ using System.Linq;
 
 public class EnemyController2D : NetworkBehaviour
 {
+	public float moveSpeed = 5f;
 	[SerializeField] private float m_JumpForce = 100f;                          // Amount of force added when the player jumps.
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
 	[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
@@ -16,10 +17,10 @@ public class EnemyController2D : NetworkBehaviour
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-	private Vector3 m_Velocity = Vector3.zero;
 
 	public GameObject healthBar;
 	[HideInInspector] public Transform targetPlayer;
+	private Animator animator;
 	[SerializeField] float aggroDistance = 30f;
 	[SerializeField] float jumpCooldown = 2f;
 	[SerializeField] bool canJump = true;
@@ -34,6 +35,7 @@ public class EnemyController2D : NetworkBehaviour
 	void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		animator = GetComponent<Animator>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -89,14 +91,14 @@ public class EnemyController2D : NetworkBehaviour
 	{
 		if (targetPlayer != null && Vector3.Distance(targetPlayer.position, transform.position) <= aggroDistance)
 		{
-			var targetPos = new Vector2(targetPlayer.position.x, transform.position.y);
-			transform.position = Vector2.MoveTowards(transform.position, targetPos, 2f * Time.deltaTime);
+			var direction = targetPlayer.position.x - transform.position.x;
+			var move = targetPlayer.position - transform.position;
+			move.y = m_Rigidbody2D.velocity.y;
+			move.Normalize();
+			
+			m_Rigidbody2D.MovePosition((Vector2)transform.position + ((Vector2) move * moveSpeed * Time.deltaTime));
 
-			//m_Rigidbody2D.MovePosition(targetPos);
-			// Move the character by finding the target velocity
-			//Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
-			// And then smoothing it out and applying it to the character
-			//m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+			animator.SetFloat("Movement", Mathf.Abs(direction));
 		}
 	}
 
@@ -108,7 +110,7 @@ public class EnemyController2D : NetworkBehaviour
 			targetPlayer = players[0].transform;
 			foreach (var player in players)
 			{
-				// If a player is nearer than the target, switch to it
+				// If a player is nearer than the current target, switch to it
 				if (Vector3.Distance(player.transform.position, transform.position) < Vector3.Distance(targetPlayer.position, transform.position))
 					targetPlayer = player.transform;
 			}
