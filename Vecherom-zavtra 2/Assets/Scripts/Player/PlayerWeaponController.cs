@@ -50,17 +50,20 @@ public class PlayerWeaponController : NetworkBehaviour
 
 	public void DropItem()
 	{
-		var itemSlug = GetComponent<InventoryUI>().inventoryPanel.Find("Inventory_Details").GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text;
-		CmdDropItem(itemSlug);
+		//var itemSlug = GetComponent<InventoryUI>().inventoryPanel.Find("Inventory_Details").GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text;
+		var itemSlug = GetComponent<InventoryUI>().inventoryPanel.Find("Inventory_Details").GetComponent<InventoryUIDetails>().GetItem().ObjectSlug;
+		CmdDropItem(itemSlug, transform.position);
+		GetComponent<InventoryController>().RemoveItem(itemSlug);
+		GetComponent<InventoryUI>().inventoryPanel.Find("Inventory_Details").GetComponent<InventoryUIDetails>().DestroySelectedItem();
 	}
 
 	[Command]
-	public void CmdDropItem(string itemSlug)
+	public void CmdDropItem(string itemSlug, Vector3 position)
     {
-		GameObject weapon = Instantiate<GameObject>(Resources.Load<GameObject>($"Drops/{itemSlug}_drop"), transform.position, transform.rotation);
-
+		Vector3 pos = new Vector3(position.x + 1f, position.y);
+		GameObject weapon = Instantiate(Resources.Load<GameObject>($"Drops/{itemSlug}_drop"), pos, transform.rotation);
 		NetworkServer.Spawn(weapon);
-    }
+	}
 
 	IEnumerator ChangeEquippedWeapon(string oldItem ,string itemToEquip)
     {

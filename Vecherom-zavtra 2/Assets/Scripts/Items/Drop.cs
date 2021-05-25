@@ -13,7 +13,7 @@ public class Drop : Interactable
         CmdDestroySelf();
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     public void CmdDestroySelf()
     {
         NetworkServer.Destroy(gameObject);

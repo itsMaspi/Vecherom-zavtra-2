@@ -41,6 +41,14 @@ public class InventoryController : NetworkBehaviour
 		UIEventHandler.ItemAddedToInventory(item);
 	}
 
+	public void RemoveItem(string itemSlug)
+	{
+		if (!isLocalPlayer) return;
+		Item item = GetComponent<ItemDatabase>().GetItem(itemSlug);
+		if (playerItems.Remove(item))
+			Debug.Log($"{playerItems.Count} items in inventory. Removed: {itemSlug}");
+	}
+
 	public void SetItemDetails(Item item, Button selectedButton)
 	{
 		inventoryDetailsPanel.SetItem(item, selectedButton);

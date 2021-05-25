@@ -10,7 +10,7 @@ public class EnemySpawnerController : NetworkBehaviour
 	{
 		base.OnStartServer();
 
-		InvokeRepeating(nameof(SpawnEnemy), 3f, 5f);
+		//InvokeRepeating(nameof(SpawnEnemy), 3f, 5f);
 	}
 
 	// Update is called once per frame
