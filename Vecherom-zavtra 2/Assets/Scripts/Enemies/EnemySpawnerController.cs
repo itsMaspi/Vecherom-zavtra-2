@@ -10,6 +10,8 @@ public class EnemySpawnerController : NetworkBehaviour
 	{
 		base.OnStartServer();
 
+		Invoke(nameof(SpawnEnemy), 2f);
+
 		//InvokeRepeating(nameof(SpawnEnemy), 3f, 5f);
 	}
 
@@ -26,7 +28,7 @@ public class EnemySpawnerController : NetworkBehaviour
 		{
 			spawnPos = SpawnPositions[Random.Range(0, SpawnPositions.Length)];
 		}
-		GameObject enemy = Instantiate(Resources.Load<GameObject>($"Enemies/Maliwan/Soldier"), spawnPos.position, spawnPos.rotation);
+		GameObject enemy = Instantiate(Resources.Load<GameObject>($"Bosses/Fire_Worm"), spawnPos.position, spawnPos.rotation);
 		NetworkServer.Spawn(enemy);
 	}
 }

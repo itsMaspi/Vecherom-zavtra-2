@@ -20,8 +20,8 @@ public class LaserBullet : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
 	{
-
-		GetComponent<Rigidbody2D>().AddForce(Force * Speed); // el fill no es mou, transform.right sempre es positiu
+		Vector3 f = new Vector3(Force.x, 0f, Force.z);
+		GetComponent<Rigidbody2D>().AddForce(f * Speed); // el fill no es mou, transform.right sempre es positiu
 		//spawnPosition = transform.position;
 		//Debug.Log(Force * Speed);
     }
