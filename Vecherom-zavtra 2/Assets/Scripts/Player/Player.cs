@@ -28,10 +28,21 @@ public class Player : NetworkBehaviour
     public void TakeDamage(int ammount)
 	{
         currentHealth -= ammount;
+        if (currentHealth <= 0)
+		{
+            currentHealth = 0;
+            GetComponent<Animator>().SetTrigger("Death");
+		}
 	}
 
     public void OnChangedHealth(int oldHealth, int newHealth)
 	{
         healthSlider.value = newHealth;
+	}
+
+    [Command]
+    public void CmdDestroySelf()
+	{
+        Destroy(gameObject);
 	}
 }
