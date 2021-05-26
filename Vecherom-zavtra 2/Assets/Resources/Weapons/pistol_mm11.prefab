@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4074994630138460666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.639, y: 0.194, z: 0}
+  m_LocalPosition: {x: 0.613, y: -0.086, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6061377962765550609}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1581981889607364066}
   - component: {fileID: 6154300400857078550}
   m_Layer: 3
-  m_Name: pistol_m
+  m_Name: pistol_mm11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3669b0e56a3314a49a2954520c788935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletName: proj1
 --- !u!82 &8628910343341428224
 AudioSource:
   m_ObjectHideFlags: 0

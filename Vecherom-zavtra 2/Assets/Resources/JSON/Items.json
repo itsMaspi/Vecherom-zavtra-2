@@ -42,7 +42,7 @@
   {
     "objectSlug": "pistol_mm11",
     "itemName": "M.M. 11",
-    "description": "A regular Maliwan manufactured pistol",
+    "description": "A simple Maliwan manufactured pistol",
     "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
@@ -82,7 +82,7 @@
   {
     "objectSlug": "pistol_glp",
     "itemName": "GLP",
-    "description": "A strangely crafted pistol. Who knows where the bandits got it from...",
+    "description": "A regular pistol. I'ts green :)",
     "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
@@ -122,7 +122,7 @@
   {
     "objectSlug": "pistol_nsm",
     "itemName": "N.S.M.",
-    "description": "<<To be edited>>",
+    "description": "A silenced pistol with high speed and accuracy.",
     "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
@@ -162,7 +162,7 @@
   {
     "objectSlug": "pistol_jbp6",
     "itemName": "JB-P6",
-    "description": "<<To be edited>>",
+    "description": "The 2.0 version of the Jakob's pistol; a burst firing terror.",
     "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
@@ -202,7 +202,7 @@
   {
     "objectSlug": "pistol_handcannon",
     "itemName": "Hand cannon",
-    "description": "<<To be edited>>",
+    "description": "High power and good precision. The opus magnum of pistols.",
     "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
@@ -242,7 +242,7 @@
   {
     "objectSlug": "pistol_iteap70",
     "itemName": "ITE-AP 70",
-    "description": "<<To be edited>>",
+    "description": "Melt enemies at the cost of your fingers!",
     "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
