@@ -19,7 +19,6 @@ public class Boss_Death_anim : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //animator.GetComponentInParent<EnemyController2D>().canMove = false;
         animator.GetComponentInParent<EnemyController2D>().enabled = false;
         animator.GetComponentInParent<Rigidbody2D>().simulated = false;
         animator.GetComponentInParent<FireWorm>().enabled = false;
@@ -29,6 +28,5 @@ public class Boss_Death_anim : StateMachineBehaviour
         {
             collider.enabled = false;
         }
-        animator.enabled = false;
     }
 }
