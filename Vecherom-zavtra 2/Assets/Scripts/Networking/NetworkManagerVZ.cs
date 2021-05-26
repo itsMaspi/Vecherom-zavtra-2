@@ -38,7 +38,7 @@ public class NetworkManagerVZ : NetworkManager
 			return;
 		}
 
-		if (SceneManager.GetActiveScene().name != menuScene)
+		if ($"Assets/_Scenes/{SceneManager.GetActiveScene().name}.unity" != menuScene)
 		{
 			conn.Disconnect();
 			return;
@@ -47,7 +47,7 @@ public class NetworkManagerVZ : NetworkManager
 
 	public override void OnServerAddPlayer(NetworkConnection conn)
 	{
-		if (SceneManager.GetActiveScene().name == menuScene)
+		if ($"Assets/_Scenes/{SceneManager.GetActiveScene().name}.unity" == menuScene)
 		{
 			NetworkRoomPlayerVZ roomPlayerInstance = Instantiate(roomPlayerPrefab);
 
