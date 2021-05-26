@@ -45,4 +45,9 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		transform.GetComponentInParent<PlayerWeaponController>().CmdShoot(transform.GetComponentInParent<Player>().characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue());
 	}
 
+	public void StopShoot()
+	{
+		transform.parent.parent.GetComponent<Animator>().SetBool("isShooting", false);
+	}
+
 }

@@ -112,9 +112,11 @@ public class PlayerWeaponController : NetworkBehaviour
 		if (GetComponent<PlayerController>().isChatting) return;
 		if (EquippedWeapon == null) return;
 
-		
-		GetComponent<Animator>().SetBool("isShooting", value.isPressed);
 
+		if (value.isPressed)
+		{
+			GetComponent<Animator>().SetBool("isShooting", true);
+		}
 	}
 
 	[Command]
