@@ -19,7 +19,7 @@ public class WildBeast : NetworkBehaviour, IEnemy
 	public override void OnStartServer()
 	{
 		base.OnStartServer();
-		characterStats = new CharacterStats(6, 2, 10);
+		characterStats = new CharacterStats(6, 2, 10, 0, 0, 0);
 		currentHealth = maxHealth;
 		controller = GetComponent<EnemyController2D>();
 	}

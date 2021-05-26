@@ -15,16 +15,24 @@ public class InventoryController : NetworkBehaviour
 
 	public Item pistol;
 	public Item PotionLog;
-
+	public string[] initialItems;
 
 	public override void OnStartLocalPlayer()
 	{
+
 		playerItems = new List<Item>();
-		GiveItem("pistol_j");
-		GiveItem("pistol_b");
 		
-		/*GiveItem("pistol_m");
-		GiveItem("potion_log");*/
+		foreach (string item in initialItems)
+        {
+			GiveItem(item);
+		}
+
+		/*
+		GiveItem("pistol_jmp1");
+		GiveItem("pistol_b");
+		GiveItem("pistol_m");
+		GiveItem("potion_log");
+		*/
 	}
 
 	void Start()

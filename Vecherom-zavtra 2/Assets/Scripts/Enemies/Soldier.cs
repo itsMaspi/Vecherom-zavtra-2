@@ -26,7 +26,7 @@ public class Soldier : NetworkBehaviour, IEnemy
 
 	public void Awake()
 	{
-		characterStats = new CharacterStats(6, 2, 10);
+		characterStats = new CharacterStats(6, 2, 10, 0, 0, 0);
 		currentHealth = maxHealth;
 		controller = GetComponent<EnemyController2D>();
 		animator = GetComponent<Animator>();

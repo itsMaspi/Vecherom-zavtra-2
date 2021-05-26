@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IConsumable 
 {
-    void Consume();
+    void Consume(GameObject gameObject);
     void Consume(CharacterStats stats);
 }

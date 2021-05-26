@@ -9,6 +9,9 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 	public List<BaseStat> Stats { get; set; }
 	public CharacterStats CharacterStats { get; set; }
 	public Transform ProjectileSpawn { get; set; }
+
+	public string bulletName;
+
 	LaserBullet laserBullet;
 
 	void Start()
@@ -16,7 +19,7 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 		animator = GetComponent<Animator>();
 		CharacterStats = transform.parent.parent.GetComponent<Player>().characterStats;
 		ProjectileSpawn = transform.GetChild(0);
-		laserBullet = Resources.Load<LaserBullet>("Weapons/Projectiles/pistol_j_bullet");
+		laserBullet = Resources.Load<LaserBullet>($"Weapons/Projectiles/{bulletName}");
 	}
 
 	public void PerformAttack()
@@ -32,10 +35,12 @@ public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
 	public GameObject CastProjectile()
 	{
 		LaserBullet bulletInstance = Instantiate(laserBullet, transform.GetChild(0).position, Quaternion.identity);
+		
+		//Spread
 		bulletInstance.Force = transform.parent.parent.lossyScale.normalized;
-		bulletInstance.Speed = 300f;
+		bulletInstance.Speed = Stats.Find(x => x.StatType == BaseStat.BaseStatType.Speed).BaseValue;
 		//bulletInstance.Damage = transform.GetComponentInParent<Player>().characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue();
-		bulletInstance.Range = 20f;
+		bulletInstance.Range = Stats.Find(x => x.StatType == BaseStat.BaseStatType.Range).BaseValue;
 		return bulletInstance.gameObject;
 		//NetworkServer.Spawn(bulletInstance.gameObject);
 	}

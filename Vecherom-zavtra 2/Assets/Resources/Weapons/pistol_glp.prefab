@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823170685251908233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.646, y: 0.023, z: 0}
+  m_LocalPosition: {x: 0.804, y: -0.078, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8493271260184907618}
@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 2398862842197576007}
   - component: {fileID: 6197078637642106227}
   - component: {fileID: 3681525526672753069}
-  - component: {fileID: 8307769975581387543}
+  - component: {fileID: 3867327190820599913}
   m_Layer: 3
-  m_Name: pistol_b
+  m_Name: pistol_glp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,12 +106,12 @@ SpriteRenderer:
   m_SortingLayerID: -1577881949
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9292db24091d1784bafa774066d26470, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d8d98b9b8dbe2844dbf686448d586376, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3669b0e56a3314a49a2954520c788935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletName: proj1
 --- !u!82 &6197078637642106227
 AudioSource:
   m_ObjectHideFlags: 0
@@ -242,7 +243,7 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 
   hasSpawned: 0
---- !u!95 &8307769975581387543
+--- !u!95 &3867327190820599913
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -252,7 +253,7 @@ Animator:
   m_GameObject: {fileID: 8493271260184907617}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 63b10235841752a40a5795dd6d9489c4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 074bf89d0c574d942ac8e76f676eb005, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

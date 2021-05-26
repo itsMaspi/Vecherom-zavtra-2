@@ -56,7 +56,7 @@ public class LaserBullet : NetworkBehaviour
 	[Command(requiresAuthority = false)]
 	public void CmdLaserHit()
     {
-		GameObject hit = (GameObject)Instantiate(Resources.Load("Weapons/Projectiles/pistol_j_hit"), transform.position, transform.rotation);
+		GameObject hit = (GameObject)Instantiate(Resources.Load("Weapons/Projectiles/proj1_hit"), transform.position, transform.rotation);
 
 
 		Vector3 theScale = hit.transform.localScale;

@@ -14,4 +14,9 @@ public class PotionLog : MonoBehaviour, IConsumable
 	{
 		Debug.Log("Potion logged (stats)");
 	}
+
+    public void Consume(GameObject gameObject)
+    {
+		gameObject.GetComponent<Player>().CmdHeal(50);
+    }
 }

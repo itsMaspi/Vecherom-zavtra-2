@@ -1,7 +1,7 @@
 [
   {
-    "objectSlug": "pistol_j",
-    "itemName": "JK 11",
+    "objectSlug": "pistol_jmp1",
+    "itemName": "JM-P1",
     "description": "A standard Jakob's pistol",
     "itemType": "Weapon",
     "actionName": "Equip",
@@ -21,12 +21,27 @@
         "StatType": "Critic",
         "baseValue": 15,
         "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 200,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 5,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 10,
+        "statName": "Weapon accuracy"
       }
     ]
   },
   {
-    "objectSlug": "pistol_m",
-    "itemName": "MM18",
+    "objectSlug": "pistol_mm11",
+    "itemName": "M.M. 11",
     "description": "A regular Maliwan manufactured pistol",
     "itemType": "Weapon",
     "actionName": "Equip",
@@ -46,12 +61,27 @@
         "StatType": "Critic",
         "baseValue": 10,
         "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 220,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 4,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 5,
+        "statName": "Weapon accuracy"
       }
     ]
   },
   {
-    "objectSlug": "pistol_b",
-    "itemName": "Glock 17",
+    "objectSlug": "pistol_glp",
+    "itemName": "GLP",
     "description": "A strangely crafted pistol. Who knows where the bandits got it from...",
     "itemType": "Weapon",
     "actionName": "Equip",
@@ -59,25 +89,518 @@
     "stats": [
       {
         "StatType": "Damage",
-        "baseValue": 8,
+        "baseValue": 6,
         "statName": "Damage"
       },
       {
         "StatType": "AttackSpeed",
-        "baseValue": 8,
+        "baseValue": 6,
         "statName": "Fire rate"
       },
       {
         "StatType": "Critic",
-        "baseValue": 10,
+        "baseValue": 5,
         "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 260,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 5,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 5,
+        "statName": "Weapon accuracy"
       }
     ]
   },
   {
+    "objectSlug": "pistol_nsm",
+    "itemName": "N.S.M.",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 14,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "pistol_jbp6",
+    "itemName": "JB-P6",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 15,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "pistol_handcannon",
+    "itemName": "Hand cannon",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 15,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "pistol_iteap70",
+    "itemName": "ITE-AP 70",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 15,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "smg_rusty",
+    "itemName": "Rusty SMG",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 15,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "smg_m1",
+    "itemName": "SMG M. I",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 15,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "smg_d9972f",
+    "itemName": "#D99-72F",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 15,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "smg_j",
+    "itemName": "SMG J.",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 15,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "smg_m2",
+    "itemName": "SMG M. II",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 15,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "smg_m3",
+    "itemName": "SMG M. III",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 15,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "smg_sweptgone",
+    "itemName": "Swept gone",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 15,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 6,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 25,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 6,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 3,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+
+
+
+
+
+  {
     "objectSlug": "potion_log",
     "itemName": "Potion log",
     "description": "9hkas hsdk a9a0s ",
+    "itemType": "Consumable",
+    "actionName": "Drink",
+    "itemModifier": 0,
+    "stats": [
+
+    ]
+  },
+  {
+    "objectSlug": "potion_healthsmall",
+    "itemName": "Small health potion",
+    "description": "<< To be Edited>>",
+    "itemType": "Consumable",
+    "actionName": "Drink",
+    "itemModifier": 0,
+    "stats": [
+
+    ]
+  },
+  {
+    "objectSlug": "potion_healthmedium",
+    "itemName": "Medium health potion",
+    "description": "<< To be Edited>>",
+    "itemType": "Consumable",
+    "actionName": "Drink",
+    "itemModifier": 0,
+    "stats": [
+
+    ]
+  },
+  {
+    "objectSlug": "potion_healthbig",
+    "itemName": "Big health potion",
+    "description": "<< To be Edited>>",
     "itemType": "Consumable",
     "actionName": "Drink",
     "itemModifier": 0,

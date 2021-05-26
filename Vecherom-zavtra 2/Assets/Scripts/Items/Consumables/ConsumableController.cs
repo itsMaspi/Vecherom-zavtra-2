@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class ConsumableController : MonoBehaviour
+public class ConsumableController : NetworkBehaviour
 {
     CharacterStats stats;
 
@@ -21,7 +22,7 @@ public class ConsumableController : MonoBehaviour
 		}
 		else
 		{
-            itemToSpawn.GetComponent<IConsumable>().Consume();
+            itemToSpawn.GetComponent<IConsumable>().Consume(gameObject);
         }
     }
 

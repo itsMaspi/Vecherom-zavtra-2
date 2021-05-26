@@ -20,7 +20,7 @@ public class Player : NetworkBehaviour
 
     public override void OnStartLocalPlayer()
 	{
-		characterStats = new CharacterStats(10, 10, 10);
+		characterStats = new CharacterStats(10, 10, 10, 0, 0, 0);
         healthSlider.maxValue = maxHealth;
 	}
 
@@ -34,6 +34,16 @@ public class Player : NetworkBehaviour
             GetComponent<Animator>().SetTrigger("Death");
 		}
 	}
+
+    [Command]
+    public void CmdHeal(int ammount)
+    {
+        currentHealth += ammount;
+        if (currentHealth >= 100)
+        {
+            currentHealth = 100;
+        }
+    }
 
     public void OnChangedHealth(int oldHealth, int newHealth)
 	{
