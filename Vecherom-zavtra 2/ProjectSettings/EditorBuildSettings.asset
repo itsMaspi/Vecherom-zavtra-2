@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/_Lobby.unity
     guid: b2a34268ae00922418d4c6537f055cb5
   - enabled: 1
+    path: Assets/_Scenes/Desert.unity
+    guid: 47ca260d60a16b9489a3d3b7fe88737a
+  - enabled: 1
     path: Assets/_Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
