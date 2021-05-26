@@ -54,6 +54,8 @@ public class LoginController : MonoBehaviour
                 w.Write(name);
             }
 
+            PlayerNameInput.DisplayName = name;
+
             // Write user login info
             SaveUserLoginInfo(name, pass, savePassword);
 
