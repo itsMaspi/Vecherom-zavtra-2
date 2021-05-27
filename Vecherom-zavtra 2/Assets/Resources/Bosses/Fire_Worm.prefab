@@ -196,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 7375615903792656101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 41.05, y: -6.01, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 7375615904475510868}
   - {fileID: 7375615903384972699}
@@ -378,7 +378,7 @@ MonoBehaviour:
   passiveAttackRange: 8
   attackCooldown: 5
   attackSpeed: 500
-  damage: 40
+  damage: 30
   projectileSlug: Fireball
   firePoint: {fileID: 1912925194894468600}
   whatCanDamage:

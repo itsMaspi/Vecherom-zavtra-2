@@ -209,7 +209,7 @@
     "stats": [
       {
         "StatType": "Damage",
-        "baseValue": 15,
+        "baseValue": 250,
         "statName": "Damage"
       },
       {

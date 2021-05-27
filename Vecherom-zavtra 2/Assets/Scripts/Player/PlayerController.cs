@@ -68,6 +68,15 @@ public class PlayerController : NetworkBehaviour
         Utils.DeleteUserInfo();
     }
 
+    public void ZoomOut()
+    {
+        virtualCamera.GetComponent<Animator>().SetTrigger("ZoomOut");
+    }
+    public void ZoomIn()
+    {
+        virtualCamera.GetComponent<Animator>().SetTrigger("ZoomIn");
+    }
+
     public void OpenInteractableIcon()
 	{
         interactionIcon.SetActive(true);

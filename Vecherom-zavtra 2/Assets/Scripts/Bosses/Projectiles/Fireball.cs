@@ -46,6 +46,7 @@ public class Fireball : NetworkBehaviour
 	[ServerCallback]
 	void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (collision.tag == "EnemyProjectile") return;
 		if (collision.tag == "Player")
 		{
 			Debug.Log($"Hit: {collision.name}");

@@ -17,7 +17,7 @@ public class FireWorm : NetworkBehaviour, IEnemy
     public int damage = 40;
     float attackTime = 0f;
     float passiveAttackTime = 0f;
-    float passiveAttackCooldown = 0.1f;
+    float passiveAttackCooldown = 0.5f;
 
     [Header("Attack")]
     public string projectileSlug = null;
@@ -35,7 +35,7 @@ public class FireWorm : NetworkBehaviour, IEnemy
 
     public void Awake()
     {
-        characterStats = new CharacterStats(1, 2, 10, 0, 0, 0);
+        characterStats = new CharacterStats(10, 2, 10, 0, 0, 0);
         currentHealth = maxHealth;
         controller = GetComponent<EnemyController2D>();
         animator = GetComponent<Animator>();
@@ -124,17 +124,30 @@ public class FireWorm : NetworkBehaviour, IEnemy
     {
         currentHealth -= amount;
         animator.SetTrigger("Hit");
+        if (currentHealth <= maxHealth/2)
+        {
+            animator.SetTrigger("Enrage");
+        } 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             animator.SetTrigger("Death");
-        }
+        } 
     }
 
     [Server]
     public void CmdDie()
     {
-        NetworkServer.Destroy(gameObject);
+        CmdSpawnTrigger();
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdSpawnTrigger()
+    {
+        GameObject trigger = (GameObject)Instantiate(Resources.Load("Triggers/CameraZoomInTrigger"), transform.position, Quaternion.identity);
+        
+        NetworkServer.Spawn(trigger);
+        Debug.Log($"Spawned camera zoom in trigger: {trigger}");
     }
 
     public void OnChangedHealth(int oldHealth, int newHealth)

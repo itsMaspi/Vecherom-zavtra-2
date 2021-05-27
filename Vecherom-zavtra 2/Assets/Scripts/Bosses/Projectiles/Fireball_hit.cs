@@ -11,6 +11,14 @@ public class Fireball_hit : NetworkBehaviour
         Invoke(nameof(DestroySelf), t);
     }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            Debug.Log($"Hit: {collision.name}");
+            collision.GetComponent<Player>().TakeDamage(10);
+        }
+    }
 
     [ServerCallback]
     void DestroySelf()
