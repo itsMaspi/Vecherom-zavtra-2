@@ -6,6 +6,8 @@ using Mirror;
 public class EnemySpawnerController : NetworkBehaviour
 {
 	public Transform[] SpawnPositions;
+
+	public GameObject enemyPrefab;
 	public override void OnStartServer()
 	{
 		base.OnStartServer();
@@ -28,7 +30,7 @@ public class EnemySpawnerController : NetworkBehaviour
 		{
 			spawnPos = SpawnPositions[Random.Range(0, SpawnPositions.Length)];
 		}
-		GameObject enemy = Instantiate(Resources.Load<GameObject>($"Enemies/Maliwan/Soldier"), spawnPos.position, spawnPos.rotation);
+		GameObject enemy = Instantiate(enemyPrefab, spawnPos.position, spawnPos.rotation);
 		NetworkServer.Spawn(enemy);
 	}
 }
