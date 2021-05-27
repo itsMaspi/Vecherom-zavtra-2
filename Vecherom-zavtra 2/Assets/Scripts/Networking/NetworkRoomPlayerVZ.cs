@@ -119,6 +119,6 @@ public class NetworkRoomPlayerVZ : NetworkBehaviour
 	{
         if (Room.RoomPlayers[0].connectionToClient != connectionToClient) return;
 
-        // Start Game
+        Room.StartGame();
 	}
 }

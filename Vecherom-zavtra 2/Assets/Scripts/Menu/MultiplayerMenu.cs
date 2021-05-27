@@ -8,11 +8,13 @@ public class MultiplayerMenu : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject mpOptionsPanel = null;
+    [SerializeField] private GameObject playButton = null;
 
     public void HostLobby()
 	{
         networkManager.StartHost();
 
         mpOptionsPanel.SetActive(false);
+        playButton.SetActive(false);
 	}
 }

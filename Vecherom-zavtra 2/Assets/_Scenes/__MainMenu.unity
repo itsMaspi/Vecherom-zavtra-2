@@ -490,8 +490,10 @@ MonoBehaviour:
   - {fileID: 5573356406776745348, guid: d47cdc865a241e44aa4dd0d26f402884, type: 3}
   - {fileID: 7375615903792656101, guid: a19fa6cd714761c4795e226dd958a8c1, type: 3}
   - {fileID: 1911283631773122519, guid: c1b58cfa4f70ad543a6c4ed8e3504ca2, type: 3}
+  minPlayers: 1
   menuScene: Assets/_Scenes/__MainMenu.unity
   roomPlayerPrefab: {fileID: 799113738855427942, guid: 2abebce0d6401a948978cdef1a210b55, type: 3}
+  gamePlayerPrefab: {fileID: 1698581975303562518, guid: 2f4d965c8667ccf449485d29286666fc, type: 3}
 --- !u!114 &58519416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2933,6 +2935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   networkManager: {fileID: 58519415}
   mpOptionsPanel: {fileID: 1580828574}
+  playButton: {fileID: 1565888330}
 --- !u!1 &518027166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,7 +3790,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 181.05
+  m_fontSize: 120.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4208,7 +4211,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.4
+  m_fontSize: 36.45
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6048,7 +6051,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 74.05
+  m_fontSize: 48.9
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8403,7 +8406,7 @@ RectTransform:
   m_Father: {fileID: 1859148041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.19248188}
+  m_AnchorMin: {x: 0, y: 0.57434237}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -9654,6 +9657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   networkManager: {fileID: 58519415}
   mpOptionsPanel: {fileID: 1580828574}
+  playButton: {fileID: 1565888330}
   ipAddressInputField: {fileID: 686127407}
   joinButton: {fileID: 518027169}
 --- !u!1 &1700626061
@@ -9907,7 +9911,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 68.2
+  m_fontSize: 45.75
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10129,8 +10133,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1428255870}
   m_HandleRect: {fileID: 1428255869}
   m_Direction: 2
-  m_Value: 1.0000004
-  m_Size: 0.8075181
+  m_Value: 1
+  m_Size: 0.4256576
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11917,7 +11921,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.05
+  m_fontSize: 31.45
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12275,7 +12279,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 85.2
+  m_fontSize: 56.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -14,27 +14,17 @@ public class PlayerController : NetworkBehaviour
 
     public TMPro.TextMeshProUGUI nickText;
     public GameObject interactionIcon;
-    [HideInInspector] public GameObject dialogueSystem;
+    [HideInInspector] public GameObject dialogueSystem = null;
     public GameObject chatPanel;
-    [HideInInspector] public GameObject virtualCamera;
+    [HideInInspector] public GameObject virtualCamera = null;
 
     public bool isChatting = true;
 
     private Vector2 boxSize = new Vector2(1f, 1f);
 
-    // Start is called before the first frame update
 
     public override void OnStartLocalPlayer()
     {
-        virtualCamera = GameObject.Find("CM vcam");
-
-        if (virtualCamera != null)
-        {
-            virtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = transform;
-        }
-
-        dialogueSystem = GameObject.Find("DialogueSystem");
-
         // Get the player nickname and apply the nickname
         string path = Application.persistentDataPath + "/usr.vz";
         using (BinaryReader r = new BinaryReader(File.Open(path, FileMode.Open)))
@@ -45,15 +35,6 @@ public class PlayerController : NetworkBehaviour
         CmdSetNickname(localNickname);
     }
 
-	public override void OnStartServer()
-	{
-		base.OnStartServer();
-
-        
-        //nickText.text = nickname;
-        //CmdSetNickname();
-    }
-
 	void Start()
     {
         if (!isLocalPlayer)
@@ -61,35 +42,25 @@ public class PlayerController : NetworkBehaviour
             GetComponent<PlayerInput>().enabled = false;
             transform.Find("HUD Canvas").gameObject.SetActive(false);
 		}
-        
-        /*
-        GameObject[] gObjects =  FindObjectsOfType<GameObject>();
-        foreach (var Object in gObjects)
-        {
-            if (Object.GetComponent<CinemachineVirtualCamera>() != null)
-            {
-                virtualCamera = Object;
-                continue;
-            }
-        }
-
-
-
-        virtualCamera = GameObject.Find("CM vcam");
-
-        if (virtualCamera != null)
-        {
-            virtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = transform;
-        }
-
-        dialogueSystem = GameObject.Find("DialogueSystem");
-        */
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        //if (!isLocalPlayer) return;
+        if (!isLocalPlayer) return;
+        if (virtualCamera == null)
+		{
+            virtualCamera = GameObject.Find("CM vcam");
+		    if (virtualCamera != null)
+                virtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = transform;
+        }
+
+        if (dialogueSystem == null)
+        {
+            dialogueSystem = GameObject.Find("DialogueSystem");
+        }
+        
+
     }
 
     void OnApplicationQuit()

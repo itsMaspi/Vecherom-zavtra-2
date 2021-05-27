@@ -24,7 +24,12 @@ public class Player : NetworkBehaviour
         healthSlider.maxValue = maxHealth;
 	}
 
-    [Server]
+	public override void OnStartServer()
+	{
+        currentHealth = maxHealth;
+	}
+
+	[Server]
     public void TakeDamage(int ammount)
 	{
         currentHealth -= ammount;

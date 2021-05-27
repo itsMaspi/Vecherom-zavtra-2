@@ -14,10 +14,14 @@ public class NetworkManagerVZ : NetworkManager
     [Header("Room")]
     [SerializeField] private NetworkRoomPlayerVZ roomPlayerPrefab = null;
 
+	[Header("Game")]
+	[SerializeField] private NetworkGamePlayerVZ gamePlayerPrefab = null;
+
     public static event Action OnClientConnected;
     public static event Action OnClientDisconnected;
 
 	public List<NetworkRoomPlayerVZ> RoomPlayers { get; } = new List<NetworkRoomPlayerVZ>();
+	public List<NetworkGamePlayerVZ> GamePlayers { get; } = new List<NetworkGamePlayerVZ>();
 
 	public override void OnClientConnect(NetworkConnection conn)
 	{
@@ -99,5 +103,35 @@ public class NetworkManagerVZ : NetworkManager
 		}
 
 		return true;
+	}
+
+	public void StartGame()
+	{
+		if ($"Assets/_Scenes/{SceneManager.GetActiveScene().name}.unity" == menuScene)
+		{
+			if (!IsReadyToStart()) return;
+
+			ServerChangeScene("Desert");
+		}
+	}
+
+	public override void ServerChangeScene(string newSceneName)
+	{
+		// From menu to game
+		if ($"Assets/_Scenes/{SceneManager.GetActiveScene().name}.unity" == menuScene && newSceneName.StartsWith("Desert"))
+		{
+			for (int i = RoomPlayers.Count - 1; i >= 0; i--)
+			{
+				var conn = RoomPlayers[i].connectionToClient;
+				var gameplayerInstance = Instantiate(gamePlayerPrefab);
+				gameplayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
+
+				NetworkServer.Destroy(conn.identity.gameObject);
+
+				NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject, true);
+			}
+		}
+
+		base.ServerChangeScene(newSceneName);
 	}
 }

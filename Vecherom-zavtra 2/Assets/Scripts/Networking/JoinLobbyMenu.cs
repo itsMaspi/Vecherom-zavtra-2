@@ -10,6 +10,7 @@ public class JoinLobbyMenu : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject mpOptionsPanel = null;
+    [SerializeField] private GameObject playButton = null;
     [SerializeField] private TMP_InputField ipAddressInputField = null;
     [SerializeField] private Button joinButton = null;
 
@@ -41,7 +42,8 @@ public class JoinLobbyMenu : MonoBehaviour
 
         gameObject.SetActive(false);
         mpOptionsPanel.SetActive(false);
-	}
+        playButton.SetActive(false);
+    }
 
     private void HandleClientDisconnected()
 	{
