@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class Pistol : MonoBehaviour, IWeapon, IProjectileWeapon
+public class Pistol : NetworkBehaviour, IWeapon, IProjectileWeapon
 {
 	private Animator animator;
 	public List<BaseStat> Stats { get; set; }
