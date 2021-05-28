@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2981905222065357083}
   - component: {fileID: 6785746117756013871}
   - component: {fileID: -4954867796411921935}
+  - component: {fileID: 942485002392781084}
   m_Layer: 3
   m_Name: pistol_jmp1
   m_TagString: Untagged
@@ -262,3 +263,19 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 
   hasSpawned: 0
+--- !u!114 &942485002392781084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076313720314890045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 0
+  animator: {fileID: 1325366503093859427}

@@ -181,17 +181,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""e3c2aecc-edbc-4ea1-a676-c7bea1c32da4"",
-                    ""path"": ""<Mouse>/press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""dash"",
                     ""id"": ""84259a09-104f-4c2f-97cd-aeb7e011c8d8"",
                     ""path"": ""1DAxis"",
