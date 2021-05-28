@@ -482,21 +482,24 @@ MonoBehaviour:
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs:
+  - {fileID: 799113738855427737, guid: 2abebce0d6401a948978cdef1a210b55, type: 3}
+  - {fileID: 2165329867883480003, guid: 8a22452ee82bd2f43b31bb950d933661, type: 3}
   - {fileID: 9076313720314890045, guid: e4303232b2179cc428b774d0aa7d1bf1, type: 3}
-  - {fileID: 6656719464119441940, guid: 1cd515e6f330a3b4bb5e3b2815376593, type: 3}
-  - {fileID: 1736445644111739055, guid: 5ff74adb34fa12d409956267d1f5214f, type: 3}
   - {fileID: 8493271260184907617, guid: 48b9c3d8dc453cf4d9ebf13d512b3efc, type: 3}
   - {fileID: 6061377962765550610, guid: 9eb14e5c8a1a49b4a8b38f179d83fa43, type: 3}
+  - {fileID: 6656719464119441940, guid: 1cd515e6f330a3b4bb5e3b2815376593, type: 3}
+  - {fileID: 1736445644111739055, guid: 5ff74adb34fa12d409956267d1f5214f, type: 3}
   - {fileID: 5573356406776745348, guid: d47cdc865a241e44aa4dd0d26f402884, type: 3}
   - {fileID: 7375615903792656101, guid: a19fa6cd714761c4795e226dd958a8c1, type: 3}
-  - {fileID: 1911283631773122519, guid: c1b58cfa4f70ad543a6c4ed8e3504ca2, type: 3}
-  - {fileID: 1262810415543999733, guid: bcf595d7a3078034e92ef7b7c9fda22e, type: 3}
   - {fileID: 6483876936111558088, guid: 4a601ca2a79ce1347b6efe97b3060a3e, type: 3}
   - {fileID: 5565513627902057727, guid: 033e8a2cca0816a41a0b6a41aa12f9a9, type: 3}
+  - {fileID: 1262810415543999733, guid: bcf595d7a3078034e92ef7b7c9fda22e, type: 3}
+  - {fileID: 1911283631773122519, guid: c1b58cfa4f70ad543a6c4ed8e3504ca2, type: 3}
   minPlayers: 1
   menuScene: Assets/_Scenes/__MainMenu.unity
   roomPlayerPrefab: {fileID: 799113738855427942, guid: 2abebce0d6401a948978cdef1a210b55, type: 3}
   gamePlayerPrefab: {fileID: 1698581975303562518, guid: 2f4d965c8667ccf449485d29286666fc, type: 3}
+  playerSpawnSystem: {fileID: 2165329867883480003, guid: 8a22452ee82bd2f43b31bb950d933661, type: 3}
 --- !u!114 &58519416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3793,7 +3796,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 120.55
+  m_fontSize: 181.05
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4214,7 +4217,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.45
+  m_fontSize: 55.4
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6054,7 +6057,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.9
+  m_fontSize: 74.05
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9914,7 +9917,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.75
+  m_fontSize: 68.2
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11924,7 +11927,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.45
+  m_fontSize: 47.05
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12282,7 +12285,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56.8
+  m_fontSize: 85.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

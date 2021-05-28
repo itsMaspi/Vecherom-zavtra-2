@@ -16,9 +16,11 @@ public class NetworkManagerVZ : NetworkManager
 
 	[Header("Game")]
 	[SerializeField] private NetworkGamePlayerVZ gamePlayerPrefab = null;
+	[SerializeField] private GameObject playerSpawnSystem = null;
 
     public static event Action OnClientConnected;
     public static event Action OnClientDisconnected;
+	public static event Action<NetworkConnection> OnServerReadied;
 
 	public List<NetworkRoomPlayerVZ> RoomPlayers { get; } = new List<NetworkRoomPlayerVZ>();
 	public List<NetworkGamePlayerVZ> GamePlayers { get; } = new List<NetworkGamePlayerVZ>();
@@ -111,7 +113,7 @@ public class NetworkManagerVZ : NetworkManager
 		{
 			if (!IsReadyToStart()) return;
 
-			ServerChangeScene("Desert");
+			ServerChangeScene("FirstContact");
 		}
 	}
 
@@ -126,12 +128,31 @@ public class NetworkManagerVZ : NetworkManager
 				var gameplayerInstance = Instantiate(gamePlayerPrefab);
 				gameplayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
 
-				NetworkServer.Destroy(conn.identity.gameObject);
-
 				NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject, true);
+
+				NetworkServer.Destroy(conn.identity.gameObject);
 			}
 		}
 
 		base.ServerChangeScene(newSceneName);
 	}
+
+	public override void OnServerSceneChanged(string sceneName)
+	{
+		Debug.Log(sceneName);
+		if (!sceneName.StartsWith("__MainMenu"))
+		{
+			GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
+			NetworkServer.Spawn(playerSpawnSystemInstance);
+		}
+	}
+
+	public override void OnServerReady(NetworkConnection conn)
+	{
+		base.OnServerReady(conn);
+
+		OnServerReadied?.Invoke(conn);
+	}
+
+	
 }
