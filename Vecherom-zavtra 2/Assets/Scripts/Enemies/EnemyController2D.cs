@@ -43,7 +43,6 @@ public class EnemyController2D : NetworkBehaviour
 	void Update()
 	{
 		if (!canMove) return;
-		TryMoveToPlayer();
 		if (canJump)
 		{
 			TryJump();
@@ -70,8 +69,12 @@ public class EnemyController2D : NetworkBehaviour
 
 	private void FixedUpdate()
 	{
+		if (!canMove) return;
+
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
+		
+		TryMoveToPlayer();
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -91,12 +94,25 @@ public class EnemyController2D : NetworkBehaviour
 	{
 		if (targetPlayer != null && Vector3.Distance(targetPlayer.position, transform.position) <= aggroDistance)
 		{
+			Vector2 target = new Vector2(targetPlayer.position.x, m_Rigidbody2D.position.y);
+			
 			var direction = targetPlayer.position.x - transform.position.x;
+			
+			/*
 			var move = targetPlayer.position - transform.position;
 			move.y = m_Rigidbody2D.velocity.y;
 			move.Normalize();
+			*/
+
+			Vector2 newPos = Vector2.MoveTowards(m_Rigidbody2D.position, target, moveSpeed * Time.fixedDeltaTime);
+
 			
-			m_Rigidbody2D.MovePosition((Vector2)transform.position + ((Vector2) move * moveSpeed * Time.deltaTime));
+
+			//m_Rigidbody2D.MovePosition((Vector2)transform.position + ((Vector2) move * moveSpeed * Time.deltaTime));
+
+			m_Rigidbody2D.MovePosition(newPos);
+
+			m_Rigidbody2D.AddForce(new Vector2(0f, -100f));
 
 			animator.SetFloat("Movement", Mathf.Abs(direction));
 			
