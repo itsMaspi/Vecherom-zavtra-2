@@ -50,7 +50,6 @@ public class PlayerWeaponController : NetworkBehaviour
 
 	public void DropItem()
 	{
-		//var itemSlug = GetComponent<InventoryUI>().inventoryPanel.Find("Inventory_Details").GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text;
 		var itemSlug = GetComponent<InventoryUI>().inventoryPanel.Find("Inventory_Details").GetComponent<InventoryUIDetails>().GetItem().ObjectSlug;
 		CmdDropItem(itemSlug, transform.position);
 		GetComponent<InventoryController>().RemoveItem(itemSlug);

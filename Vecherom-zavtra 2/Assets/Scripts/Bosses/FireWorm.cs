@@ -63,7 +63,6 @@ public class FireWorm : NetworkBehaviour, IEnemy
     [Command(requiresAuthority = false)]
     public void CmdAttack1(string projectileSlug, Vector3 force, float angle)
     {
-        Debug.Log($"Force: {force}");
         Fireball fireball = Instantiate(Resources.Load<Fireball>($"Bosses/Projectiles/{projectileSlug}"), firePoint.position, firePoint.rotation);
         fireball.Force = force;
         fireball.Speed = attackSpeed;
@@ -82,11 +81,7 @@ public class FireWorm : NetworkBehaviour, IEnemy
         }
 
         fireballG.transform.localScale = theScale;
-        //Debug.Log($"Angle{Quaternion.LookRotation(force, force)}");
-        //fireballG.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-
-
+        
         NetworkServer.Spawn(fireballG);
     }
 
@@ -184,7 +179,6 @@ public class FireWorm : NetworkBehaviour, IEnemy
     [ClientRpc]
     public void RPCStop()
     {
-
         GetComponent<EnemyController2D>().enabled = false;
         GetComponent<Rigidbody2D>().simulated = false;
         GetComponent<FireWorm>().enabled = false;

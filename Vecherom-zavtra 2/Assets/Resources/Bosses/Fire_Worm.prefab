@@ -342,7 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  moveSpeed: 6
+  moveSpeed: 4
   m_JumpForce: 0
   m_MovementSmoothing: 0.05
   m_WhatIsGround:
