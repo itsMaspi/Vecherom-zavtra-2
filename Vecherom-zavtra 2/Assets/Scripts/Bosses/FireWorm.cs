@@ -150,6 +150,22 @@ public class FireWorm : NetworkBehaviour, IEnemy
         Debug.Log($"Spawned camera zoom in trigger: {trigger}");
     }
 
+    [Command(requiresAuthority = false)]
+    public void CmdStop()
+    {
+
+        GetComponent<EnemyController2D>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+        GetComponent<FireWorm>().enabled = false;
+        GetComponent<FireWorm>().healthBar.enabled = false;
+        var colliders = GetComponents<CapsuleCollider2D>();
+        foreach (var collider in colliders)
+        {
+            collider.enabled = false;
+        }
+    }
+
+
     public void OnChangedHealth(int oldHealth, int newHealth)
     {
         healthBar.text = newHealth.ToString();
