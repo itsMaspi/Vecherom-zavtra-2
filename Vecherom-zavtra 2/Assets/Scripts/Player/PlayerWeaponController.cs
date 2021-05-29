@@ -78,10 +78,10 @@ public class PlayerWeaponController : NetworkBehaviour
 		}
 
 		EquippedWeapon = Instantiate(Resources.Load<GameObject>($"Weapons/{itemToEquip}"), transform.Find("WeaponPoint"));
+		EquippedWeapon.GetComponent<IWeapon>().Stats = GetComponent<ItemDatabase>().GetItem(itemToEquip).Stats;
 
 		if (isLocalPlayer)
 		{
-			EquippedWeapon.GetComponent<IWeapon>().Stats = GetComponent<ItemDatabase>().GetItem(itemToEquip).Stats;
 			GetComponent<Player>().characterStats.AddStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
 		}
 	}
@@ -120,10 +120,12 @@ public class PlayerWeaponController : NetworkBehaviour
 	}
 
 	[Command]
-	public void CmdShoot(int dmg)
+	public void CmdShoot(int dmg, int speed, int range)
 	{
 		GameObject bulletInstance = EquippedWeapon.GetComponent<IProjectileWeapon>().CastProjectile();
 		bulletInstance.GetComponent<LaserBullet>().Damage = dmg;
+		bulletInstance.GetComponent<LaserBullet>().Speed = speed;
+		bulletInstance.GetComponent<LaserBullet>().Range = range;
 		NetworkServer.Spawn(bulletInstance);
 	}
 
