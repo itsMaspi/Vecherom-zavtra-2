@@ -378,7 +378,7 @@ MonoBehaviour:
   passiveAttackRange: 8
   attackCooldown: 5
   attackSpeed: 500
-  damage: 30
+  damage: 25
   projectileSlug: Fireball
   firePoint: {fileID: 1912925194894468600}
   whatCanDamage:

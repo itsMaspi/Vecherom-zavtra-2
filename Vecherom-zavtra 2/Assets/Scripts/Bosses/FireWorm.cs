@@ -43,15 +43,13 @@ public class FireWorm : NetworkBehaviour, IEnemy
 
     void Update()
     {
-        if (!isServer) return;
         attackTime += Time.deltaTime;
         passiveAttackTime += Time.deltaTime;
         TryAttack();
         if (passiveAttackTime>=passiveAttackCooldown)
         {
             PassiveAttack();
-        }      
-
+        }
     }
 
     //Called by animator trigger 'Attack'

@@ -16,7 +16,7 @@ public class Fireball_hit : NetworkBehaviour
         if (collision.tag == "Player")
         {
             Debug.Log($"Hit: {collision.name}");
-            collision.GetComponent<Player>().TakeDamage(10);
+            collision.GetComponent<Player>().TakeDamage(5);
         }
     }
 
