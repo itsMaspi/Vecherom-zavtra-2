@@ -119,6 +119,18 @@ public class FireWorm : NetworkBehaviour, IEnemy
         }
     }
 
+    [Command(requiresAuthority =false)]
+    public void CmdStopMove()
+    {
+        controller.canMove = false;
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdStartMove()
+    {
+        controller.canMove = true;
+    }
+
     [Server]
     public void CmdTakeDamage(int amount)
     {
@@ -126,13 +138,13 @@ public class FireWorm : NetworkBehaviour, IEnemy
         animator.SetTrigger("Hit");
         if (currentHealth <= maxHealth/2)
         {
-            animator.SetTrigger("Enrage");
+            animator.SetBool("isEnraged", true);
         } 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            animator.SetTrigger("Death");
-        } 
+            animator.SetBool("isDead", true);
+        }
     }
 
     [Server]
@@ -151,7 +163,13 @@ public class FireWorm : NetworkBehaviour, IEnemy
     }
 
     [Command(requiresAuthority = false)]
-    public void CmdStop()
+    public void CmdCallStop()
+    {
+        RPCStop();
+    }
+
+    [ClientRpc]
+    public void RPCStop()
     {
 
         GetComponent<EnemyController2D>().enabled = false;

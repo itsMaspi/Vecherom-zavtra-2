@@ -99,8 +99,18 @@ public class EnemyController2D : NetworkBehaviour
 			m_Rigidbody2D.MovePosition((Vector2)transform.position + ((Vector2) move * moveSpeed * Time.deltaTime));
 
 			animator.SetFloat("Movement", Mathf.Abs(direction));
+			
+			if (targetPlayer.transform.position.x - transform.position.x > 0 && !m_FacingRight)
+			{
+				Flip();
+			}
+			else if (targetPlayer.transform.position.x - transform.position.x < 0 && m_FacingRight)
+			{
+				Flip();
+			}
+			
 		}
-	}
+    }
 
 	private void TrySwitchTarget()
 	{
