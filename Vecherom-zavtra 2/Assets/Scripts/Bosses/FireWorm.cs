@@ -151,13 +151,28 @@ public class FireWorm : NetworkBehaviour, IEnemy
         CmdSpawnTrigger();
     }
 
+    public void CallSpawnDrops()
+	{
+        Vector3 pos = transform.position;
+        Debug.Log(pos);
+        CmdSpawnDrops(pos);
+	}
+
     [Command(requiresAuthority = false)]
     public void CmdSpawnTrigger()
     {
         GameObject trigger = (GameObject)Instantiate(Resources.Load("Triggers/CameraZoomInTrigger"), transform.position, Quaternion.identity);
         
         NetworkServer.Spawn(trigger);
-        Debug.Log($"Spawned camera zoom in trigger: {trigger}");
+    }
+    [Command(requiresAuthority = false)]
+    public void CmdSpawnDrops(Vector3 pos)
+    {
+        Debug.Log(pos);
+        GameObject trigger = Instantiate(Resources.Load<GameObject>("Drops/pistol_b_drop"), pos, Quaternion.identity);
+        Debug.Log(trigger.transform.position);
+
+        NetworkServer.Spawn(trigger);
     }
 
     [Command(requiresAuthority = false)]
