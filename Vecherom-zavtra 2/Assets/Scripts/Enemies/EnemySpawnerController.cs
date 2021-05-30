@@ -7,30 +7,32 @@ public class EnemySpawnerController : NetworkBehaviour
 {
 	public Transform[] SpawnPositions;
 
-	public GameObject enemyPrefab;
-	public override void OnStartServer()
-	{
-		base.OnStartServer();
+	public GameObject[] enemyPrefabs;
 
-		Invoke(nameof(SpawnEnemy), 2f);
-
-		//InvokeRepeating(nameof(SpawnEnemy), 3f, 5f);
-	}
-
-	// Update is called once per frame
-	void Update()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.tag == "Player")
+        {
+			CmdSpawnEnemy();
+			NetworkServer.Destroy(gameObject);
+        }
     }
 
-	void SpawnEnemy()
+	[Command(requiresAuthority = false)]
+	void CmdSpawnEnemy()
 	{
 		Transform spawnPos = transform;
 		if (SpawnPositions.Length > 0)
 		{
 			spawnPos = SpawnPositions[Random.Range(0, SpawnPositions.Length)];
 		}
-		GameObject enemy = Instantiate(enemyPrefab, spawnPos.position, spawnPos.rotation);
-		NetworkServer.Spawn(enemy);
+		foreach (GameObject prefab in enemyPrefabs)
+		{
+			GameObject enemy = Instantiate(prefab, spawnPos.position, spawnPos.rotation);
+			NetworkServer.Spawn(enemy);
+			spawnPos.position = new Vector3(spawnPos.position.x + 5f, spawnPos.position.y, spawnPos.position.z);
+		}
 	}
+
+
 }
