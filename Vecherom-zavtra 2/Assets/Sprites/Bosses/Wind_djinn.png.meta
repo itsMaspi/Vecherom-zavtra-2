@@ -1,0 +1,3504 @@
+fileFormatVersion: 2
+guid: 851bd9bf3448fb04284ab67316ef2592
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -811109533352983685
+    second: Wind_djinn_0
+  - first:
+      213: 2695316663126377182
+    second: Wind_djinn_1
+  - first:
+      213: 932549724847666555
+    second: Wind_djinn_2
+  - first:
+      213: -2386455156699038071
+    second: Wind_djinn_3
+  - first:
+      213: 8837420360460973598
+    second: Wind_djinn_4
+  - first:
+      213: -6080211769602650638
+    second: Wind_djinn_5
+  - first:
+      213: 9117269193585662195
+    second: Wind_djinn_6
+  - first:
+      213: 9156185215097581197
+    second: Wind_djinn_7
+  - first:
+      213: 1313201233824779607
+    second: Wind_djinn_8
+  - first:
+      213: 2287504413501668836
+    second: Wind_djinn_9
+  - first:
+      213: 4476676673053598933
+    second: Wind_djinn_10
+  - first:
+      213: 1342093366768472716
+    second: Wind_djinn_11
+  - first:
+      213: 2139288736717241174
+    second: Wind_djinn_12
+  - first:
+      213: -6656205934322225853
+    second: Wind_djinn_13
+  - first:
+      213: 3562202920644607418
+    second: Wind_djinn_14
+  - first:
+      213: -7524303574578625497
+    second: Wind_djinn_15
+  - first:
+      213: 7333226529822094099
+    second: Wind_djinn_16
+  - first:
+      213: 5616700516336907579
+    second: Wind_djinn_17
+  - first:
+      213: 8499414868982778961
+    second: Wind_djinn_18
+  - first:
+      213: 7700593711033505517
+    second: Wind_djinn_19
+  - first:
+      213: 6212807302101268310
+    second: Wind_djinn_20
+  - first:
+      213: -5471334301688462957
+    second: Wind_djinn_21
+  - first:
+      213: 279072383217919786
+    second: Wind_djinn_22
+  - first:
+      213: 8347237336388385410
+    second: Wind_djinn_23
+  - first:
+      213: -2805778326181518417
+    second: Wind_djinn_24
+  - first:
+      213: 8524526407883744108
+    second: Wind_djinn_25
+  - first:
+      213: 3690976701847332784
+    second: Wind_djinn_26
+  - first:
+      213: -3439561928500308756
+    second: Wind_djinn_27
+  - first:
+      213: 6932380413675667704
+    second: Wind_djinn_28
+  - first:
+      213: 2739994231719740177
+    second: Wind_djinn_29
+  - first:
+      213: -1670616439520735587
+    second: Wind_djinn_30
+  - first:
+      213: 6600838245835935495
+    second: Wind_djinn_31
+  - first:
+      213: -7677122533109143804
+    second: Wind_djinn_32
+  - first:
+      213: -2885602643626589780
+    second: Wind_djinn_33
+  - first:
+      213: -3143283509909003165
+    second: Wind_djinn_34
+  - first:
+      213: -5286509136701094471
+    second: Wind_djinn_35
+  - first:
+      213: 1238025192673246840
+    second: Wind_djinn_36
+  - first:
+      213: 5728084498372335063
+    second: Wind_djinn_37
+  - first:
+      213: -1382723694246126471
+    second: Wind_djinn_38
+  - first:
+      213: -6261939465148932833
+    second: Wind_djinn_39
+  - first:
+      213: 8461627377078795986
+    second: Wind_djinn_40
+  - first:
+      213: 2256739633543384022
+    second: Wind_djinn_41
+  - first:
+      213: -8522661316648113339
+    second: Wind_djinn_42
+  - first:
+      213: 3888258537228466024
+    second: Wind_djinn_43
+  - first:
+      213: -7886325141434197095
+    second: Wind_djinn_44
+  - first:
+      213: -799423830263193990
+    second: Wind_djinn_45
+  - first:
+      213: 8374794352323989977
+    second: Wind_djinn_46
+  - first:
+      213: -1109617192369927166
+    second: Wind_djinn_47
+  - first:
+      213: 5548181409185317611
+    second: Wind_djinn_48
+  - first:
+      213: 5038613463693334954
+    second: Wind_djinn_49
+  - first:
+      213: -6087005973780640859
+    second: Wind_djinn_50
+  - first:
+      213: -4205747353655725819
+    second: Wind_djinn_51
+  - first:
+      213: 1366188376122017341
+    second: Wind_djinn_52
+  - first:
+      213: -1610666963982128807
+    second: Wind_djinn_53
+  - first:
+      213: 1095826620637795963
+    second: Wind_djinn_54
+  - first:
+      213: 6105387499889587051
+    second: Wind_djinn_55
+  - first:
+      213: 8636820758140436805
+    second: Wind_djinn_56
+  - first:
+      213: -5118530325928223035
+    second: Wind_djinn_57
+  - first:
+      213: -1353288834007136348
+    second: Wind_djinn_58
+  - first:
+      213: 1957892273747071103
+    second: Wind_djinn_59
+  - first:
+      213: 293182739483033838
+    second: Wind_djinn_60
+  - first:
+      213: -388993616581307056
+    second: Wind_djinn_61
+  - first:
+      213: -5750515145890947785
+    second: Wind_djinn_62
+  - first:
+      213: -5032420962240267141
+    second: Wind_djinn_63
+  - first:
+      213: 5494794662642164530
+    second: Wind_djinn_64
+  - first:
+      213: 5125447456097873363
+    second: Wind_djinn_65
+  - first:
+      213: 6821757991194578837
+    second: Wind_djinn_66
+  - first:
+      213: -4882906823644474221
+    second: Wind_djinn_67
+  - first:
+      213: 4718365880541460378
+    second: Wind_djinn_68
+  - first:
+      213: -3027849907964212558
+    second: Wind_djinn_69
+  - first:
+      213: -286634773067206493
+    second: Wind_djinn_70
+  - first:
+      213: -8580178411608893659
+    second: Wind_djinn_71
+  - first:
+      213: 3874297256704459431
+    second: Wind_djinn_72
+  - first:
+      213: -3850243906262179744
+    second: Wind_djinn_73
+  - first:
+      213: 4972408695014113219
+    second: Wind_djinn_74
+  - first:
+      213: 2750368521230200350
+    second: Wind_djinn_75
+  - first:
+      213: 7189299295706828986
+    second: Wind_djinn_76
+  - first:
+      213: -4785140953315628296
+    second: Wind_djinn_77
+  - first:
+      213: -7417452544633542908
+    second: Wind_djinn_78
+  - first:
+      213: 3319730380140224105
+    second: Wind_djinn_79
+  - first:
+      213: -4090538759863391253
+    second: Wind_djinn_80
+  - first:
+      213: 1927150673572876063
+    second: Wind_djinn_81
+  - first:
+      213: 2842761725556778451
+    second: Wind_djinn_82
+  - first:
+      213: 2646742564348104543
+    second: Wind_djinn_83
+  - first:
+      213: 4652760313209035009
+    second: Wind_djinn_84
+  - first:
+      213: 5704873972872419861
+    second: Wind_djinn_85
+  - first:
+      213: 1460845196109284401
+    second: Wind_djinn_86
+  - first:
+      213: -3671763169257088034
+    second: Wind_djinn_87
+  - first:
+      213: -3559769183239365436
+    second: Wind_djinn_88
+  - first:
+      213: -3714666611362818509
+    second: Wind_djinn_89
+  - first:
+      213: -2337201680764921069
+    second: Wind_djinn_90
+  - first:
+      213: -3196472960295274297
+    second: Wind_djinn_91
+  - first:
+      213: 5698760752864658450
+    second: Wind_djinn_92
+  - first:
+      213: -1634441118770216217
+    second: Wind_djinn_93
+  - first:
+      213: 6104891396079522698
+    second: Wind_djinn_94
+  - first:
+      213: 8771199048611409988
+    second: Wind_djinn_95
+  - first:
+      213: 5252492048787305998
+    second: Wind_djinn_96
+  - first:
+      213: 6909736958235782348
+    second: Wind_djinn_97
+  - first:
+      213: 9130026103145817307
+    second: Wind_djinn_98
+  - first:
+      213: 8772313080064534589
+    second: Wind_djinn_99
+  - first:
+      213: 3207927376254789960
+    second: Wind_djinn_100
+  - first:
+      213: -1578010714641136638
+    second: Wind_djinn_101
+  - first:
+      213: 5697144221677501791
+    second: Wind_djinn_102
+  - first:
+      213: 62503991973175270
+    second: Wind_djinn_103
+  - first:
+      213: -6509448230995811349
+    second: Wind_djinn_104
+  - first:
+      213: -6602269523917744037
+    second: Wind_djinn_105
+  - first:
+      213: 6564612624754979570
+    second: Wind_djinn_106
+  - first:
+      213: 3701734919368316054
+    second: Wind_djinn_107
+  - first:
+      213: -5818503688502949105
+    second: Wind_djinn_108
+  - first:
+      213: 2155177056847807950
+    second: Wind_djinn_109
+  - first:
+      213: 6759455940937378423
+    second: Wind_djinn_110
+  - first:
+      213: -2872419109252578734
+    second: Wind_djinn_111
+  - first:
+      213: 1383301737126309242
+    second: Wind_djinn_112
+  - first:
+      213: -1736635746484937154
+    second: Wind_djinn_113
+  - first:
+      213: 4138432780115361544
+    second: Wind_djinn_114
+  - first:
+      213: -667305931686178439
+    second: Wind_djinn_115
+  - first:
+      213: -8127366372138233252
+    second: Wind_djinn_116
+  - first:
+      213: 7626443589257305675
+    second: Wind_djinn_117
+  - first:
+      213: 8651833632672405241
+    second: Wind_djinn_118
+  - first:
+      213: 1183116701008152238
+    second: Wind_djinn_119
+  - first:
+      213: 8078181528830549883
+    second: Wind_djinn_120
+  - first:
+      213: -2577054666582511694
+    second: Wind_djinn_121
+  - first:
+      213: -7231507149608951892
+    second: Wind_djinn_122
+  - first:
+      213: 5939358121407197742
+    second: Wind_djinn_123
+  - first:
+      213: -6720084380689813765
+    second: Wind_djinn_124
+  - first:
+      213: 1799627421606369153
+    second: Wind_djinn_125
+  - first:
+      213: -5943832258406606225
+    second: Wind_djinn_126
+  - first:
+      213: 7035388465248357330
+    second: Wind_djinn_127
+  - first:
+      213: -4438876398841178567
+    second: Wind_djinn_128
+  - first:
+      213: -6535891874710217638
+    second: Wind_djinn_129
+  - first:
+      213: 1537212179177005129
+    second: Wind_djinn_130
+  - first:
+      213: -4620341510361565676
+    second: Wind_djinn_131
+  - first:
+      213: 4114076441651861437
+    second: Wind_djinn_132
+  - first:
+      213: -1770767397209280072
+    second: Wind_djinn_133
+  - first:
+      213: 4822826893229536647
+    second: Wind_djinn_134
+  - first:
+      213: -7117474653897826527
+    second: Wind_djinn_135
+  - first:
+      213: 5147306087054321684
+    second: Wind_djinn_136
+  - first:
+      213: 5732311209008565302
+    second: Wind_djinn_137
+  - first:
+      213: -1950405284921105713
+    second: Wind_djinn_138
+  - first:
+      213: -7058615852118794878
+    second: Wind_djinn_139
+  - first:
+      213: 1270547709156993892
+    second: Wind_djinn_140
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wind_djinn_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1232
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7300964d2c5eb4f0800000000000000
+      internalID: -811109533352983685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1232
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2c6d68930b76520800000000000000
+      internalID: 2695316663126377182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1232
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75feeca80511fc00800000000000000
+      internalID: 932549724847666555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1232
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98efd80ddab91eed0800000000000000
+      internalID: -2386455156699038071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_4
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1232
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16b414cef2d4aa70800000000000000
+      internalID: 8837420360460973598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_5
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1232
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd4fa12c9fbe9ba0800000000000000
+      internalID: -6080211769602650638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_6
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1232
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f81945b60c078e70800000000000000
+      internalID: 9117269193585662195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_7
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 1232
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e239b01fd411f70800000000000000
+      internalID: 9156185215097581197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1120
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d0bb4809d693210800000000000000
+      internalID: 1313201233824779607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_9
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1120
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edb7e4f429debf10800000000000000
+      internalID: 2287504413501668836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_10
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1120
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d423a737b9502e30800000000000000
+      internalID: 4476676673053598933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_11
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1120
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8294ad6ec210a210800000000000000
+      internalID: 1342093366768472716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_12
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1120
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b760885c740bd10800000000000000
+      internalID: 2139288736717241174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_13
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1120
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d60e408f760a3a0800000000000000
+      internalID: -6656205934322225853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_14
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1120
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd71e6deac7f6130800000000000000
+      internalID: 3562202920644607418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_15
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 1120
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7240a0fa3cd449790800000000000000
+      internalID: -7524303574578625497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1008
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313348ffcaad4c560800000000000000
+      internalID: 7333226529822094099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_17
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1008
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35b30e6c5782fd40800000000000000
+      internalID: 5616700516336907579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_18
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1008
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c4460aaccf3f570800000000000000
+      internalID: 8499414868982778961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de652c14e210eda60800000000000000
+      internalID: 7700593711033505517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_20
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 896
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657f2bb0353583650800000000000000
+      internalID: 6212807302101268310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_21
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 896
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3910374e07ae114b0800000000000000
+      internalID: -5471334301688462957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 784
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27635c9ad67fd300800000000000000
+      internalID: 279072383217919786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_23
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 784
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28abe43c12857d370800000000000000
+      internalID: 8347237336388385410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_24
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 784
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3e57d5a7fdf09d0800000000000000
+      internalID: -2805778326181518417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_25
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 784
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63e8546a933d4670800000000000000
+      internalID: 8524526407883744108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_26
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 784
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b76ad331cbf83330800000000000000
+      internalID: 3690976701847332784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_27
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 784
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce418cc46a83440d0800000000000000
+      internalID: -3439561928500308756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f08305c143c43060800000000000000
+      internalID: 6932380413675667704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_29
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 672
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11346449c3a660620800000000000000
+      internalID: 2739994231719740177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_30
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 672
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e40761337c0d8e0800000000000000
+      internalID: -1670616439520735587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_31
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 672
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f0dde6963ea9b50800000000000000
+      internalID: 6600838245835935495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_32
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 672
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407e1e43bb1657590800000000000000
+      internalID: -7677122533109143804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_33
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 672
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca185b72fa744f7d0800000000000000
+      internalID: -2885602643626589780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_34
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 672
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364e7833d40d064d0800000000000000
+      internalID: -3143283509909003165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_35
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 672
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5031503fb82a6b0800000000000000
+      internalID: -5286509136701094471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ef5487a595e2110800000000000000
+      internalID: 1238025192673246840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_37
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d597e8a08e3e7f40800000000000000
+      internalID: 5728084498372335063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_38
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c91f540249fcce0800000000000000
+      internalID: -1382723694246126471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_39
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d5ccecb3f1919a0800000000000000
+      internalID: -6261939465148932833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_40
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de7080944dbd6570800000000000000
+      internalID: 8461627377078795986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_41
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db06ef6dbc815f10800000000000000
+      internalID: 2256739633543384022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_42
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54be93000bc69b980800000000000000
+      internalID: -8522661316648113339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_43
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867f16ae98ed5f530800000000000000
+      internalID: 3888258537228466024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_44
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b159141152e8290800000000000000
+      internalID: -7886325141434197095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_45
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e1e2c0340e7e4f0800000000000000
+      internalID: -799423830263193990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_46
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d11835871f393470800000000000000
+      internalID: 8374794352323989977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_47
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ccf14ea09d990f0800000000000000
+      internalID: -1109617192369927166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_48
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2caeb98991ffc40800000000000000
+      internalID: 5548181409185317611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_49
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa911ffdf30cce540800000000000000
+      internalID: 5038613463693334954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_50
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abcf13315c968ba0800000000000000
+      internalID: -6087005973780640859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_51
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501bf4a901f22a5c0800000000000000
+      internalID: -4205747353655725819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_52
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d364507f61da5f210800000000000000
+      internalID: 1366188376122017341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_53
+      rect:
+        serializedVersion: 2
+        x: 3808
+        y: 560
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95963601ee2c5a9e0800000000000000
+      internalID: -1610666963982128807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76588a6188253f00800000000000000
+      internalID: 1095826620637795963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_55
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63770b5591bab450800000000000000
+      internalID: 6105387499889587051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_56
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5414ead38b62cd770800000000000000
+      internalID: 8636820758140436805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_57
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cedbf6a9c357f8b0800000000000000
+      internalID: -5118530325928223035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_58
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7808ab9f6283de0800000000000000
+      internalID: -1353288834007136348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_59
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f701d2d46a4db2b10800000000000000
+      internalID: 1957892273747071103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_60
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee08921f528911400800000000000000
+      internalID: 293182739483033838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_61
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055d6cfdd540a9af0800000000000000
+      internalID: -388993616581307056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_62
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d9aad31f01230b0800000000000000
+      internalID: -5750515145890947785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_63
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7c70793ccf392ab0800000000000000
+      internalID: -5032420962240267141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_64
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233af7c02ae614c40800000000000000
+      internalID: 5494794662642164530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_65
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dda4a73e4f312740800000000000000
+      internalID: 5125447456097873363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_66
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fc5d0ffb0cbae50800000000000000
+      internalID: 6821757991194578837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_67
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39417595d1e6c3cb0800000000000000
+      internalID: -4882906823644474221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_68
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a973ff5f4c00b7140800000000000000
+      internalID: 4718365880541460378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_69
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba089a0d8aeaf5d0800000000000000
+      internalID: -3027849907964212558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_70
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0fd0b413ba50cf0800000000000000
+      internalID: -286634773067206493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_71
+      rect:
+        serializedVersion: 2
+        x: 3808
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5279392c1351de880800000000000000
+      internalID: -8580178411608893659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_72
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2c32cf3d444c530800000000000000
+      internalID: 3874297256704459431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_73
+      rect:
+        serializedVersion: 2
+        x: 4256
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06061a4119f219ac0800000000000000
+      internalID: -3850243906262179744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_74
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf3168fc5b810540800000000000000
+      internalID: 4972408695014113219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_75
+      rect:
+        serializedVersion: 2
+        x: 4704
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ea75519954b2620800000000000000
+      internalID: 2750368521230200350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_76
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab052907e9585c360800000000000000
+      internalID: 7189299295706828986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_77
+      rect:
+        serializedVersion: 2
+        x: 5152
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8faa27dd7a3c79db0800000000000000
+      internalID: -4785140953315628296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_78
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407ecc2c53aef0990800000000000000
+      internalID: -7417452544633542908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_79
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 448
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e945a213d021e20800000000000000
+      internalID: 3319730380140224105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb2066abac7b37c0800000000000000
+      internalID: -4090538759863391253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_81
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f47feb35d9eba10800000000000000
+      internalID: 1927150673572876063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_82
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d563e05ab4837720800000000000000
+      internalID: 2842761725556778451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_83
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f00e7d65e1bb420800000000000000
+      internalID: 2646742564348104543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_84
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1091cdd7adce19040800000000000000
+      internalID: 4652760313209035009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_85
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a9e6117a8cb2f40800000000000000
+      internalID: 5704873972872419861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_86
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1340ee947f6f54410800000000000000
+      internalID: 1460845196109284401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_87
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb9115f9d64b0dc0800000000000000
+      internalID: -3671763169257088034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_88
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc92aec9c8299ec0800000000000000
+      internalID: -3559769183239365436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_89
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33617bae56ad27cc0800000000000000
+      internalID: -3714666611362818509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_90
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b9f815477909fd0800000000000000
+      internalID: -2337201680764921069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_91
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8757b37c8d3a3d0800000000000000
+      internalID: -3196472960295274297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_92
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2148f6e16b0161f40800000000000000
+      internalID: 5698760752864658450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_93
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2c86d467c4159e0800000000000000
+      internalID: -1634441118770216217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_94
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8398af216ee8b450800000000000000
+      internalID: 6104891396079522698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_95
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4403aba101f89b970800000000000000
+      internalID: 8771199048611409988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_96
+      rect:
+        serializedVersion: 2
+        x: 3808
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06f78180b994e840800000000000000
+      internalID: 5252492048787305998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_97
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc2807772154ef50800000000000000
+      internalID: 6909736958235782348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_98
+      rect:
+        serializedVersion: 2
+        x: 4256
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4ec0c2e5e54be70800000000000000
+      internalID: 9130026103145817307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_99
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3862c3c4448db970800000000000000
+      internalID: 8772313080064534589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_100
+      rect:
+        serializedVersion: 2
+        x: 4704
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 849eaeec3f8d48c20800000000000000
+      internalID: 3207927376254789960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_101
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2040e0e9d97c91ae0800000000000000
+      internalID: -1578010714641136638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_102
+      rect:
+        serializedVersion: 2
+        x: 5152
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5db14f1c72501f40800000000000000
+      internalID: 5697144221677501791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_103
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efda9eac0f0ed000800000000000000
+      internalID: 62503991973175270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_104
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be323bb825bc9a5a0800000000000000
+      internalID: -6509448230995811349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_105
+      rect:
+        serializedVersion: 2
+        x: 6048
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58de7b29d60064a0800000000000000
+      internalID: -6602269523917744037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_106
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2b092c6603a1b50800000000000000
+      internalID: 6564612624754979570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_107
+      rect:
+        serializedVersion: 2
+        x: 6496
+        y: 336
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6949b99eb443f5330800000000000000
+      internalID: 3701734919368316054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b4b7a19b5804fa0800000000000000
+      internalID: -5818503688502949105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_109
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec54c755d1ab8ed10800000000000000
+      internalID: 2155177056847807950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_110
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 224
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ae97a7d596ecd50800000000000000
+      internalID: 6759455940937378423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_111
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 224
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252c4f2f90e1328d0800000000000000
+      internalID: -2872419109252578734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_112
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 224
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d2892d999723310800000000000000
+      internalID: 1383301737126309242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_113
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 224
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e158a5dfa36e7e0800000000000000
+      internalID: -1736635746484937154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_114
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 224
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80fbb99efaaae6930800000000000000
+      internalID: 4138432780115361544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_115
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 224
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97195596ac04db6f0800000000000000
+      internalID: -667305931686178439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_116
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c52de3d585bc53f80800000000000000
+      internalID: -8127366372138233252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_117
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 112
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e9c3da90296d960800000000000000
+      internalID: 7626443589257305675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_118
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 112
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6573b79dc711870800000000000000
+      internalID: 8651833632672405241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_119
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 112
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea64c630f564b6010800000000000000
+      internalID: 1183116701008152238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_120
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 112
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f1119ec477b1070800000000000000
+      internalID: 8078181528830549883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_121
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 112
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf269f3f667c3cd0800000000000000
+      internalID: -2577054666582511694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_122
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf5cd4cf8684ab90800000000000000
+      internalID: -7231507149608951892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_123
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22be4c4eb6dc6250800000000000000
+      internalID: 5939358121407197742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_124
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe255c3cd67db2a0800000000000000
+      internalID: -6720084380689813765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_125
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18756e8ea9f89f810800000000000000
+      internalID: 1799627421606369153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_126
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a9a218d04438da0800000000000000
+      internalID: -5943832258406606225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_127
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2db4208b888b2a160800000000000000
+      internalID: 7035388465248357330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_128
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936d435fe61f562c0800000000000000
+      internalID: -4438876398841178567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_129
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c1985f7f8db45a0800000000000000
+      internalID: -6535891874710217638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_130
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940ef3c1556455510800000000000000
+      internalID: 1537212179177005129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_131
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41638ed30ef31efb0800000000000000
+      internalID: -4620341510361565676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_132
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db75673f9b2281930800000000000000
+      internalID: 4114076441651861437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_133
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b17f752f68fc67e0800000000000000
+      internalID: -1770767397209280072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_134
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785b528c18f1ee240800000000000000
+      internalID: 4822826893229536647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_135
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12fd2942386a93d90800000000000000
+      internalID: -7117474653897826527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_136
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41824155d97ee6740800000000000000
+      internalID: 5147306087054321684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_137
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c02fa6ca24d8f40800000000000000
+      internalID: 5732311209008565302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_138
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2ab302ab4cee4e0800000000000000
+      internalID: -1950405284921105713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_139
+      rect:
+        serializedVersion: 2
+        x: 3808
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d9488d742ca0e90800000000000000
+      internalID: -7058615852118794878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_djinn_140
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 0
+        width: 224
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b2d7ae864e1a110800000000000000
+      internalID: 1270547709156993892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,19 +8,45 @@ public class WildBeast : NetworkBehaviour, IEnemy
 	[SyncVar(hook = nameof(OnChangedHealth))]
 	public int currentHealth;
 	public int maxHealth;
+	[SerializeField] float attackDistance = 5f;
+	[SerializeField] private LayerMask whatCanDamage;
+	[SerializeField] float attackCooldown = 1f;
+	float attackTime = 0f;
 
 	private CharacterStats characterStats;
+	private EnemyController2D controller;
 
 	public override void OnStartServer()
 	{
 		base.OnStartServer();
-		characterStats = new CharacterStats(6, 2, 10);
+		characterStats = new CharacterStats(6, 2, 10, 0, 0, 0);
 		currentHealth = maxHealth;
+		controller = GetComponent<EnemyController2D>();
+	}
+
+	void Update()
+	{
+		if (!isServer) return;
+		attackTime += Time.deltaTime;
+		if (controller.targetPlayer != null && Vector3.Distance(controller.targetPlayer.position, transform.position) <= attackDistance)
+		{
+			if (attackTime >= attackCooldown)
+				PerformAttack();
+		}
 	}
 
 	public void PerformAttack()
 	{
-		throw new System.NotImplementedException();
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackDistance, whatCanDamage);
+		for (int i = 0; i < colliders.Length; i++)
+		{
+			if (colliders[i].tag == "Player")
+			{
+				colliders[i].GetComponent<Player>().TakeDamage(characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue());
+				Debug.Log($"DmgDealt = {characterStats.GetStat(BaseStat.BaseStatType.Damage).GetCalculatedStatValue()}");
+			}
+		}
+		attackTime = 0;
 	}
 
 	public void CmdTakeDamage(int amount)

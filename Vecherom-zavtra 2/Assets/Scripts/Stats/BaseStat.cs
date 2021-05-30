@@ -9,7 +9,7 @@ public class BaseStat
 {
 	public enum BaseStatType
 	{
-		Damage, AttackSpeed, Critic
+		Damage, AttackSpeed, Critic, Speed, Range, Spread
 	}
 
 	public List<StatBonus> BaseAdditives { get; set; }

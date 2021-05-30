@@ -50,4 +50,9 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
 	}
+
+    public void ButtonHitSound()
+	{
+        Play("ButtonHit");
+	}
 }

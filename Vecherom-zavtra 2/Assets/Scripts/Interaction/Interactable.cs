@@ -1,14 +1,15 @@
+using Mirror;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public abstract class Interactable : MonoBehaviour
+public abstract class Interactable : NetworkBehaviour
 {
 	private void Reset()
 	{
 		GetComponent<BoxCollider2D>().isTrigger = true;
 	}
 
-	public abstract void Interact();
+	public abstract void Interact(GameObject gameObject);
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{

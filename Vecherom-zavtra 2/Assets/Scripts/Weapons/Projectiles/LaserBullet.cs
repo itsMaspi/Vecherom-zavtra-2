@@ -20,8 +20,8 @@ public class LaserBullet : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
 	{
-
-		GetComponent<Rigidbody2D>().AddForce(Force * Speed); // el fill no es mou, transform.right sempre es positiu
+		Vector3 f = new Vector3(Force.x, 0f, Force.z);
+		GetComponent<Rigidbody2D>().AddForce(f * Speed); // el fill no es mou, transform.right sempre es positiu
 		//spawnPosition = transform.position;
 		//Debug.Log(Force * Speed);
     }
@@ -47,16 +47,16 @@ public class LaserBullet : NetworkBehaviour
 		{
 			Debug.Log($"Hit: {collision.name}");
 			collision.GetComponent<IEnemy>().CmdTakeDamage(Damage);
+			CmdLaserHit();
+			NetworkServer.Destroy(gameObject);
 		}
-		CmdLaserHit();
-		NetworkServer.Destroy(gameObject);
 		//Remove();
 	}
 
 	[Command(requiresAuthority = false)]
 	public void CmdLaserHit()
     {
-		GameObject hit = (GameObject)Instantiate(Resources.Load("Weapons/Projectiles/pistol_j_hit"), transform.position, transform.rotation);
+		GameObject hit = (GameObject)Instantiate(Resources.Load("Weapons/Projectiles/proj1_hit"), transform.position, transform.rotation);
 
 
 		Vector3 theScale = hit.transform.localScale;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -23,18 +24,20 @@ public class InventoryUI : MonoBehaviour
         inventoryPanel.gameObject.SetActive(false);
     }
 
-    public void OnToggleInventory()
+    public void OnToggleInventory(InputValue value)
 	{
         if (PauseManager.pauseState == PauseState.Paused) return;
-        Debug.Log("OnToggleInventory");
-
-        menuIsActive = !menuIsActive;
-        inventoryPanel.gameObject.SetActive(menuIsActive);
+        if (GetComponent<PlayerController>().isChatting) return;
+        if (value.isPressed)
+        {
+            menuIsActive = !menuIsActive;
+            inventoryPanel.gameObject.SetActive(menuIsActive);
+        }
 	}
 
     public void ItemAdded(Item item)
 	{
-        Debug.Log($"InventoryUI.cs: ItemAdded({item.ObjectSlug})");
+        //Debug.Log($"InventoryUI.cs: ItemAdded({item.ObjectSlug})");
         InventoryUIItem emptyItem = Instantiate(itemContainer);
         emptyItem.SetItem(item);
         emptyItem.transform.SetParent(scrollViewContent);

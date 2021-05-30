@@ -39,20 +39,32 @@ public class InventoryUIDetails : MonoBehaviour
         itemInteractButton.onClick.AddListener(OnItemInteract);
     }
 
+    public Item GetItem()
+	{
+        return this.item;
+	}
+
     public void OnItemInteract()
 	{
         if (item.ItemType == Item.ItemTypes.Consumable)
 		{
             //transform.parent.parent.parent.parent.GetComponent<InventoryController>().ConsumeItem(item);
             transform.GetComponentInParent<InventoryController>().ConsumeItem(item);
-            Destroy(selectedItemButton.gameObject);
+            DestroySelectedItem();
         }
         else if (item.ItemType == Item.ItemTypes.Weapon)
 		{
             transform.GetComponentInParent<InventoryController>().EquipItem(item);
-            Destroy(selectedItemButton.gameObject);
+            DestroySelectedItem();
         }
+        //item = null;
+        //gameObject.SetActive(false);
+	}
+
+    public void DestroySelectedItem()
+	{
+        Destroy(selectedItemButton.gameObject);
         item = null;
         gameObject.SetActive(false);
-	}
+    }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Mirror;
 
@@ -14,14 +15,24 @@ public class InventoryController : NetworkBehaviour
 
 	public Item pistol;
 	public Item PotionLog;
-
+	public string[] initialItems;
 
 	public override void OnStartLocalPlayer()
 	{
+
 		playerItems = new List<Item>();
-		GiveItem("pistol_j");
+		
+		foreach (string item in initialItems)
+        {
+			GiveItem(item);
+		}
+
+		/*
+		GiveItem("pistol_jmp1");
 		GiveItem("pistol_b");
 		GiveItem("pistol_m");
+		GiveItem("potion_log");
+		*/
 	}
 
 	void Start()
@@ -36,6 +47,14 @@ public class InventoryController : NetworkBehaviour
 		playerItems.Add(item);
 		Debug.Log($"{playerItems.Count} items in inventory. Added: {itemSlug}");
 		UIEventHandler.ItemAddedToInventory(item);
+	}
+
+	public void RemoveItem(string itemSlug)
+	{
+		if (!isLocalPlayer) return;
+		Item item = GetComponent<ItemDatabase>().GetItem(itemSlug);
+		if (playerItems.Remove(item))
+			Debug.Log($"{playerItems.Count} items in inventory. Removed: {itemSlug}");
 	}
 
 	public void SetItemDetails(Item item, Button selectedButton)

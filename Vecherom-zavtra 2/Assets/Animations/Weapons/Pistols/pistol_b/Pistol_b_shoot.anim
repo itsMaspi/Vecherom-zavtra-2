@@ -103,22 +103,7 @@ AnimationClip:
     path: 
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves:
-  - curve:
-    - time: 0
-      value: {fileID: 4300503865467396380, guid: b87e4b5e59ed4ac4a8b987160bb9903c, type: 3}
-    - time: 0.13333334
-      value: {fileID: 8476695771003819041, guid: b87e4b5e59ed4ac4a8b987160bb9903c, type: 3}
-    - time: 0.25
-      value: {fileID: 5155077299247571281, guid: b87e4b5e59ed4ac4a8b987160bb9903c, type: 3}
-    - time: 0.36666667
-      value: {fileID: 4621256987608849975, guid: b87e4b5e59ed4ac4a8b987160bb9903c, type: 3}
-    - time: 0.51666665
-      value: {fileID: -8370079862059238706, guid: b87e4b5e59ed4ac4a8b987160bb9903c, type: 3}
-    attribute: m_Sprite
-    path: 
-    classID: 212
-    script: {fileID: 0}
+  m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -140,25 +125,13 @@ AnimationClip:
       typeID: 4
       customType: 4
       isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: 4300503865467396380, guid: b87e4b5e59ed4ac4a8b987160bb9903c, type: 3}
-    - {fileID: 8476695771003819041, guid: b87e4b5e59ed4ac4a8b987160bb9903c, type: 3}
-    - {fileID: 5155077299247571281, guid: b87e4b5e59ed4ac4a8b987160bb9903c, type: 3}
-    - {fileID: 4621256987608849975, guid: b87e4b5e59ed4ac4a8b987160bb9903c, type: 3}
-    - {fileID: -8370079862059238706, guid: b87e4b5e59ed4ac4a8b987160bb9903c, type: 3}
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5333333
+    m_StopTime: 0.51666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -486,6 +459,13 @@ AnimationClip:
   m_Events:
   - time: 0.2
     functionName: Shoot
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.51666665
+    functionName: StopShoot
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

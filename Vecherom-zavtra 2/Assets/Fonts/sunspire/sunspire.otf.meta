@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 99896638fd9a5e045a1c0ba305cb5664
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - sunspire
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0388e5d2ca4176446bfe27151127eaab, type: 3}
+  - {fileID: 12800000, guid: c56eef9eaf011fe45bf6fa7a1846b6d2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
