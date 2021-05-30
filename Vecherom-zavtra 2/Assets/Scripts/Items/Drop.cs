@@ -14,7 +14,7 @@ public class Drop : Interactable
 
 	void Start()
 	{
-        initialY = transform.position.y + 1f;
+        initialY = transform.position.y + 1.5f;
 	}
 	void Update()
 	{

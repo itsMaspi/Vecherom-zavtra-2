@@ -2,6 +2,7 @@ using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FireWorm : NetworkBehaviour, IEnemy
 {
@@ -27,7 +28,7 @@ public class FireWorm : NetworkBehaviour, IEnemy
 
     [Header("Other stuff")]
     [HideInInspector] public Animator animator;
-    public TMPro.TextMeshProUGUI healthBar;
+    public Slider healthBar;
 
     private CharacterStats characterStats;
     [HideInInspector] public EnemyController2D controller;
@@ -193,6 +194,6 @@ public class FireWorm : NetworkBehaviour, IEnemy
 
     public void OnChangedHealth(int oldHealth, int newHealth)
     {
-        healthBar.text = newHealth.ToString();
+        healthBar.value = newHealth;
     }
 }
