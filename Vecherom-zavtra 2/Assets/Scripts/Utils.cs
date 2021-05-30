@@ -36,4 +36,9 @@ public static class Utils
 		string path = Application.persistentDataPath + "/loginInfo.vz";
 		if (File.Exists(path)) File.Delete(path);
 	}
+
+	public static float ConvertToRadians(float angle)
+	{
+		return (Mathf.PI / 180) * angle;
+	}
 }

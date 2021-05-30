@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 1911283631773122538}
   - component: {fileID: 1911283631773122536}
   - component: {fileID: 1911283631773122537}
-  - component: {fileID: 1911283631773122539}
-  - component: {fileID: 1911283631773122542}
   - component: {fileID: 8028200947202278049}
   m_Layer: 7
   m_Name: pistol_b_drop
@@ -129,6 +127,9 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   itemSlug: pistol_handcannon
+  angle: 0
+  increaseAngle: 1
+  sinMultiplier: 0.4
 --- !u!114 &1911283631773122537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,41 +147,6 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 
   hasSpawned: 0
---- !u!95 &1911283631773122539
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911283631773122519}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f64a398e7cf9ac840885012721e4994b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1911283631773122542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911283631773122519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  clientAuthority: 0
-  animator: {fileID: 1911283631773122539}
 --- !u!114 &8028200947202278049
 MonoBehaviour:
   m_ObjectHideFlags: 0
