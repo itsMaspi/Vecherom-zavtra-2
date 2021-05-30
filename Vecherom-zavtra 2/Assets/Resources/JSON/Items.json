@@ -29,7 +29,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 5,
+        "baseValue": 1,
         "statName": "Bullet range"
       },
       {
@@ -69,7 +69,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 4,
+        "baseValue": 1,
         "statName": "Bullet range"
       },
       {
@@ -109,7 +109,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 5,
+        "baseValue": 1,
         "statName": "Bullet range"
       },
       {
@@ -149,7 +149,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 1,
         "statName": "Bullet range"
       },
       {
@@ -189,7 +189,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 1,
         "statName": "Bullet range"
       },
       {
@@ -224,12 +224,12 @@
       },
       {
         "StatType": "Speed",
-        "baseValue": 280,
+        "baseValue": 400,
         "statName": "Bullet speed"
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 2,
         "statName": "Bullet range"
       },
       {
@@ -269,7 +269,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 1,
         "statName": "Bullet range"
       },
       {
@@ -309,7 +309,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 1,
         "statName": "Bullet range"
       },
       {
@@ -349,7 +349,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 1,
         "statName": "Bullet range"
       },
       {
@@ -389,7 +389,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 2,
         "statName": "Bullet range"
       },
       {
@@ -429,7 +429,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 2,
         "statName": "Bullet range"
       },
       {
@@ -469,7 +469,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 2,
         "statName": "Bullet range"
       },
       {
@@ -509,7 +509,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 2,
         "statName": "Bullet range"
       },
       {
@@ -549,7 +549,7 @@
       },
       {
         "StatType": "Range",
-        "baseValue": 6,
+        "baseValue": 3,
         "statName": "Bullet range"
       },
       {
@@ -559,8 +559,246 @@
       }
     ]
   },
-
-
+  {
+    "objectSlug": "rifle_rusty",
+    "itemName": "Rusty rifle",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 12,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 0,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 0,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 320,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 3,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 0,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+    {
+    "objectSlug": "rifle_blaster",
+    "itemName": "Blaster",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 8,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 0,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 0,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 280,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 3,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 0,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+    {
+    "objectSlug": "rifle_m",
+    "itemName": "Maliwan rifle",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 10,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 0,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 0,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 380,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 3,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 0,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+  {
+    "objectSlug": "rifle_silenced",
+    "itemName": "Silenced rifle",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 18,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 0,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 0,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 320,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 3,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 0,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+    {
+    "objectSlug": "rifle_decimator",
+    "itemName": "Decimator",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 85,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 0,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 0,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 500,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 3,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 0,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
+    {
+    "objectSlug": "rifle_whiteout",
+    "itemName": "Maliwan rifle",
+    "description": "<<To be edited>>",
+    "itemType": "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "stats": [
+      {
+        "StatType": "Damage",
+        "baseValue": 20,
+        "statName": "Damage"
+      },
+      {
+        "StatType": "AttackSpeed",
+        "baseValue": 0,
+        "statName": "Fire rate"
+      },
+      {
+        "StatType": "Critic",
+        "baseValue": 0,
+        "statName": "Critical chance"
+      },
+      {
+        "StatType": "Speed",
+        "baseValue": 380,
+        "statName": "Bullet speed"
+      },
+      {
+        "StatType": "Range",
+        "baseValue": 3,
+        "statName": "Bullet range"
+      },
+      {
+        "StatType": "Spread",
+        "baseValue": 0,
+        "statName": "Weapon accuracy"
+      }
+    ]
+  },
 
 
 
