@@ -5131,21 +5131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5233db677280a6947ae916819b3b1670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: MainMenuTheme
-    clip: {fileID: 8300000, guid: cd57dbaff53973b43b071d259ed99cbd, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    audioMixerGroup: {fileID: 7487254939088639973, guid: 135a3fcadc1b1e44abb47ce07be2b752, type: 2}
-    source: {fileID: 0}
-  - name: bulletHit
-    clip: {fileID: 8300000, guid: 1d1d902f9e7c3734a8534ec0626772cb, type: 3}
-    volume: 1
-    pitch: 0.5
-    loop: 0
-    audioMixerGroup: {fileID: -9139883705081574305, guid: 135a3fcadc1b1e44abb47ce07be2b752, type: 2}
-    source: {fileID: 0}
+  sounds: []
 --- !u!1 &1131805623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5614,10 +5600,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ReferenceResolution: {x: 2160, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

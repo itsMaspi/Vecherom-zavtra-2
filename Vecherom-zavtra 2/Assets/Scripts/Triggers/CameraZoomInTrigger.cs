@@ -8,7 +8,6 @@ public class CameraZoomInTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<PlayerController>().ZoomIn();
             Destroy(gameObject);
         }
     }

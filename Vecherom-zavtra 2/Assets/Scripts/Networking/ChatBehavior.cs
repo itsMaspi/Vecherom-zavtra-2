@@ -24,7 +24,6 @@ public class ChatBehavior : NetworkBehaviour
 	{
         if (!isLocalPlayer) return;
         //Debug.Log(inputField.isFocused);
-        GetComponent<PlayerController>().SetChatting(inputField.isFocused);
 	}
 
     public void SetFocus()

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -24,11 +23,15 @@ public class InventoryUI : MonoBehaviour
         inventoryPanel.gameObject.SetActive(false);
     }
 
-    public void OnToggleInventory(InputValue value)
+    void Update()
+	{
+        OnToggleInventory();
+	}
+
+    public void OnToggleInventory()
 	{
         if (PauseManager.pauseState == PauseState.Paused) return;
-        if (GetComponent<PlayerController>().isChatting) return;
-        if (value.isPressed)
+        if (Input.GetKeyDown(KeyCode.I))
         {
             menuIsActive = !menuIsActive;
             inventoryPanel.gameObject.SetActive(menuIsActive);

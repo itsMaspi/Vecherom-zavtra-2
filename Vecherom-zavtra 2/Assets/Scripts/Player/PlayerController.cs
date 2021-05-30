@@ -121,7 +121,7 @@ public class PlayerController : NetworkBehaviour
             {
                 if (rc.transform.GetComponent<Interactable>())
                 {
-                    rc.transform.GetComponent<Interactable>().Interact();
+                    rc.transform.GetComponent<Interactable>().Interact(gameObject);
                     return;
                 }
             }
