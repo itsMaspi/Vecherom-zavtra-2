@@ -588,7 +588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000010122091}
+  m_AnchoredPosition: {x: 0, y: 0.0006268479}
   m_SizeDelta: {x: 0, y: 68.4231}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2588929348779010408
@@ -6509,8 +6509,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: playername123
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a368db952ce516d4a961b28599f46a03, type: 2}
-  m_sharedMaterial: {fileID: 1381555423618879518, guid: a368db952ce516d4a961b28599f46a03, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1af37bf2267d00c489bc90ea28646af8, type: 2}
+  m_sharedMaterial: {fileID: 467502195557189411, guid: 1af37bf2267d00c489bc90ea28646af8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6534,8 +6534,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.6
+  m_fontSizeBase: 0.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7060,7 +7060,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4360224113617347878}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.999995
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
