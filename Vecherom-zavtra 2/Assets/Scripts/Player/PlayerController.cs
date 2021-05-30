@@ -17,6 +17,7 @@ public class PlayerController : NetworkBehaviour
     [HideInInspector] public GameObject dialogueSystem = null;
     public GameObject chatPanel;
     [HideInInspector] public GameObject virtualCamera = null;
+    public GameObject bossHP;
 
     public bool isChatting = true;
 
@@ -151,5 +152,10 @@ public class PlayerController : NetworkBehaviour
     public void CmdSetNickname(string n)
 	{
         nickname = n;
+	}
+
+    public void SetActiveBossHP(bool active)
+	{
+        bossHP.SetActive(active);
 	}
 }

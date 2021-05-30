@@ -42,7 +42,19 @@ public class FireWorm : NetworkBehaviour, IEnemy
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+	public override void OnStartServer()
+	{
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+		foreach (var player in players)
+        {
+            player.GetComponent<PlayerController>().SetActiveBossHP(true);
+            var HPBar = player.transform.Find("HUD Canvas/HUD/BossHealthBar/BossHealthBarSlider").GetComponent<Slider>();
+            HPBar.maxValue = maxHealth;
+            HPBar.value = maxHealth;
+        }
+    }
+
+	void Update()
     {
         attackTime += Time.deltaTime;
         passiveAttackTime += Time.deltaTime;
@@ -175,6 +187,11 @@ public class FireWorm : NetworkBehaviour, IEnemy
     public void CmdCallStop()
     {
         RPCStop();
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var player in players)
+        {
+            player.GetComponent<PlayerController>().SetActiveBossHP(false);
+        }
     }
 
     [ClientRpc]
@@ -182,8 +199,8 @@ public class FireWorm : NetworkBehaviour, IEnemy
     {
         GetComponent<EnemyController2D>().enabled = false;
         GetComponent<Rigidbody2D>().simulated = false;
-        GetComponent<FireWorm>().enabled = false;
         GetComponent<FireWorm>().healthBar.enabled = false;
+        GetComponent<FireWorm>().enabled = false;
         var colliders = GetComponents<CapsuleCollider2D>();
         foreach (var collider in colliders)
         {
@@ -195,5 +212,6 @@ public class FireWorm : NetworkBehaviour, IEnemy
     public void OnChangedHealth(int oldHealth, int newHealth)
     {
         healthBar.value = newHealth;
+        GameObject.FindGameObjectWithTag("Player").transform.Find("HUD Canvas/HUD/BossHealthBar/BossHealthBarSlider").GetComponent<Slider>().value = newHealth;
     }
 }
