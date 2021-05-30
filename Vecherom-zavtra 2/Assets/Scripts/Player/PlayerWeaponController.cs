@@ -111,11 +111,16 @@ public class PlayerWeaponController : NetworkBehaviour
 		if (GetComponent<PlayerController>().isChatting) return;
 		if (EquippedWeapon == null) return;
 
-
-		if (value.isPressed)
+		if (EquippedWeaponSlug.StartsWith("pistol"))
 		{
-			GetComponent<Animator>().SetBool("isShooting", true);
-		}
+			if (value.isPressed)
+			{
+				GetComponent<Animator>().SetBool("isShooting", true);
+			}
+		} else if (EquippedWeaponSlug.StartsWith("smg"))
+        {
+			GetComponent<Animator>().SetBool("isShootingAuto", value.isPressed);
+        }
 	}
 
 	[Command]

@@ -33,7 +33,7 @@ public class Boss_Enrage_Anim : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponentInParent<EnemyController2D>().moveSpeed = 7;
+        animator.GetComponentInParent<EnemyController2D>().moveSpeed = 5;
     }
 
 
