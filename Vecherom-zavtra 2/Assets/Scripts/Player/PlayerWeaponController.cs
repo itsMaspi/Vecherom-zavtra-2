@@ -112,6 +112,14 @@ public class PlayerWeaponController : NetworkBehaviour
 		GetComponent<Animator>().SetBool("isShooting", true);
 	}
 
+	public void OnReleaseAttack()
+	{
+		if (!isLocalPlayer) return;
+		if (EquippedWeapon == null) return;
+
+		GetComponent<Animator>().SetBool("isShooting", false);
+	}
+
 	[Command]
 	public void CmdShoot(int dmg, int speed, int range)
 	{

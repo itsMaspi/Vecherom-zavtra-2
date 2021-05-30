@@ -19,28 +19,18 @@ public class InventoryUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         inventoryPanel.gameObject.SetActive(false);
     }
-
-    void Update()
-	{
-        OnToggleInventory();
-	}
 
     public void OnToggleInventory()
 	{
         if (PauseManager.pauseState == PauseState.Paused) return;
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            menuIsActive = !menuIsActive;
-            inventoryPanel.gameObject.SetActive(menuIsActive);
-        }
+        menuIsActive = !menuIsActive;
+        inventoryPanel.gameObject.SetActive(menuIsActive);
 	}
 
     public void ItemAdded(Item item)
 	{
-        //Debug.Log($"InventoryUI.cs: ItemAdded({item.ObjectSlug})");
         InventoryUIItem emptyItem = Instantiate(itemContainer);
         emptyItem.SetItem(item);
         emptyItem.transform.SetParent(scrollViewContent);
