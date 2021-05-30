@@ -19,6 +19,11 @@ public class MenuManager : MonoBehaviour
 		//loginPanel.SetActive(false);
 	}
 
+	public void ChangeScene(string sceneName)
+	{
+		SceneManager.LoadScene(sceneName);
+	}
+
     public void Play()
 	{
         SceneManager.LoadScene(SceneName);
