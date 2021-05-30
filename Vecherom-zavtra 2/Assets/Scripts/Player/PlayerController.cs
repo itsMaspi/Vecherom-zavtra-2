@@ -13,6 +13,7 @@ public class PlayerController : NetworkBehaviour
 
     public TMPro.TextMeshProUGUI nickText;
     public GameObject interactionIcon;
+    public GameObject interactionButton;
     public GameObject dialogueSystem;
     public GameObject virtualCamera;
 
@@ -95,11 +96,13 @@ public class PlayerController : NetworkBehaviour
     public void OpenInteractableIcon()
 	{
         interactionIcon.SetActive(true);
+        interactionButton.SetActive(true);
 	}
 
     public void CloseInteractableIcon()
     {
         interactionIcon.SetActive(false);
+        interactionButton.SetActive(false);
     }
 
     public void OnInteract()
