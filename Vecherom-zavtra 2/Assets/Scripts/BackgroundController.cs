@@ -20,10 +20,7 @@ public class BackgroundController : MonoBehaviour
     void Update()
     {
         angle += increaseAngle;
-        background.uvRect = new Rect(background.uvRect.x + (0.02f * Time.deltaTime), (Mathf.Sin(ConvertToRadians(angle)/40)), 1f, 1f);
+        background.uvRect = new Rect(background.uvRect.x + (0.02f * Time.deltaTime), (Mathf.Sin(Utils.ConvertToRadians(angle)/40)), 1f, 1f);
     }
-    public float ConvertToRadians(float angle)
-    {
-        return (Mathf.PI / 180) * angle;
-    }
+    
 }
