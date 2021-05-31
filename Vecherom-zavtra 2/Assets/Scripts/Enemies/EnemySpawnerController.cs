@@ -14,7 +14,6 @@ public class EnemySpawnerController : NetworkBehaviour
         if (collision.tag == "Player")
         {
 			CmdSpawnEnemy();
-			NetworkServer.Destroy(gameObject);
         }
     }
 
@@ -32,6 +31,7 @@ public class EnemySpawnerController : NetworkBehaviour
 			NetworkServer.Spawn(enemy);
 			spawnPos.position = new Vector3(spawnPos.position.x + 5f, spawnPos.position.y, spawnPos.position.z);
 		}
+		NetworkServer.Destroy(gameObject);
 	}
 
 

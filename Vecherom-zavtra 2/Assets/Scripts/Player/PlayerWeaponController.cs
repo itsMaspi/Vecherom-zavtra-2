@@ -133,7 +133,7 @@ public class PlayerWeaponController : NetworkBehaviour
 		NetworkServer.Spawn(bulletInstance);
 	}
 
-	[Command]
+	[Command(requiresAuthority = false)]
 	public void CmdShootAnim()
 	{
 		RpcShoot();

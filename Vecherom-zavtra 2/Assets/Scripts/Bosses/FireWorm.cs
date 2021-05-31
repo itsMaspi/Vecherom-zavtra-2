@@ -46,7 +46,7 @@ public class FireWorm : NetworkBehaviour, IEnemy
         animator = GetComponent<Animator>();
     }
 
-	public override void OnStartClient()
+	public override void OnStartServer()
 	{
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerController>().SetActiveBossHP(true);
