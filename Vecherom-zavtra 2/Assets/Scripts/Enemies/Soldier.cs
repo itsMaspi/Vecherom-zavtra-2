@@ -2,6 +2,7 @@ using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Soldier : NetworkBehaviour, IEnemy
 {
@@ -12,6 +13,11 @@ public class Soldier : NetworkBehaviour, IEnemy
 	float attackTime = 0f;
 	[SerializeField] private LayerMask whatCanDamage;
 
+	[Header("Drop")]
+	public string dropSlug = "";
+	[Range(0, 100)]
+	public int dropChance = 100;
+
 	[Space]
 	[Header("Other")]
 
@@ -19,7 +25,7 @@ public class Soldier : NetworkBehaviour, IEnemy
 	[HideInInspector] public int currentHealth;
 
 	[HideInInspector] public Animator animator;
-	public TMPro.TextMeshProUGUI healthBar;
+	public Slider healthBar;
 
 	private CharacterStats characterStats;
 	[HideInInspector] public EnemyController2D controller;
@@ -83,12 +89,30 @@ public class Soldier : NetworkBehaviour, IEnemy
 
 	public void OnChangedHealth(int oldHealth, int newHealth)
 	{
-		healthBar.text = newHealth.ToString();
+		healthBar.value = newHealth;
 	}
 
 	[Server]
 	public void CmdDie()
 	{
 		NetworkServer.Destroy(gameObject);
+	}
+
+	public void CallSpawnDrops()
+	{
+		Vector3 pos = transform.position;
+		CmdSpawnDrops(pos);
+	}
+
+	[Command(requiresAuthority = false)]
+	public void CmdSpawnDrops(Vector3 pos)
+	{
+		if (Random.Range(0, 100) <= dropChance)
+		{
+			GameObject trigger = Instantiate(Resources.Load<GameObject>($"Drops/{dropSlug}_drop"), pos, Quaternion.identity);
+
+			NetworkServer.Spawn(trigger);
+		}
+
 	}
 }

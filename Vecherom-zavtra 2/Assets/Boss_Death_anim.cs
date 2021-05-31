@@ -21,8 +21,8 @@ public class Boss_Death_anim : StateMachineBehaviour
     {
         animator.GetComponentInParent<EnemyController2D>().enabled = false;
         animator.GetComponentInParent<Rigidbody2D>().simulated = false;
+        animator.GetComponentInParent<FireWorm>().healthBar.transform.parent.gameObject.SetActive(false);
         animator.GetComponentInParent<FireWorm>().enabled = false;
-        animator.GetComponentInParent<FireWorm>().healthBar.enabled = false;
         var colliders = animator.GetComponentsInParent<CapsuleCollider2D>();
         foreach (var collider in colliders)
         {

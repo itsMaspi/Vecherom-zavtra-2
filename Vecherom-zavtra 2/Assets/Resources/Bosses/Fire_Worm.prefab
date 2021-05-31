@@ -384,6 +384,8 @@ MonoBehaviour:
   whatCanDamage:
     serializedVersion: 2
     m_Bits: 8
+  dropSlug: smg_sweptgone
+  dropChance: 100
   animator: {fileID: 0}
   healthBar: {fileID: 7650678103395250898}
   controller: {fileID: 0}

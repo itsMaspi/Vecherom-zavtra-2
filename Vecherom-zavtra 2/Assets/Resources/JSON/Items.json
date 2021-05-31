@@ -282,7 +282,7 @@
   {
     "objectSlug": "smg_rusty",
     "itemName": "Rusty SMG",
-    "description": "<<To be edited>>",
+    "description": "Just about the worst SMG you could find!",
     "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
@@ -322,7 +322,7 @@
   {
     "objectSlug": "smg_m1",
     "itemName": "SMG M. I",
-    "description": "<<To be edited>>",
+    "description": "A Maliwan built SMG.",
     "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
@@ -362,7 +362,7 @@
   {
     "objectSlug": "smg_d9972f",
     "itemName": "#D99-72F",
-    "description": "<<To be edited>>",
+    "description": "A strange weapon with a strange name.",
     "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
@@ -402,7 +402,7 @@
   {
     "objectSlug": "smg_jabg",
     "itemName": "JAB-G",
-    "description": "<<To be edited>>",
+    "description": "A blue gun that will fend off some enemies.",
     "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,

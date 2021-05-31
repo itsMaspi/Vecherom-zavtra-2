@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5598136741263079821}
   - component: {fileID: 5598136741263079820}
-  - component: {fileID: 5598136741263079810}
   - component: {fileID: 5598136741263079811}
   - component: {fileID: 5598136741263079835}
   - component: {fileID: 5598136741263079808}
@@ -20,6 +19,7 @@ GameObject:
   - component: {fileID: 5598136741263079815}
   - component: {fileID: 5598136741263079813}
   - component: {fileID: 3994593315899970820}
+  - component: {fileID: 4386536253731691285}
   m_Layer: 0
   m_Name: SmallDroid
   m_TagString: Enemy
@@ -94,25 +94,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5598136741263079810
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5598136741263079823}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5bb05e06b1fafc94fa783c960036f914, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!70 &5598136741263079811
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -251,7 +232,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   clientAuthority: 0
-  animator: {fileID: 5598136741263079810}
+  animator: {fileID: 4386536253731691285}
 --- !u!114 &5598136741263079813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  moveSpeed: 5
+  moveSpeed: 7
   m_JumpForce: 100
   m_MovementSmoothing: 0.05
   m_WhatIsGround:
@@ -302,10 +283,31 @@ MonoBehaviour:
   whatCanDamage:
     serializedVersion: 2
     m_Bits: 0
+  dropSlug: pistol_jmp1
+  dropChance: 30
   currentHealth: 0
   animator: {fileID: 0}
   healthBar: {fileID: 6274804633748727965}
   controller: {fileID: 0}
+--- !u!95 &4386536253731691285
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5598136741263079823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6a2a7cd8115d1144b20a9b2e6f0acdd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5598136741565323682
 GameObject:
   m_ObjectHideFlags: 0

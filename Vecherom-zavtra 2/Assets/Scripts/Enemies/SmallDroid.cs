@@ -13,6 +13,11 @@ public class SmallDroid : NetworkBehaviour, IEnemy
 	float attackTime = 0f;
 	[SerializeField] private LayerMask whatCanDamage;
 
+	[Header("Drop")]
+	public string dropSlug = "";
+	[Range(0, 100)]
+	public int dropChance = 100;
+
 	[Space]
 	[Header("Other")]
 
@@ -92,4 +97,22 @@ public class SmallDroid : NetworkBehaviour, IEnemy
 	{
 		NetworkServer.Destroy(gameObject);
 	}
+	public void CallSpawnDrops()
+	{
+		Vector3 pos = transform.position;
+		CmdSpawnDrops(pos);
+	}
+
+	[Command(requiresAuthority = false)]
+	public void CmdSpawnDrops(Vector3 pos)
+	{
+		if (Random.Range(0, 100) <= dropChance)
+		{
+			GameObject trigger = Instantiate(Resources.Load<GameObject>($"Drops/{dropSlug}_drop"), pos, Quaternion.identity);
+
+			NetworkServer.Spawn(trigger);
+		}
+
+	}
+
 }

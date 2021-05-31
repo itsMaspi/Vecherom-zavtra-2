@@ -23,8 +23,12 @@ public class FireWorm : NetworkBehaviour, IEnemy
     [Header("Attack")]
     public string projectileSlug = null;
     [SerializeField] Transform firePoint = null;
-
     [SerializeField] private LayerMask whatCanDamage;
+
+    [Header("Drop")]
+    public string dropSlug = "";
+    [Range(0, 100)]
+    public int dropChance = 100;
 
     [Header("Other stuff")]
     [HideInInspector] public Animator animator;
@@ -162,7 +166,6 @@ public class FireWorm : NetworkBehaviour, IEnemy
     public void CallSpawnDrops()
 	{
         Vector3 pos = transform.position;
-        Debug.Log(pos);
         CmdSpawnDrops(pos);
 	}
 
@@ -173,14 +176,17 @@ public class FireWorm : NetworkBehaviour, IEnemy
         
         NetworkServer.Spawn(trigger);
     }
+
     [Command(requiresAuthority = false)]
     public void CmdSpawnDrops(Vector3 pos)
     {
-        Debug.Log(pos);
-        GameObject trigger = Instantiate(Resources.Load<GameObject>("Drops/pistol_b_drop"), pos, Quaternion.identity);
-        Debug.Log(trigger.transform.position);
+        if (Random.Range(0, 100) <= dropChance)
+        {
+            GameObject trigger = Instantiate(Resources.Load<GameObject>($"Drops/{dropSlug}_drop"), pos, Quaternion.identity);
 
-        NetworkServer.Spawn(trigger);
+            NetworkServer.Spawn(trigger);
+        }
+
     }
 
     [Command(requiresAuthority = false)]

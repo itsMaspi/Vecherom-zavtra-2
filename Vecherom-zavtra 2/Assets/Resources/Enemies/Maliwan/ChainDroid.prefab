@@ -302,6 +302,8 @@ MonoBehaviour:
   whatCanDamage:
     serializedVersion: 2
     m_Bits: 8
+  dropSlug: smg_d9972f
+  dropChance: 20
   currentHealth: 0
   animator: {fileID: 0}
   healthBar: {fileID: 6274804633748727965}
