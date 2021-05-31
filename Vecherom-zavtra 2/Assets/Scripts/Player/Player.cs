@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using kcp2k;
 
 public class Player : NetworkBehaviour
 {
@@ -50,6 +52,11 @@ public class Player : NetworkBehaviour
         }
     }
 
+    public void ResetServer()
+	{
+        NetworkServer.DisconnectAll();
+	}
+
     public void OnChangedHealth(int oldHealth, int newHealth)
 	{
         healthSlider.value = newHealth;
@@ -57,7 +64,16 @@ public class Player : NetworkBehaviour
 
     [Command]
     public void CmdDestroySelf()
-	{
+    {
+        //FindObjectOfType<KcpTransport>().ServerStop();
+        var nm = FindObjectOfType<NetworkManager>();
+        nm.StopClient();
+        nm.StopHost();
+        nm.StopServer();
+        //Destroy(FindObjectOfType<NetworkManagerHUD>());
+        //Destroy(FindObjectOfType<KcpTransport>());
+        //Destroy(FindObjectOfType<NetworkManager>().gameObject);
+        FindObjectOfType<SceneLoader>().LoadLevel(SceneManager.GetActiveScene().name);
         Destroy(gameObject);
 	}
 }
