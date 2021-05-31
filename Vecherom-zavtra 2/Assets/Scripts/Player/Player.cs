@@ -65,15 +65,17 @@ public class Player : NetworkBehaviour
     [Command]
     public void CmdDestroySelf()
     {
-        //FindObjectOfType<KcpTransport>().ServerStop();
+        RpcDie();
+        //NetworkServer.Destroy(gameObject);
+	}
+
+    [ClientRpc]
+    public void RpcDie()
+	{
         var nm = FindObjectOfType<NetworkManager>();
         nm.StopClient();
         nm.StopHost();
         nm.StopServer();
-        //Destroy(FindObjectOfType<NetworkManagerHUD>());
-        //Destroy(FindObjectOfType<KcpTransport>());
-        //Destroy(FindObjectOfType<NetworkManager>().gameObject);
         FindObjectOfType<SceneLoader>().LoadLevel(SceneManager.GetActiveScene().name);
-        Destroy(gameObject);
-	}
+    }
 }

@@ -46,16 +46,13 @@ public class FireWorm : NetworkBehaviour, IEnemy
         animator = GetComponent<Animator>();
     }
 
-	public override void OnStartServer()
+	public override void OnStartClient()
 	{
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-		foreach (var player in players)
-        {
-            player.GetComponent<PlayerController>().SetActiveBossHP(true);
-            var HPBar = player.transform.Find("HUD Canvas/HUD/BossHealthBar/BossHealthBarSlider").GetComponent<Slider>();
-            HPBar.maxValue = maxHealth;
-            HPBar.value = maxHealth;
-        }
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().SetActiveBossHP(true);
+        var HPBar = player.transform.Find("HUD Canvas/HUD/BossHealthBar/BossHealthBarSlider").GetComponent<Slider>();
+        HPBar.maxValue = maxHealth;
+        HPBar.value = maxHealth;
     }
 
 	void Update()
