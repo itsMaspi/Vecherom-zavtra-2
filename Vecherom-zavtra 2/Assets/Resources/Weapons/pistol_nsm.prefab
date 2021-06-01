@@ -130,7 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3669b0e56a3314a49a2954520c788935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletName: proj1
+  syncMode: 0
+  syncInterval: 0.1
+  bulletName: proj2
 --- !u!82 &8628910343341428224
 AudioSource:
   m_ObjectHideFlags: 0

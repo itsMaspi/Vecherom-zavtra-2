@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  bulletName: proj1
+  bulletName: proj4
 --- !u!82 &4230134676473972803
 AudioSource:
   m_ObjectHideFlags: 0
