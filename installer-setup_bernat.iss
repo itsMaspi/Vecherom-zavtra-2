@@ -24,7 +24,7 @@ AllowNoIcons=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=E:\UnityProjects\Vecherom-zavtra-2\Vecherom-zavtra 2\Build\bins
+OutputDir=C:\Users\Holypipo\Documents\VZ\Vecherom-zavtra 2\Build\bins
 OutputBaseFilename=VZ2-Installer
 Compression=lzma
 SolidCompression=yes
@@ -40,11 +40,11 @@ Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "E:\UnityProjects\Vecherom-zavtra-2\Vecherom-zavtra 2\Build\release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "E:\UnityProjects\Vecherom-zavtra-2\Vecherom-zavtra 2\Build\release\MonoBleedingEdge\*"; DestDir: "{app}\MonoBleedingEdge"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "E:\UnityProjects\Vecherom-zavtra-2\Vecherom-zavtra 2\Build\release\Vecherom-zavtra 2_Data\*"; DestDir: "{app}\Vecherom-zavtra 2_Data"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "E:\UnityProjects\Vecherom-zavtra-2\Vecherom-zavtra 2\Build\release\UnityCrashHandler64.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "E:\UnityProjects\Vecherom-zavtra-2\Vecherom-zavtra 2\Build\release\UnityPlayer.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Holypipo\Documents\VZ\Vecherom-zavtra 2\Build\release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Holypipo\Documents\VZ\Vecherom-zavtra 2\Build\release\MonoBleedingEdge\*"; DestDir: "{app}\MonoBleedingEdge"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\Holypipo\Documents\VZ\Vecherom-zavtra 2\Build\release\Vecherom-zavtra 2_Data\*"; DestDir: "{app}\Vecherom-zavtra 2_Data"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\Holypipo\Documents\VZ\Vecherom-zavtra 2\Build\release\UnityCrashHandler64.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Holypipo\Documents\VZ\Vecherom-zavtra 2\Build\release\UnityPlayer.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
