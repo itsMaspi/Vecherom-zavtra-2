@@ -48,6 +48,11 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning($"Sound: {name} not found!");
             return;
         }
+        if (s.name.Contains("Theme"))
+		{
+            Sound theme = Array.Find(sounds, sound => sound.name.Contains("Theme"));
+            theme.source.Stop();
+        }
         s.source.Play();
 	}
 
