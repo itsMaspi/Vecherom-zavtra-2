@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Vecherom-Zavtra 2"
-#define MyAppVersion "0.9.2"
+#define MyAppVersion "0.9.3"
 #define MyAppPublisher "Dasha"
 #define MyAppURL "https://github.com/itsMaspi/Vecherom-zavtra-2"
 #define MyAppExeName "Vecherom-zavtra 2.exe"
